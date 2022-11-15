@@ -54,58 +54,31 @@ STAVKOVE {
 
 ## Balíky
 
-**\--STARTER--**
-
-**1-3 TIPY DENNE**
-
-**ÚSPEŠNOSŤ 78-80%**
-
-**24/7 SUPPORT**
-
-**TELEGRAM NOTIFIKÁCIE**
-
-**15 DNÍ | 39.90€**
-
-**30 DNÍ | 69.90€**
-
-**90 DNÍ | 149.90€**
-
-**\--KOMBI--**
-
-**STARTER & EXCLUSIVE**
-
-**LIMITOVANÉ MIESTA**
-
-**VERIFIKOVANÉ ZDROJE**
-
-**5-15 TIPOV DENNE**
-
-**VYSOKÝ KURZ ZDARMA**
-
-**ÚSPEŠNOSŤ 84-86%**
-
-**24/7 SUPPORT**
-
-**TELEGRAM NOTIFIKÁCIE**
-
-**30 DNÍ | 129.90€ (-40€)**
-
-**90 DNÍ | 219.90€ (-100€)**
-
-**180 DNÍ | 299.90€ (-140€)**
-
-**\--EXCLUSIVE--**
-
-**2-5 TIPOV DENNE**
-
-**ÚSPEŠNOSŤ 81-83%**
-
-**24/7 SUPPORT**
-
-**TELEGRAM NOTIFIKÁCIE**
-
-**30 DNÍ | 99.90€**
-
-**90 DNÍ | 169.90€**
-
-**180 DNÍ | 239.90€**
+1.  STARTER
+    1.  1-3 TIPY DENNE
+    2.  ÚSPEŠNOSŤ 78-80%
+    3.  24/7 SUPPORT
+    4.  TELEGRAM NOTIFIKÁCIE
+        1.  **15 DNÍ | 39.90€**
+        2.  **30 DNÍ | 69.90€**
+        3.  **90 DNÍ | 149.90€**
+2.  KOMBI
+    1.  **STARTER & EXCLUSIVE**
+    2.  **LIMITOVANÉ MIESTA**
+    3.  **VERIFIKOVANÉ ZDROJE**
+    4.  **5-15 TIPOV DENNE**
+    5.  **VYSOKÝ KURZ ZDARMA**
+    6.  **ÚSPEŠNOSŤ 84-86%**
+    7.  **24/7 SUPPORT**
+    8.  **TELEGRAM NOTIFIKÁCIE**
+        1.  **30 DNÍ | 129.90€ (-40€)**
+        2.  **90 DNÍ | 219.90€ (-100€)**
+        3.  **180 DNÍ | 299.90€ (-140€)**
+3.  EXCLUSIVE
+    1.  **2-5 TIPOV DENNE**
+    2.  **ÚSPEŠNOSŤ 81-83%**
+    3.  **24/7 SUPPORT**
+    4.  **TELEGRAM NOTIFIKÁCIE**
+        1.  **30 DNÍ | 99.90€**
+        2.  **90 DNÍ | 169.90€**
+        3.  **180 DNÍ | 239.90€**
