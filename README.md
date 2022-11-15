@@ -54,9 +54,7 @@ STAVKOVE {
 
 ## Balíky
 
-| NÁZOV       | VÝHODY | DNI/CENA |
-| ----------- | ------ | -------- |
-| **STARTER** |
+**\--STARTER--**
 
 **1-3 TIPY DENNE**
 
@@ -66,16 +64,13 @@ STAVKOVE {
 
 **TELEGRAM NOTIFIKÁCIE**
 
-|
-
 **15 DNÍ | 39.90€**
 
 **30 DNÍ | 69.90€**
 
 **90 DNÍ | 149.90€**
 
-|
-| **KOMBI** |
+**\--KOMBI--**
 
 **STARTER & EXCLUSIVE**
 
@@ -93,16 +88,13 @@ STAVKOVE {
 
 **TELEGRAM NOTIFIKÁCIE**
 
-|
-
 **30 DNÍ | 129.90€ (-40€)**
 
 **90 DNÍ | 219.90€ (-100€)**
 
 **180 DNÍ | 299.90€ (-140€)**
 
-|
-| **EXCLUSIVE** |
+**\--EXCLUSIVE--**
 
 **2-5 TIPOV DENNE**
 
@@ -112,12 +104,8 @@ STAVKOVE {
 
 **TELEGRAM NOTIFIKÁCIE**
 
-|
-
 **30 DNÍ | 99.90€**
 
 **90 DNÍ | 169.90€**
 
 **180 DNÍ | 239.90€**
-
-|
