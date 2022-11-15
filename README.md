@@ -12,8 +12,20 @@ Potom si zavoláme a preberieme nejaký CW a fotky + úpravy od klienta.
 
 Linky:
 
-- [https://www.forexporadenstvo.sk](https://www.forexporadenstvo.sk/wp-admin?fbclid=IwAR0BA9kGhDY9x3OlTGwmTy1nv6vr2YE92D4mPwq8Vho-OLP86drml8HeXkg)
-- [https://www.stavkoveporadenstvo.sk](https://www.stavkoveporadenstvo.sk/wp-admin/?fbclid=IwAR3BFDKHmrhj38xepdB3hEx33zwy2v-dCT0qagc04_N5d5kQ0EGqA1lAbgo)
+- [https://www.forexporadenstvo.sk](https://www.forexporadenstvo.sk)
+- [https://www.stavkoveporadenstvo.sk](https://www.stavkoveporadenstvo.sk)
+
+---
+
+FTP:
+
+forexporadenstvo.sk
+ftp.forexporadenstvo.sk
+Oz2P]7LU}|
+
+stavkoveporadenstvo.sk
+ftp.stavkoveporadenstvo.sk
+Wy1=?6T^0B
 
 ---
 
