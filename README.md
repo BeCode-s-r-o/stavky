@@ -41,7 +41,7 @@ Firebase
 npm install firebase
 ```
 
-```
+```js
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -57,7 +57,7 @@ const firebaseConfig = {
   storageBucket: "forex-stavkove.appspot.com",
   messagingSenderId: "440847828743",
   appId: "1:440847828743:web:a9d2199ca6d9b176d9a7a2",
-  measurementId: "G-64DZNMWGSY"
+  measurementId: "G-64DZNMWGSY",
 };
 
 // Initialize Firebase
