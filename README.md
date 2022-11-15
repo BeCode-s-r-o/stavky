@@ -17,6 +17,12 @@ Linky:
 
 ---
 
+Texty:
+
+[POSTUP-WEBU.docx](https://github.com/VladimirTomko/stavky/files/10016203/POSTUP-WEBU.docx)
+
+---
+
 FTP:
 
 forexporadenstvo.sk
