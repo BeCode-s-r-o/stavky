@@ -1,4 +1,4 @@
-## LINForexPoradenstvo & StavkovePoradenstvo
+## ForexPoradenstvo & StavkovePoradenstvo
 
 Pôjde o 2 webky ktoré budú úplne identické, jedine sa budú pri builde setovať ENV variable a na základe podmienok v kóde sa zmení text/logo/farba,…
 
