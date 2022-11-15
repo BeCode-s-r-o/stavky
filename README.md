@@ -12,8 +12,8 @@ Potom si zavoláme a preberieme nejaký CW a fotky + úpravy od klienta.
 
 Linky:
 
-- [https://www.forexporadenstvo.sk](https://www.forexporadenstvo.sk/)
-- [https://www.stavkoveporadenstvo.sk](https://www.stavkoveporadenstvo.sk/)
+- [https://www.forexporadenstvo.sk](https://www.forexporadenstvo.sk/wp-admin?fbclid=IwAR0BA9kGhDY9x3OlTGwmTy1nv6vr2YE92D4mPwq8Vho-OLP86drml8HeXkg)
+- [https://www.stavkoveporadenstvo.sk](https://www.stavkoveporadenstvo.sk/wp-admin/?fbclid=IwAR3BFDKHmrhj38xepdB3hEx33zwy2v-dCT0qagc04_N5d5kQ0EGqA1lAbgo)
 
 ---
 
@@ -58,10 +58,13 @@ STAVKOVE {
 | ----------- | ------ | -------- |
 | **STARTER** |
 
-- **1-3 TIPY DENNE**
-- **ÚSPEŠNOSŤ 78-80%**
-- **24/7 SUPPORT**
-- **TELEGRAM NOTIFIKÁCIE**
+**1-3 TIPY DENNE**
+
+**ÚSPEŠNOSŤ 78-80%**
+
+**24/7 SUPPORT**
+
+**TELEGRAM NOTIFIKÁCIE**
 
 |
 
@@ -74,14 +77,21 @@ STAVKOVE {
 |
 | **KOMBI** |
 
-- **STARTER & EXCLUSIVE**
-- **LIMITOVANÉ MIESTA**
-- **VERIFIKOVANÉ ZDROJE**
-- **5-15 TIPOV DENNE**
-- **VYSOKÝ KURZ ZDARMA**
-- **ÚSPEŠNOSŤ 84-86%**
-- **24/7 SUPPORT**
-- **TELEGRAM NOTIFIKÁCIE**
+**STARTER & EXCLUSIVE**
+
+**LIMITOVANÉ MIESTA**
+
+**VERIFIKOVANÉ ZDROJE**
+
+**5-15 TIPOV DENNE**
+
+**VYSOKÝ KURZ ZDARMA**
+
+**ÚSPEŠNOSŤ 84-86%**
+
+**24/7 SUPPORT**
+
+**TELEGRAM NOTIFIKÁCIE**
 
 |
 
@@ -94,10 +104,13 @@ STAVKOVE {
 |
 | **EXCLUSIVE** |
 
-- **2-5 TIPOV DENNE**
-- **ÚSPEŠNOSŤ 81-83%**
-- **24/7 SUPPORT**
-- **TELEGRAM NOTIFIKÁCIE**
+**2-5 TIPOV DENNE**
+
+**ÚSPEŠNOSŤ 81-83%**
+
+**24/7 SUPPORT**
+
+**TELEGRAM NOTIFIKÁCIE**
 
 |
 
