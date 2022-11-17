@@ -1,8 +1,7 @@
 {
-  "name": "doob",
+  "name": "stavky-forex",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://doob.rainbowit.net/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
@@ -34,7 +33,18 @@
     "start:forex": "REACT_APP_WEBSITE_TYPE=forex react-scripts start",
     "start:stavkove": "REACT_APP_WEBSITE_TYPE=stavkove react-scripts start",
     "build:forex": "REACT_APP_WEBSITE_TYPE=forex react-scripts build",
-    "build:stavkove": "REACT_APP_WEBSITE_TYPE=stavkove react-scripts build"
+    "build:stavkove": "REACT_APP_WEBSITE_TYPE=stavkove react-scripts build",
+    "imageoptim": "imageoptim:public && imageoptim:assets",
+    "imageoptim:public": "yarn imageoptim:jpg:public && yarn imageoptim:png:public",
+    "imageoptim:assets": "yarn imageoptim:jpg:assets && yarn imageoptim:png:assets",
+    "imageoptim:jpg:assets": "imageoptim \"src/assets/**/*.jpg\"",
+    "imageoptim:png:assets": "imageoptim  \"src/assets/**/*.png\"",
+    "imageoptim:jpg:public": "imageoptim \"public/**/*.jpg\"",
+    "imageoptim:png:public": "imageoptim  \"public/**/*.png\"",
+    "copy:forex": "cp -r build forex",
+    "copy:stavkove": "cp -r build stavkove",
+    "build-and-copy:forex": "npm run build:forex && npm run copy:forex",
+    "build-and-copy:stavkove": "npm run build:stavkove && npm run copy:stavkove"
   },
   "eslintConfig": {
     "extends": [
@@ -57,6 +67,17 @@
   "devDependencies": {
     "@types/react-dom": "^18.0.9",
     "@types/react-router-dom": "^5.3.3",
-    "fslightbox-react": "^1.6.2"
+    "fslightbox-react": "^1.6.2",
+    "@types/react-scroll": "^1.8.4",
+    "@types/react-slick": "^0.23.10",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.4.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.10",
+    "typescript": "^4.8.4"
   }
 }

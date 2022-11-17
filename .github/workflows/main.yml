@@ -10,7 +10,6 @@ jobs:
   web-deploy:
     name: 🚀 Nahrať na FTP server
     runs-on: ubuntu-latest
-
     steps:
       - name: 📥 Stiahnuť repozitár
         uses: actions/checkout@v2
@@ -18,10 +17,10 @@ jobs:
       - name: Použiť Node.js 14
         uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: '14'
 
       - name: 📦 Nainštalovať NPM balíčky
-        run: npm install
+        run: npm install --force
 
       - name: 🛠 Zbaliť Forex projekt
         run: npm run build:forex
@@ -40,7 +39,7 @@ jobs:
           timeout: 100000
 
       - name: 🛠 Zbaliť Stávky projekt
-        run: npm run build:stavky
+        run: npm run build:stavkove
 
       - name: 📤 Nahrať na FTP server
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
@@ -54,3 +53,6 @@ jobs:
           port: 21
           protocol: ftp
           timeout: 100000
+
+      - name: Pridať novú verziu
+        run: npm version patch
