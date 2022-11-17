@@ -67,6 +67,20 @@ const analytics = getAnalytics(app);
 
 ---
 
+ENV
+Budeme stále používať env REACT_APP_WEBSITE_TYPE : forex | stavkove a podla toho budeme davat podmienky na content (texty,fotky,farby,...)
+
+```json
+ "scripts": {
+    "start:forex": "REACT_APP_WEBSITE_TYPE=forex react-scripts start",
+    "start:stavkove": "REACT_APP_WEBSITE_TYPE=stavkove react-scripts start",
+    "build:forex": "REACT_APP_WEBSITE_TYPE=forex react-scripts build",
+    "build:stavkove": "REACT_APP_WEBSITE_TYPE=stavkove react-scripts build"
+  },
+```
+
+---
+
 Farby:
 
 ```css
