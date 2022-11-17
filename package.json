@@ -32,6 +32,7 @@
   "scripts": {
     "start:forex": "REACT_APP_WEBSITE_TYPE=forex react-scripts start",
     "start:stavkove": "REACT_APP_WEBSITE_TYPE=stavkove react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build:forex": "REACT_APP_WEBSITE_TYPE=forex react-scripts build",
     "build:stavkove": "REACT_APP_WEBSITE_TYPE=stavkove react-scripts build",
     "imageoptim": "imageoptim:public && imageoptim:assets",

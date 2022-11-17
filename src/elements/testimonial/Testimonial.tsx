@@ -1,72 +1,17 @@
-import Layout from "../../common/Layout";
-import SEO from "../../common/SEO";
-import BreadcrumbOne from "../breadcrumb/BreadcrumbOne";
-import SectionTitle from "../sectionTitle/SectionTitle";
-import Separator from "../separator/Separator";
-import TestimonialOne from "./TestimonialOne";
-import TestimonialThree from "./TestimonialThree";
-import TestimonialTwo from "./TestimonialTwo";
+import Layout from '../../common/Layout';
+import SEO from '../../common/SEO';
+import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
+import SectionTitle from '../sectionTitle/SectionTitle';
+import Separator from '../separator/Separator';
+import TestimonialOne from './TestimonialOne';
+import TestimonialThree from './TestimonialThree';
+import TestimonialTwo from './TestimonialTwo';
 
 const Testimonial = () => {
   return (
     <>
-      <SEO title="Testimonial || Doob - React Business  Template" />
-
       <Layout>
-        <BreadcrumbOne
-          title="The Easiest Way To Create Website <br /> Quick Copy & Make site."
-          rootUrl="/"
-          parentUrl="Home"
-          currentUrl="Elements"
-        />
-
         <div className="main-content">
-          {/* Start Elements Area  */}
-          <div className="rwt-testimonial-area rn-section-gap">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-12 mb--10">
-                  <SectionTitle
-                    textAlign="text-center"
-                    radiusRounded=""
-                    subtitle="Client Feedback"
-                    title="Testimonial."
-                    description={undefined}
-                  />
-                </div>
-              </div>
-              <TestimonialOne
-                column="col-lg-4 col-md-6 col-12 mt--30"
-                teamStyle="card-style-default testimonial-style-one"
-              />
-            </div>
-          </div>
-          {/* End Elements Area  */}
-          <Separator />
-
-          {/* Start Elements Area  */}
-          <div className="rwt-elements-area rn-section-gap">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-12">
-                  <SectionTitle
-                    textAlign="text-center"
-                    radiusRounded=""
-                    subtitle="Client Feedback"
-                    title="Testimonial."
-                    description={undefined}
-                  />
-                </div>
-              </div>
-              <TestimonialOne
-                column="col-lg-4 col-md-6 col-12"
-                teamStyle="card-style-default testimonial-style-one style-two"
-              />
-            </div>
-          </div>
-          {/* End Elements Area  */}
-          <Separator />
-
           {/* Start Elements Area  */}
           <div className="rwt-elements-area rn-section-gap">
             <div className="container">
@@ -89,45 +34,6 @@ const Testimonial = () => {
           </div>
           {/* End Elements Area  */}
           <Separator />
-
-          {/* Start Elements Area  */}
-          <div className="rwt-elements-area rn-section-gap">
-            <div className="container">
-              <div className="row mb--20">
-                <div className="col-lg-12">
-                  <SectionTitle
-                    textAlign="text-center"
-                    radiusRounded=""
-                    subtitle="Client Feedback"
-                    title="Testimonial."
-                    description={undefined}
-                  />
-                </div>
-              </div>
-              <TestimonialTwo column="col-lg-12 mt--30" teamStyle="" />
-            </div>
-          </div>
-          {/* End Elements Area  */}
-          <Separator />
-
-          {/* Start Elements Area  */}
-          <div className="rwt-elements-area rn-section-gap">
-            <div className="container">
-              <div className="row mb--20">
-                <div className="col-lg-12">
-                  <SectionTitle
-                    textAlign="text-center"
-                    radiusRounded=""
-                    subtitle="Client Feedback"
-                    title="Testimonial."
-                    description={undefined}
-                  />
-                </div>
-              </div>
-              <TestimonialThree teamStyle="" />
-            </div>
-          </div>
-          {/* End Elements Area  */}
         </div>
       </Layout>
     </>

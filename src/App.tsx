@@ -27,6 +27,7 @@ import './assets/scss/style.scss';
 
 import Copyright from './common/footer/Copyright';
 import FooterTwo from './common/footer/FooterTwo';
+import CalltoActionSix from './elements/calltoaction/CalltoActionSix';
 
 const App = () => {
   return (
@@ -41,11 +42,10 @@ const App = () => {
         <Testimonial />
         <CalltoAction />
         <RnAccordion />
-        <CalltoAction />
+        <CalltoActionSix />
         <Social />
         <BlogGridView />
         <Contact />
-        <FooterTwo />
         <Copyright />
       </PageScrollTop>
     </Router>
