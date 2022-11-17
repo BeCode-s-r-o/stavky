@@ -23,6 +23,11 @@ Texty:
 
 [POSTUP-WEBU.docx](https://github.com/VladimirTomko/stavky/files/10016203/POSTUP-WEBU.docx)
 
+Konkrétne komponenty:
+
+[stvkovforex.zip](https://github.com/VladimirTomko/stavky/files/10031181/stvkovforex.zip)
+
+
 ---
 
 FTP:
