@@ -6,7 +6,7 @@ import Separator from '../separator/Separator';
 import TimelineOne from './TimelineOne';
 import TimelineTwo from './TimelineTwo';
 
-const Timeline = () => {
+const Timeline = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>
@@ -20,8 +20,8 @@ const Timeline = () => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="Timeline"
-                    title="Working Process."
+                    subtitle="POSTUP SPOLUPRÁCE "
+                    title="PROCES OBJEDNÁVKY"
                     description={undefined}
                   />
                 </div>

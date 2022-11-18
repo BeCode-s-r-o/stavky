@@ -9,7 +9,7 @@ import ServiceOne from './ServiceOne';
 import ServiceThree from './ServiceThree';
 import ServiceTwo from './ServiceTwo';
 
-const Service = () => {
+const Service = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>
@@ -22,9 +22,13 @@ const Service = () => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="What we can do for you"
-                    title="Services provide for you."
-                    description="There are many variations of passages of Lorem Ipsum available, <br /> but the majority have suffered alteration."
+                    subtitle="JEDNODUCHÉ A EFEKTÍVNE"
+                    title="VYSVETLENIE NAŠICH SLUŽIEB "
+                    description={
+                      pageType === 'forex'
+                        ? 'Ponúkame kvalitné a odborné poradenstvo v oblasti obchodovania na forexe, vyhľadávame obchodné príležitosti na správne určenie pohybu trhu.'
+                        : 'Ponúkame kvalitné a odborné poradenstvo v oblasti športových zápasov, vyhľadávame stávkové príležitosti na správne určenie výsledku zápasu.'
+                    }
                   />
                 </div>
               </div>

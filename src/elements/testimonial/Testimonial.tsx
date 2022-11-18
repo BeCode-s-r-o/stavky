@@ -7,7 +7,7 @@ import TestimonialOne from './TestimonialOne';
 import TestimonialThree from './TestimonialThree';
 import TestimonialTwo from './TestimonialTwo';
 
-const Testimonial = () => {
+const Testimonial = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>

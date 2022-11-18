@@ -30,23 +30,24 @@ import FooterTwo from './common/footer/FooterTwo';
 import CalltoActionSix from './elements/calltoaction/CalltoActionSix';
 
 const App = () => {
+  const pageType = process.env.REACT_APP_WEBSITE_TYPE;
   return (
     <Router>
       <PageScrollTop>
-        <WebAgency />
-        <Service />
-        <Tab />
-        <Timeline />
-        <Pricing />
-        <CounterUp />
-        <Testimonial />
-        <CalltoAction />
-        <RnAccordion />
-        <CalltoActionSix />
-        <Social />
-        <BlogGridView />
-        <Contact />
-        <Copyright />
+        <WebAgency pageType={pageType} />
+        <Service pageType={pageType} />
+        <Tab pageType={pageType} />
+        <Timeline pageType={pageType} />
+        <Pricing pageType={pageType} />
+        <CounterUp pageType={pageType} />
+        <Testimonial pageType={pageType} />
+        <CalltoAction pageType={pageType} />
+        <RnAccordion pageType={pageType} />
+        <CalltoActionSix pageType={pageType} />
+        <Social pageType={pageType} />
+        <BlogGridView pageType={pageType} />
+        <Contact pageType={pageType} />
+        <Copyright pageType={pageType} />
       </PageScrollTop>
     </Router>
   );

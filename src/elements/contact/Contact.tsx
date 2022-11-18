@@ -5,7 +5,7 @@ import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
 import SectionTitle from '../sectionTitle/SectionTitle';
 import ContactOne from './ContactOne';
 
-const Contact = () => {
+const Contact = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>

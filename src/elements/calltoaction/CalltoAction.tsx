@@ -13,7 +13,7 @@ import CalltoActionSeven from './CalltoActionSeven';
 import CalltoActionEight from './CalltoActionEight';
 import Separator from '../separator/Separator';
 
-const CalltoAction = () => {
+const CalltoAction = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>
@@ -26,8 +26,8 @@ const CalltoAction = () => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="Call To Action"
-                    title="Style Five"
+                    subtitle="SLEDUJTE NÁS "
+                    title="AKTUALIZOVANÉ VÝSLEDKY"
                     description=""
                   />
                 </div>

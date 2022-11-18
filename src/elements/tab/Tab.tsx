@@ -7,7 +7,7 @@ import TabOne from './TabOne';
 import TabThree from './TabThree';
 import TabTwo from './TabTwo';
 
-const Tab = () => {
+const Tab = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>
@@ -22,13 +22,13 @@ const Tab = () => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="You can Change Easily"
-                    title="Tab Style Three"
+                    subtitle="PREČO SI VYBRAŤ NÁS "
+                    title="ZAČNITE SI PLNIŤ SVOJE SNY "
                     description=""
                   />
                 </div>
               </div>
-              <TabTwo />
+              <TabTwo pageType={pageType} />
             </div>
           </div>
           {/* End Elements Area  */}

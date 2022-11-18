@@ -4,7 +4,7 @@ import Layout from '../../common/Layout';
 import BreadcrumbOne from '../../elements/breadcrumb/BreadcrumbOne';
 import BlogProp from './itemProp/BlogProp';
 
-const BlogGridView = () => {
+const BlogGridView = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>
