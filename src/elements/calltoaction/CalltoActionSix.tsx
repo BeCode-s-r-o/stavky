@@ -1,8 +1,9 @@
 import React from 'react';
 const callToActionData = {
-  title: 'Ready to start creating a standard website?',
+  title:
+    'Delí Vás už len posledný krok od spolupráce. Prezrite si ešte raz našu ponuku služieb. Zvoľte si ten správny balík pre Vás.',
   subtitle: 'Finest choice for your home & office',
-  btnText: 'Purchase Doob',
+  btnText: 'PONUKA SLUŽIEB',
 };
 const CalltoActionSix = ({ pageType }: PageType) => {
   return (
@@ -12,7 +13,7 @@ const CalltoActionSix = ({ pageType }: PageType) => {
           <div className="col-lg-8 col-12">
             <div className="inner">
               <div className="content text-start">
-                <h2 className="title">{callToActionData.title}</h2>
+                <h6 className="subtitle">{callToActionData.title}</h6>
               </div>
             </div>
           </div>

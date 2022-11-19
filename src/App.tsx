@@ -28,6 +28,8 @@ import './assets/scss/style.scss';
 import Copyright from './common/footer/Copyright';
 import FooterTwo from './common/footer/FooterTwo';
 import CalltoActionSix from './elements/calltoaction/CalltoActionSix';
+import HeaderOne from './common/header/HeaderOne';
+import WhyUs from './pages/WhyUs';
 
 const App = () => {
   const pageType = process.env.REACT_APP_WEBSITE_TYPE;
@@ -43,7 +45,7 @@ const App = () => {
         <Testimonial pageType={pageType} />
         <CalltoAction pageType={pageType} />
         <RnAccordion pageType={pageType} />
-        <CalltoActionSix pageType={pageType} />
+        <WhyUs pageType={pageType} />
         <Social pageType={pageType} />
         <BlogGridView pageType={pageType} />
         <Contact pageType={pageType} />
