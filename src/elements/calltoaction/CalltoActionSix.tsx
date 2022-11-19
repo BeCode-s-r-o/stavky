@@ -4,7 +4,7 @@ const callToActionData = {
   subtitle: 'Finest choice for your home & office',
   btnText: 'Purchase Doob',
 };
-const CalltoActionSix = () => {
+const CalltoActionSix = ({ pageType }: PageType) => {
   return (
     <div className="rn-callto-action clltoaction-style-default style-6">
       <div className="container">

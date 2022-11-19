@@ -7,7 +7,7 @@ import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
 import SectionTitle from '../sectionTitle/SectionTitle';
 import Separator from '../separator/Separator';
 
-const Social = () => {
+const Social = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>
@@ -20,8 +20,8 @@ const Social = () => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="Our Social Share"
-                    title="You can Customize All."
+                    subtitle="SLEDUJTE NÁS "
+                    title="NAŠE SOCIÁLNE SIEŤE "
                     description=""
                   />
                 </div>

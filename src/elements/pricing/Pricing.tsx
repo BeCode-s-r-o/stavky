@@ -9,7 +9,7 @@ import PricingFour from './PricingFour';
 import PricingFive from './PricingFive';
 import Separator from '../separator/Separator';
 
-const Pricing = () => {
+const Pricing = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>

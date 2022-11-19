@@ -6,7 +6,7 @@ import SectionTitle from '../sectionTitle/SectionTitle';
 import AccordionOne from './AccordionOne';
 import Separator from '../separator/Separator';
 
-const RnAccordion = () => {
+const RnAccordion = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>
@@ -20,7 +20,7 @@ const RnAccordion = () => {
                     textAlign="text-center"
                     radiusRounded=""
                     subtitle="Accordion"
-                    title="Customize All"
+                    title="FAQ"
                     description=""
                   />
                 </div>

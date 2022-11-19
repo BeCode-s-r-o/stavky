@@ -1,14 +1,9 @@
-import React from 'react';
-import SEO from '../../common/SEO';
 import Layout from '../../common/Layout';
 import SectionTitle from '../sectionTitle/SectionTitle';
 import Separator from '../separator/Separator';
-import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
-import CounterUpOne from './CounterUpOne';
 import CounterUpTwo from './CounterUpTwo';
-import CounterUpFour from './CounterUpFour';
 
-const CounterUp = () => {
+const CounterUp = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>
@@ -21,8 +16,8 @@ const CounterUp = () => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="Customizable counters"
-                    title="Counters Custom Elements"
+                    subtitle="NAŠE VÝSLEDKY"
+                    title="ŠTATISTIKY NAŠEJ SPOLOČNOSTI"
                     description=""
                   />
                 </div>

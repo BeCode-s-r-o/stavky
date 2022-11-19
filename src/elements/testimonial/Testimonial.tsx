@@ -7,7 +7,7 @@ import TestimonialOne from './TestimonialOne';
 import TestimonialThree from './TestimonialThree';
 import TestimonialTwo from './TestimonialTwo';
 
-const Testimonial = () => {
+const Testimonial = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>
@@ -20,8 +20,8 @@ const Testimonial = () => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="Client Feedback"
-                    title="Testimonial."
+                    subtitle="NAŠI KLIENTI"
+                    title="REFERENCIE KLIENTOV"
                     description={undefined}
                   />
                 </div>
