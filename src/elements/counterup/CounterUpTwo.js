@@ -16,7 +16,7 @@ const Data = [
     suffix: '+',
   },
   {
-    countNum: 87,
+    countNum: process.env.REACT_APP_WEBSITE_TYPE === 'forex' ? 87 : 86,
     countTitle: 'DLHODOBÁ ÚSPEŠNOSŤ ',
     description: 'Naša úspešnosť služieb z dlhodobého hľadiska dosahuje až 87%. ',
     suffix: '%',

@@ -1,17 +1,6 @@
-import React from 'react';
-import SEO from '../../common/SEO';
 import Layout from '../../common/Layout';
-import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
 import SectionTitle from '../sectionTitle/SectionTitle';
-import CalltoActionOne from './CalltoActionOne';
-import CalltoActionTwo from './CalltoActionTwo';
-import CalltoActionThree from './CalltoActionThree';
-import CalltoActionFour from './CalltoActionFour';
 import CalltoActionFive from './CalltoActionFive';
-import CalltoActionSix from './CalltoActionSix';
-import CalltoActionSeven from './CalltoActionSeven';
-import CalltoActionEight from './CalltoActionEight';
-import Separator from '../separator/Separator';
 
 const CalltoAction = ({ pageType }: PageType) => {
   return (

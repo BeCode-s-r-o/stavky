@@ -1,12 +1,7 @@
-import React from 'react';
-import SEO from '../../common/SEO';
 import Layout from '../../common/Layout';
 import SectionTitle from '../sectionTitle/SectionTitle';
 import Separator from '../separator/Separator';
-import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
-import CounterUpOne from './CounterUpOne';
 import CounterUpTwo from './CounterUpTwo';
-import CounterUpFour from './CounterUpFour';
 
 const CounterUp = ({ pageType }: PageType) => {
   return (

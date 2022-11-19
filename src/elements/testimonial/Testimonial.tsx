@@ -20,8 +20,8 @@ const Testimonial = ({ pageType }: PageType) => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="Client Feedback"
-                    title="Testimonial."
+                    subtitle="NAŠI KLIENTI"
+                    title="REFERENCIE KLIENTOV"
                     description={undefined}
                   />
                 </div>
