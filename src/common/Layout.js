@@ -1,15 +1,9 @@
-import HeaderOne from "./header/HeaderOne";
+import HeaderOne from './header/HeaderOne';
 
 const Layout = ({ children }) => {
   return (
     <>
-      <main className="page-wrapper">
-        <HeaderOne
-          btnStyle="btn-small round btn-icon"
-          HeaderSTyle="header-not-transparent"
-        />
-        {children}
-      </main>
+      <main className="page-wrapper">{children}</main>
     </>
   );
 };
