@@ -35,22 +35,24 @@ const App = () => {
   const pageType = process.env.REACT_APP_WEBSITE_TYPE;
   return (
     <Router>
-      <PageScrollTop>
-        <WebAgency pageType={pageType} />
-        <Service pageType={pageType} />
-        <Tab pageType={pageType} />
-        <Timeline pageType={pageType} />
-        <Pricing pageType={pageType} />
-        <CounterUp pageType={pageType} />
-        <Testimonial pageType={pageType} />
-        <CalltoAction pageType={pageType} />
-        <RnAccordion pageType={pageType} />
-        <WhyUs pageType={pageType} />
-        <Social pageType={pageType} />
-        <BlogGridView pageType={pageType} />
-        <Contact pageType={pageType} />
-        <Copyright pageType={pageType} />
-      </PageScrollTop>
+      <main className="page-wrapper" id="main">
+        <PageScrollTop>
+          <WebAgency pageType={pageType} />
+          <Service pageType={pageType} />
+          <Tab pageType={pageType} />
+          <Timeline pageType={pageType} />
+          <Pricing pageType={pageType} />
+          <CounterUp pageType={pageType} />
+          <Testimonial pageType={pageType} />
+          <CalltoAction pageType={pageType} />
+          <RnAccordion pageType={pageType} />
+          <WhyUs pageType={pageType} />
+          <Social pageType={pageType} />
+          <BlogGridView pageType={pageType} />
+          <Contact pageType={pageType} />
+          <Copyright pageType={pageType} />
+        </PageScrollTop>
+      </main>
     </Router>
   );
 };
