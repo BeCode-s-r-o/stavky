@@ -17,7 +17,7 @@ const CounterUp = ({ pageType }: PageType) => {
                     textAlign="text-center"
                     radiusRounded=""
                     subtitle="NAŠE VÝSLEDKY"
-                    title="ŠTATISTIKY NAŠEJ SPOLOČNOSTI"
+                    title="Štatistiky našej spoločnosti"
                     description=""
                   />
                 </div>

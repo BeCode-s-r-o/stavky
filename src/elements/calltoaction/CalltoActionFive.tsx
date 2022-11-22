@@ -1,4 +1,3 @@
-import React from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { FiArrowRight } from 'react-icons/fi';
 
@@ -18,7 +17,7 @@ const CalltoActionFive = () => {
             <div className="inner">
               <div className="content text-center">
                 <ScrollAnimation animateIn="fadeInUp" animateOut="fadeInOut" animateOnce={true}>
-                  <h6 className="subtitle">{callToActionData.subtitle}</h6>
+                  <h5 className="subtitle px-5">{callToActionData.subtitle}</h5>
                 </ScrollAnimation>
 
                 <ScrollAnimation animateIn="fadeInUp" animateOut="fadeInOut" animateOnce={true}>

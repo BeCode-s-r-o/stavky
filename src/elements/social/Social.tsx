@@ -1,9 +1,6 @@
-import React from 'react';
+import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import { FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
-import SEO from '../../common/SEO';
 import Layout from '../../common/Layout';
-import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
 import SectionTitle from '../sectionTitle/SectionTitle';
 import Separator from '../separator/Separator';
 
@@ -20,8 +17,8 @@ const Social = ({ pageType }: PageType) => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="SLEDUJTE NÁS "
-                    title="NAŠE SOCIÁLNE SIEŤE "
+                    subtitle="OSTAŇME V KONTAKTE"
+                    title="Sledijte nás na sociálnych sieťach"
                     description=""
                   />
                 </div>

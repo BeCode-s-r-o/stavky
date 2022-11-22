@@ -1,10 +1,7 @@
-import React from 'react';
-import SEO from '../../common/SEO';
 import Layout from '../../common/Layout';
-import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
 import SectionTitle from '../sectionTitle/SectionTitle';
-import AccordionOne from './AccordionOne';
 import Separator from '../separator/Separator';
+import AccordionOne from './AccordionOne';
 
 const RnAccordion = ({ pageType }: PageType) => {
   return (
@@ -19,8 +16,8 @@ const RnAccordion = ({ pageType }: PageType) => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="Accordion"
-                    title="FAQ"
+                    subtitle="PÝTATE SA"
+                    title="Časté otázky"
                     description=""
                   />
                 </div>

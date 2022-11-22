@@ -1,6 +1,4 @@
-import React from 'react';
 import Layout from '../common/Layout';
-import CalltoActionFive from '../elements/calltoaction/CalltoActionFive';
 import CalltoActionSix from '../elements/calltoaction/CalltoActionSix';
 import SectionTitle from '../elements/sectionTitle/SectionTitle';
 
@@ -18,7 +16,7 @@ const WhyUs = ({ pageType }: PageType) => {
                     textAlign="text-center"
                     radiusRounded=""
                     subtitle="ZAČNITE UŽ DNES"
-                    title="JEDNODUCHÝ PASÍVNY PRÍJEM"
+                    title="Jednoduchý pasívny príjem"
                     description=""
                   />
                 </div>

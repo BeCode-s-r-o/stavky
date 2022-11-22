@@ -1,9 +1,6 @@
-import React from 'react';
-import SEO from '../../common/SEO';
 import Layout from '../../common/Layout';
-import BreadcrumbOne from '../../elements/breadcrumb/BreadcrumbOne';
-import BlogProp from './itemProp/BlogProp';
 import SectionTitle from '../../elements/sectionTitle/SectionTitle';
+import BlogProp from './itemProp/BlogProp';
 
 const BlogGridView = ({ pageType }: PageType) => {
   return (
@@ -18,8 +15,10 @@ const BlogGridView = ({ pageType }: PageType) => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="EŠTE DOKONČIŤ"
-                    title="BLOG"
+                    subtitle="ZAUJÍMAVÉ INFORMÁCIE"
+                    title={`Články zo sveta ${
+                      process.env.REACT_APP_WEBSITE_TYPE === 'forex' ? 'forexu' : 'stávkovania'
+                    }`}
                     description={undefined}
                   />
                 </div>

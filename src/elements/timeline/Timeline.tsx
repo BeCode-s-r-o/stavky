@@ -1,9 +1,6 @@
 import Layout from '../../common/Layout';
-import SEO from '../../common/SEO';
-import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
 import SectionTitle from '../sectionTitle/SectionTitle';
 import Separator from '../separator/Separator';
-import TimelineOne from './TimelineOne';
 import TimelineTwo from './TimelineTwo';
 
 const Timeline = ({ pageType }: PageType) => {
@@ -21,7 +18,7 @@ const Timeline = ({ pageType }: PageType) => {
                     textAlign="text-center"
                     radiusRounded=""
                     subtitle="POSTUP SPOLUPRÁCE "
-                    title="PROCES OBJEDNÁVKY"
+                    title="Proces objednávky"
                     description={undefined}
                   />
                 </div>

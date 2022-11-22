@@ -5076,7 +5076,7 @@ textarea:-ms-input-placeholder {
   margin-top: -20px;
 }
 .rn-section-gap {
-  padding: 120px 0 !important;
+  padding: 60px 0 !important;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .rn-section-gap {
@@ -13006,7 +13006,7 @@ button.btn-default.rounded-player.sm-size {
   margin-top: 30px;
 }
 .clltoaction-style-default.style-6 {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 .clltoaction-style-default.style-6 .content .title {
   font-size: 36px;

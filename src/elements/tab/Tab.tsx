@@ -1,10 +1,6 @@
 import Layout from '../../common/Layout';
-import SEO from '../../common/SEO';
-import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
 import SectionTitle from '../sectionTitle/SectionTitle';
 import Separator from '../separator/Separator';
-import TabOne from './TabOne';
-import TabThree from './TabThree';
 import TabTwo from './TabTwo';
 
 const Tab = ({ pageType }: PageType) => {
@@ -23,7 +19,7 @@ const Tab = ({ pageType }: PageType) => {
                     textAlign="text-center"
                     radiusRounded=""
                     subtitle="PREČO SI VYBRAŤ NÁS "
-                    title="ZAČNITE SI PLNIŤ SVOJE SNY "
+                    title="Začnite si plniť svoje sny"
                     description=""
                   />
                 </div>

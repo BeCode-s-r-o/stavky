@@ -1,13 +1,6 @@
-import SEO from '../../common/SEO';
 import Layout from '../../common/Layout';
-import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
 import SectionTitle from '../sectionTitle/SectionTitle';
-import PricingOne from './PricingOne';
-import PricingTwo from './PricingTwo';
-import PricingThree from './PricingThree';
-import PricingFour from './PricingFour';
 import PricingFive from './PricingFive';
-import Separator from '../separator/Separator';
 
 const Pricing = ({ pageType }: PageType) => {
   return (
@@ -22,8 +15,8 @@ const Pricing = ({ pageType }: PageType) => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="Pricing"
-                    title="Pricing Style Five."
+                    subtitle="CENNÍK"
+                    title="Služby, ktoré ponúkame"
                     description=""
                   />
                 </div>

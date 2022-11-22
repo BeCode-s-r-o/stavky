@@ -1,7 +1,4 @@
-import React from 'react';
-import ContactForm from './ContactForm';
-import GoogleMapStyle from './GoogleMapStyle';
-import { FiHeadphones, FiMail, FiMapPin } from 'react-icons/fi';
+import { FiMail, FiPhone } from 'react-icons/fi';
 
 const ContactOne = () => {
   return (
@@ -10,18 +7,16 @@ const ContactOne = () => {
         <div className="col-lg-12">
           <div className="rn-contact-address mt_dec--30">
             <div className="row">
+              <div className="col-lg-2 col-md-6 col-12"></div>
               <div className="col-lg-4 col-md-6 col-12">
                 <div className="rn-address">
                   <div className="icon">
-                    <FiHeadphones />
+                    <FiPhone />
                   </div>
                   <div className="inner">
-                    <h4 className="title">Contact Phone Number</h4>
+                    <h4 className="title">Telefónne číslo</h4>
                     <p>
-                      <a href="tel:+444 555 666 777">+444 555 666 777</a>
-                    </p>
-                    <p>
-                      <a href="tel:+222 222 222 333">+222 222 222 333</a>
+                      <a href="tel:+421 123 123 123">+421 123 123 123</a>
                     </p>
                   </div>
                 </div>
@@ -33,18 +28,18 @@ const ContactOne = () => {
                     <FiMail />
                   </div>
                   <div className="inner">
-                    <h4 className="title">Our Email Address</h4>
+                    <h4 className="title">E-mail</h4>
                     <p>
-                      <a href="mailto:admin@gmail.com">admin@gmail.com</a>
-                    </p>
-                    <p>
-                      <a href="mailto:example@gmail.com">example@gmail.com</a>
+                      <a href="mailto:">
+                        info@
+                        {process.env.REACT_APP_WEBSITE_TYPE === 'forex' ? 'forexporadenstvo' : 'stavkoveporadenstvo'}.sk
+                      </a>
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="col-lg-4 col-md-6 col-12">
+              {/* <div className="col-lg-4 col-md-6 col-12">
                 <div className="rn-address">
                   <div className="icon">
                     <FiMapPin />
@@ -56,7 +51,7 @@ const ContactOne = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

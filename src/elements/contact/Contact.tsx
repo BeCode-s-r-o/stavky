@@ -1,7 +1,4 @@
-import React from 'react';
-import SEO from '../../common/SEO';
 import Layout from '../../common/Layout';
-import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
 import SectionTitle from '../sectionTitle/SectionTitle';
 import ContactOne from './ContactOne';
 
@@ -9,7 +6,7 @@ const Contact = ({ pageType }: PageType) => {
   return (
     <>
       <Layout>
-        <div className="main-content">
+        <div className="main-content" style={{ paddingBottom: '100px' }}>
           {/* Start Contact Area  */}
           <div className="rwt-contact-area rn-section-gap">
             <div className="container">
@@ -18,8 +15,8 @@ const Contact = ({ pageType }: PageType) => {
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
-                    subtitle="Contact Form"
-                    title="Our Contact Address Here."
+                    subtitle="KONTAKTNÉ ÚDAJE"
+                    title="Kontaktujte nás a začnime zarábať spolu!"
                     description=""
                   />
                 </div>

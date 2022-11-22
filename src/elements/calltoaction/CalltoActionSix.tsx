@@ -1,4 +1,3 @@
-import React from 'react';
 const callToActionData = {
   title:
     'Delí Vás už len posledný krok od spolupráce. Prezrite si ešte raz našu ponuku služieb. Zvoľte si ten správny balík pre Vás.',
@@ -10,7 +9,8 @@ const CalltoActionSix = ({ pageType }: PageType) => {
     <div className="rn-callto-action clltoaction-style-default style-6">
       <div className="container">
         <div className="row row--0 align-items-center content-wrapper">
-          <div className="col-lg-8 col-12">
+          <div className="col-lg-2 col-12"></div>
+          <div className="col-lg-6 col-12">
             <div className="inner">
               <div className="content text-start">
                 <h6 className="subtitle">{callToActionData.title}</h6>

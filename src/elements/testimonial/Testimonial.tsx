@@ -1,11 +1,7 @@
 import Layout from '../../common/Layout';
-import SEO from '../../common/SEO';
-import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
 import SectionTitle from '../sectionTitle/SectionTitle';
 import Separator from '../separator/Separator';
 import TestimonialOne from './TestimonialOne';
-import TestimonialThree from './TestimonialThree';
-import TestimonialTwo from './TestimonialTwo';
 
 const Testimonial = ({ pageType }: PageType) => {
   return (
@@ -21,7 +17,7 @@ const Testimonial = ({ pageType }: PageType) => {
                     textAlign="text-center"
                     radiusRounded=""
                     subtitle="NAŠI KLIENTI"
-                    title="REFERENCIE KLIENTOV"
+                    title="Referencie od spokojných klientov"
                     description={undefined}
                   />
                 </div>
