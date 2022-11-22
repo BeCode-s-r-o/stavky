@@ -24,7 +24,7 @@ const ServiceList = [
   },
 ];
 
-const ServiceOne = ({ textAlign, serviceStyle }) => {
+const ServiceOne = ({ textAlign, serviceStyle }: any) => {
   return (
     <div className="row row--15 service-wrapper">
       {ServiceList.map((val, i) => (

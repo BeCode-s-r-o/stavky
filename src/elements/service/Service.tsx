@@ -1,13 +1,7 @@
 import Layout from '../../common/Layout';
-import SEO from '../../common/SEO';
-import BreadcrumbOne from '../breadcrumb/BreadcrumbOne';
 import SectionTitle from '../sectionTitle/SectionTitle';
 import Separator from '../separator/Separator';
-import ServiceFive from './ServiceFive';
-import ServiceFour from './ServiceFour';
 import ServiceOne from './ServiceOne';
-import ServiceThree from './ServiceThree';
-import ServiceTwo from './ServiceTwo';
 
 const Service = ({ pageType }: PageType) => {
   return (

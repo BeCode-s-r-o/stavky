@@ -13,7 +13,7 @@ const WebAgency = ({ pageType }: PageType) => {
   return (
     <>
       <HeaderOne btnStyle="btn-small" HeaderSTyle="header-not-transparent" />
-      {/* Start Slider Area  */}
+
       <div className="slider-area slider-style-8 height-650">
         {BannerData.map((data, index) => (
           <div key={index} className="single-slide">
@@ -43,11 +43,7 @@ const WebAgency = ({ pageType }: PageType) => {
                       }}
                     ></p>
                     <div className="button-group mt--30">
-                      <a
-                        className="btn-default btn-large round"
-                        target="_blank"
-                        href="https://themeforest.net/checkout/from_item/33571911?license=regular"
-                      >
+                      <a className="btn-default btn-large round" target="_blank" href="#">
                         PONUKA SLUŽIEB
                       </a>
                       <a className="btn-default btn-border btn-large round" href="#">
