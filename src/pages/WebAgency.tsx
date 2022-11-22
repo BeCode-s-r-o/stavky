@@ -1,5 +1,4 @@
 import HeaderOne from '../common/header/HeaderOne';
-import Background from '../assets/images/forex-bg.jpg';
 const BannerData = [
   {
     image: '/images/bg/bg-image-20.jpg',
@@ -14,7 +13,8 @@ const WebAgency = ({ pageType }: PageType) => {
     <>
       <HeaderOne btnStyle="btn-small" HeaderSTyle="header-not-transparent" />
 
-      <div className="slider-area slider-style-8 height-650" style={{ background: `url(${Background})` }}>
+      <div className="slider-area slider-style-8 height-650">
+        {/* style={{ background: `url(${Background})` }} */}
         <div className="background-overlay"></div>
         {BannerData.map((data, index) => (
           <div key={index} className="single-slide" style={{ position: 'relative' }}>

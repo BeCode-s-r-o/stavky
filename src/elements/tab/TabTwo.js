@@ -1,5 +1,4 @@
-import React from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 
 const TabTwo = ({ pageType }) => {
   return (
