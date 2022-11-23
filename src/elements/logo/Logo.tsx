@@ -5,8 +5,8 @@ const Logo = ({ image, img2 }: any) => {
   return (
     <div className="logo">
       <Link to={process.env.PUBLIC_URL + '/'}>
-        <img className="logo-light" src={image} />
-        <img className="logo-dark" src={image} />
+        <img className="logo-light" src={image} alt="logo" />
+        <img className="logo-dark" src={image} alt="logo" />
       </Link>
     </div>
   );
