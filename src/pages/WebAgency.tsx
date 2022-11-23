@@ -27,6 +27,7 @@ const WebAgency = ({ pageType }: PageType) => {
                     </span>
                     <h1
                       className="title"
+                      style={{ paddingTop: '2rem' }}
                       dangerouslySetInnerHTML={{
                         __html:
                           pageType === 'forex'

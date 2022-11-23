@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import { FiCheck } from 'react-icons/fi';
 
 const PricingFive = () => {
+  const [pricing, setPricing] = useState({
+    first: { label: '30 dní', value: 69.9 },
+    second: { label: '90 dní', value: 219.9 },
+    third: { label: '90 dní', value: 169.9 },
+  });
   return (
     <div className="row row--15">
-      {/* Start PRicing Table Area  */}
       <div className="col-lg-4 col-md-6 col-12">
         <div className="rn-pricing style-5">
           <div className="pricing-table-inner">
@@ -11,10 +16,10 @@ const PricingFive = () => {
               <h4 className="title">STARTER</h4>
               <div className="pricing">
                 <div className="price-wrapper">
-                  <span className="price">69.90</span>
+                  <span className="price">{pricing.first.value}0</span>
                   <span className="currency">€</span>
                 </div>
-                <span className="subtitle">EUR za mesiac</span>
+                <span className="subtitle">EUR za {pricing.first.label}</span>
               </div>
             </div>
             <div className="pricing-body">
@@ -32,6 +37,18 @@ const PricingFive = () => {
                   <FiCheck /> TELEGRAM NOTIFIKÁCIE
                 </li>
               </ul>
+            </div>
+            <div className="container w-50 mb-5">
+              <select
+                value={JSON.stringify(pricing.first)}
+                onChange={(e) => {
+                  setPricing({ ...pricing, first: JSON.parse(e.target.value) });
+                }}
+              >
+                <option value={JSON.stringify({ label: '15 dní', value: 39.9 })}>15 dní</option>
+                <option value={JSON.stringify({ label: '30 dní', value: 69.9 })}>30 dní</option>
+                <option value={JSON.stringify({ label: '90 dní', value: 149.9 })}>90 dní</option>
+              </select>
             </div>
             <div className="pricing-footer">
               <a className="btn-default btn-border" href="#pricing">
@@ -51,10 +68,10 @@ const PricingFive = () => {
               <h4 className="title">KOMBI</h4>
               <div className="pricing">
                 <div className="price-wrapper">
-                  <span className="price">219.90</span>
+                  <span className="price">{pricing.second.value}0</span>
                   <span className="currency">€</span>
                 </div>
-                <span className="subtitle">EUR za mesiac</span>
+                <span className="subtitle">EUR za {pricing.second.label}</span>
               </div>
             </div>
             <div className="pricing-body">
@@ -85,6 +102,18 @@ const PricingFive = () => {
                 </li>
               </ul>
             </div>
+            <div className="container w-50 mb-5">
+              <select
+                value={JSON.stringify(pricing.second)}
+                onChange={(e) => {
+                  setPricing({ ...pricing, second: JSON.parse(e.target.value) });
+                }}
+              >
+                <option value={JSON.stringify({ label: '30 dní', value: 129.9 })}>30 dní</option>
+                <option value={JSON.stringify({ label: '90 dní', value: 219.9 })}>90 dní</option>
+                <option value={JSON.stringify({ label: '180 dní', value: 299.9 })}>180 dní</option>
+              </select>
+            </div>
             <div className="pricing-footer">
               <a className="btn-default" href="#pricing">
                 Objednať
@@ -103,10 +132,10 @@ const PricingFive = () => {
               <h4 className="title">EXCLUSIVE</h4>
               <div className="pricing">
                 <div className="price-wrapper">
-                  <span className="price">169.90</span>
+                  <span className="price">{pricing.third.value}0</span>
                   <span className="currency">€</span>
                 </div>
-                <span className="subtitle">EUR za mesiac</span>
+                <span className="subtitle">EUR za {pricing.third.label}</span>
               </div>
             </div>
             <div className="pricing-body">
@@ -124,6 +153,18 @@ const PricingFive = () => {
                   <FiCheck /> TELEGRAM NOTIFIKÁCIE
                 </li>
               </ul>
+            </div>
+            <div className="container w-50 mb-5">
+              <select
+                value={JSON.stringify(pricing.third)}
+                onChange={(e) => {
+                  setPricing({ ...pricing, third: JSON.parse(e.target.value) });
+                }}
+              >
+                <option value={JSON.stringify({ label: '30 dní', value: 99.9 })}>30 dní</option>
+                <option value={JSON.stringify({ label: '90 dní', value: 169.9 })}>90 dní</option>
+                <option value={JSON.stringify({ label: '180 dní', value: 239.9 })}>180 dní</option>
+              </select>
             </div>
             <div className="pricing-footer">
               <a className="btn-default btn-border" href="#pricing">
