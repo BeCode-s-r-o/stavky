@@ -8,7 +8,7 @@ const PricingFive = () => {
     third: { label: '90 dní', value: 169.9 },
   });
   return (
-    <div className="row row--15">
+    <div className="row row--15 align-items-center">
       <div className="col-lg-4 col-md-6 col-12">
         <div className="rn-pricing style-5">
           <div className="pricing-table-inner">

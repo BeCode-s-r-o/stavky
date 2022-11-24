@@ -31,8 +31,8 @@ const WebAgency = ({ pageType }: PageType) => {
                       dangerouslySetInnerHTML={{
                         __html:
                           pageType === 'forex'
-                            ? 'ZAČNITE ZARÁBAŤ FOREX OBCHODOVANÍM'
-                            : 'ZAČNITE ZARÁBAŤ STÁVKOVANÍM ZÁPASOV',
+                            ? 'ZAČNITE ZARÁBAŤ  <br /> FOREX OBCHODOVANÍM'
+                            : 'ZAČNITE ZARÁBAŤ  <br /> STÁVKOVANÍM ZÁPASOV',
                       }}
                     ></h1>
                     <p

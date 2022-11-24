@@ -23,8 +23,8 @@ import Contact from './elements/contact/Contact';
 import BlogGridView from './components/blog/BlogGridView';
 
 // Import Css Here
-import './assets/scss/style.scss';
 
+import './assets/scss/style.scss';
 import Copyright from './common/footer/Copyright';
 import WhyUs from './pages/WhyUs';
 
