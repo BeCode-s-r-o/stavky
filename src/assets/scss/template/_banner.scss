@@ -798,7 +798,7 @@
 
 .slider-style-8 {
   justify-content: center;
-  min-height: 100vh;
+
   .inner {
     .title {
       font-size: 55px;
@@ -813,9 +813,11 @@
     .description {
       font-size: 22px;
       line-height: 43px;
+      margin: 0 50px;
       @media #{$sm-layout} {
         font-size: 20px;
         line-height: 38px;
+        margin: 0;
       }
       br {
         @media #{$md-layout} {
