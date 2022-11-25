@@ -1,30 +1,30 @@
-import { Link } from 'react-router-dom';
-
+import * as Scroll from 'react-scroll';
+import { Link } from 'react-scroll';
 const Nav = () => {
   return (
     <ul className="mainmenu">
       <li className="has-droupdown">
-        <Link to="#">Úvod</Link>
+        <Link to="uvod">Úvod</Link>
       </li>
 
       <li>
-        <Link to="/about-us">O nás</Link>
+        <Link to="onas">O nás</Link>
       </li>
 
       <li className="with-megamenu">
-        <Link to="#">Proces objednávky</Link>
+        <Link to="proces">Proces objednávky</Link>
       </li>
 
       <li className="has-droupdown">
-        <Link to="#">Časté otázky</Link>
+        <Link to="faq">Časté otázky</Link>
       </li>
 
       <li className="has-droupdown">
-        <Link to="#">Referencie</Link>
+        <Link to="ref">Referencie</Link>
       </li>
 
       <li className="has-droupdown">
-        <Link to="/contact">Kontakt</Link>
+        <Link to="contact">Kontakt</Link>
       </li>
     </ul>
   );

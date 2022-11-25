@@ -4,7 +4,8 @@ import Logo from '../../elements/logo/Logo';
 import MobileMenu from './MobileMenu';
 import Nav from './Nav';
 import useStickyHeader from './useStickyHeader';
-
+import * as Scroll from 'react-scroll';
+import { Link } from 'react-scroll';
 const HeaderOne = ({ btnStyle, HeaderSTyle }: any) => {
   const [ofcanvasShow, setOffcanvasShow] = useState(false);
   const onCanvasHandler = () => {
@@ -29,9 +30,9 @@ const HeaderOne = ({ btnStyle, HeaderSTyle }: any) => {
                   <Nav />
                 </nav>
                 <div className="header-btn">
-                  <a className={`btn-default ${btnStyle}`} target="_blank" href="#balicky">
+                  <Link className={`btn-default ${btnStyle}`} to="sluzby" offset={-100}>
                     NAŠE SLUŽBY
-                  </a>
+                  </Link>
                 </div>
                 <div className="mobile-menu-bar ml--5 d-block d-lg-none">
                   <div className="hamberger">

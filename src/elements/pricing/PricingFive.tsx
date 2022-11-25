@@ -66,7 +66,7 @@ const PricingFive = () => {
           <div className="pricing-table-inner">
             <div className="pricing-header">
               <h4 className="title">KOMBI</h4>
-              <div className="pricing">
+              <div className="pricing" style={{ background: 'var(--color-primary)' }}>
                 <div className="price-wrapper">
                   <span className="price">{pricing.second.value}0</span>
                   <span className="currency">€</span>

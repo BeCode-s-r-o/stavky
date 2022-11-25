@@ -1,3 +1,5 @@
+import { Link } from 'react-scroll';
+
 const callToActionData = {
   title:
     'Delí Vás už len posledný krok od spolupráce. Prezrite si ešte raz našu ponuku služieb. Zvoľte si ten správny balík pre Vás.',
@@ -19,9 +21,9 @@ const CalltoActionSix = ({ pageType }: PageType) => {
           </div>
           <div className="col-lg-4 col-12">
             <div className="call-to-btn text-start text-lg-right mt_md--20 mt_sm--20">
-              <a className="btn-default" href="#">
+              <Link className="btn-default" to="packages">
                 {callToActionData.btnText}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
