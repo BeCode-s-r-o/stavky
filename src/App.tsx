@@ -24,12 +24,21 @@ import BlogGridView from './components/blog/BlogGridView';
 
 // Import Css Here
 
+import { useEffect } from 'react';
 import './assets/scss/style.scss';
 import Copyright from './common/footer/Copyright';
 import WhyUs from './pages/WhyUs';
 
 const App = () => {
   const pageType = process.env.REACT_APP_WEBSITE_TYPE;
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--color-primary', '#2c074f');
+    document.documentElement.style.setProperty('--color-secondary', '#3a0869');
+    document.documentElement.style.setProperty('--color-tertiary', '#3b055b');
+    document.documentElement.style.setProperty('--color-pink', '#7c18b8');
+  }, []);
+
   return (
     <Router>
       <Helmet>

@@ -10,11 +10,11 @@ const PricingFive = () => {
   return (
     <div className="row row--15 align-items-center">
       <div className="col-lg-4 col-md-6 col-12">
-        <div className="rn-pricing style-5">
+        <div className="rn-pricing style-5 ">
           <div className="pricing-table-inner">
             <div className="pricing-header">
               <h4 className="title">STARTER</h4>
-              <div className="pricing">
+              <div className="pricing" style={{ background: 'var(--color-primary)' }}>
                 <div className="price-wrapper">
                   <span className="price">{pricing.first.value}0</span>
                   <span className="currency">€</span>
@@ -39,6 +39,7 @@ const PricingFive = () => {
               </ul>
             </div>
             <div className="container w-50 mb-5">
+              <p style={{ textAlign: 'center', marginBottom: 0 }}>Vyberte dĺžku:</p>
               <select
                 value={JSON.stringify(pricing.first)}
                 onChange={(e) => {
@@ -66,7 +67,7 @@ const PricingFive = () => {
           <div className="pricing-table-inner">
             <div className="pricing-header">
               <h4 className="title">KOMBI</h4>
-              <div className="pricing" style={{ background: 'var(--color-primary)' }}>
+              <div className="pricing" style={{ background: 'var(--color-pink)' }}>
                 <div className="price-wrapper">
                   <span className="price">{pricing.second.value}0</span>
                   <span className="currency">€</span>
@@ -103,6 +104,7 @@ const PricingFive = () => {
               </ul>
             </div>
             <div className="container w-50 mb-5">
+              <p style={{ textAlign: 'center', marginBottom: 0 }}>Vyberte dĺžku:</p>
               <select
                 value={JSON.stringify(pricing.second)}
                 onChange={(e) => {
@@ -130,7 +132,7 @@ const PricingFive = () => {
           <div className="pricing-table-inner">
             <div className="pricing-header">
               <h4 className="title">EXCLUSIVE</h4>
-              <div className="pricing">
+              <div className="pricing" style={{ background: 'var(--color-primary)' }}>
                 <div className="price-wrapper">
                   <span className="price">{pricing.third.value}0</span>
                   <span className="currency">€</span>
@@ -155,6 +157,7 @@ const PricingFive = () => {
               </ul>
             </div>
             <div className="container w-50 mb-5">
+              <p style={{ textAlign: 'center', marginBottom: 0 }}>Vyberte dĺžku:</p>
               <select
                 value={JSON.stringify(pricing.third)}
                 onChange={(e) => {
