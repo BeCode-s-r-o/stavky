@@ -30,8 +30,8 @@ const HeaderOne = ({ btnStyle, HeaderSTyle }: any) => {
                   <Nav />
                 </nav>
                 <div className="header-btn">
-                  <Link className={`btn-default ${btnStyle}`} to="sluzby" offset={-100}>
-                    NAŠE SLUŽBY
+                  <Link className={`btn-default ${btnStyle}`} to="packages" offset={-100}>
+                    ZAKÚPIŤ ČLENSTVO
                   </Link>
                 </div>
                 <div className="mobile-menu-bar ml--5 d-block d-lg-none">

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FiCheck } from 'react-icons/fi';
 
 const PricingFive = () => {
+  const pageType = process.env.REACT_APP_WEBSITE_TYPE;
   const [pricing, setPricing] = useState({
     first: { label: '30 dní', value: 69.9 },
     second: { label: '90 dní', value: 219.9 },
@@ -25,7 +26,7 @@ const PricingFive = () => {
             <div className="pricing-body">
               <ul className="list-style--1">
                 <li>
-                  <FiCheck /> 1-3 TIPY DENNE
+                  <FiCheck /> {pageType === 'forex' ? '1-3 SIGNÁLY DENNE' : '1-3 TIPY DENNE'}
                 </li>
                 <li>
                   <FiCheck /> ÚSPEŠNOSŤ 78-80%
@@ -84,16 +85,16 @@ const PricingFive = () => {
                   <FiCheck /> LIMITOVANÉ MIESTA
                 </li>
                 <li>
-                  <FiCheck /> VERIFIKOVANÉ ZDROJE
+                  <FiCheck /> {pageType === 'forex' ? 'ZAHRANIČNÉ ZDROJE' : 'VERIFIKOVANÉ ZDROJE'}
                 </li>
                 <li>
-                  <FiCheck /> 5-15 TIPOV DENNE
+                  <FiCheck /> {pageType === 'forex' ? '5-15 SIGNÁLOV DENNE' : '5-15 TIPOV DENNE'}
                 </li>
                 <li>
-                  <FiCheck /> VYSOKÝ KURZ ZDARMA
+                  <FiCheck /> {pageType === 'forex' ? 'PRÉMIOVY SIGNÁL ZDARMA' : 'VYSOKÝ KURZ ZDARMA'}
                 </li>
                 <li>
-                  <FiCheck /> ÚSPEŠNOSŤ 84-86%
+                  <FiCheck /> {pageType === 'forex' ? 'ÚSPEŠNOSŤ 84-87%' : 'ÚSPEŠNOSŤ 84-86%'}
                 </li>
                 <li>
                   <FiCheck /> 24/7 SUPPORT
@@ -143,7 +144,7 @@ const PricingFive = () => {
             <div className="pricing-body">
               <ul className="list-style--1">
                 <li>
-                  <FiCheck /> 2-5 TIPOV DENNE
+                  <FiCheck /> {pageType === 'forex' ? '2-5 SIGNÁLOV DENNE' : '2-5 TIPOV DENNE'}
                 </li>
                 <li>
                   <FiCheck /> ÚSPEŠNOSŤ 81-83%

@@ -18,7 +18,11 @@ const Contact = ({ pageType }: PageType) => {
                       textAlign="text-center"
                       radiusRounded=""
                       subtitle="KONTAKTNÉ ÚDAJE"
-                      title="Kontaktujte nás a začnime zarábať spolu!"
+                      title={
+                        pageType === 'forex'
+                          ? 'ZAČNITE ZARÁBAŤ NA FOREX OBCHODOVANÍ'
+                          : 'ZAČNITE ZARÁBAŤ NA STÁVKOVANÍ ZÁPASOV'
+                      }
                       description=""
                     />
                   </div>

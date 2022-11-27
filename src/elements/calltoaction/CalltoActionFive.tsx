@@ -3,9 +3,13 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const callToActionData = {
   title: 'Ready to start creating a standard website?',
-  subtitle:
-    'Sledujte a odoberajte naše aktualizované výsledky na instagrame. V našom telegram kanáli nájdete každodennú aktivitu a možnosť otestovania našich služieb úplne ZDARMA.',
-  btnText: 'Purchase Doob',
+
+  subtitle: (
+    <h5 className="subtitle px-5 col-lg-8 mx-auto">
+      Sledujte a odoberajte naše aktualizované výsledky na instagrame. V našom telegram kanáli nájdete každodennú
+      aktivitu a možnosť otestovania našich služieb úplne ZDARMA.
+    </h5>
+  ),
 };
 
 const CalltoActionFive = () => {
@@ -25,17 +29,11 @@ const CalltoActionFive = () => {
                     <div className="call-to-btn text-center ">
                       <a className="btn-default btn-icon mx-2" href="#">
                         INSTAGRAM
-                        <i className="icon">
-                          <FiArrowRight />
-                        </i>
                       </a>
                     </div>
                     <div className="call-to-btn text-center ">
                       <a className=" btn-default btn-icon mx-2" href="#">
                         TELEGRAM
-                        <i className="icon">
-                          <FiArrowRight />
-                        </i>
                       </a>
                     </div>
                   </div>

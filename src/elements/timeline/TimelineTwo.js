@@ -10,7 +10,7 @@ const TimelineData = [
   {
     id: '2',
     title: 'OBJEDNÁVKA',
-    description: 'Následne prebieha realizácia objednávky a úhrada zvoleného poplatku.',
+    description: 'Následne prebehne realizácia objednávky a úhrada zvoleného poplatku.',
   },
   {
     id: '3',
