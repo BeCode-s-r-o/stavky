@@ -7,13 +7,19 @@ const Copyright = ({ pageType }: PageType) => {
             <div className="copyright-left">
               <ul className="ft-menu link-hover">
                 <li>
-                  <a href="#">Obchodné podmienky</a>
+                  <a href={pageType === 'forex' ? '/VOP-forex.pdf' : '/VOP-stavky.pdf'} target="_blank">
+                    Obchodné podmienky
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Spracovanie osobných údajov</a>
+                  <a href={pageType === 'forex' ? '/GDPR-forex.pdf' : '/GDPR-stavky.pdf'} target="_blank">
+                    Spracovanie osobných údajov
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Cookies</a>
+                  <a href={pageType === 'forex' ? '/COOKIES-forex.pdf' : '/COOKIES-stavky.pdf'} target="_blank">
+                    Cookies
+                  </a>
                 </li>
               </ul>
             </div>

@@ -31,44 +31,44 @@ const Social = ({ pageType }: PageType) => {
                     <ul className="social-icon social-default">
                       <li>
                         {pageType === 'forex' ? (
-                          <a href="https://www.facebook.com/poradenstvoforex.sk">
+                          <a target="_blank" href="https://www.facebook.com/poradenstvoforex.sk">
                             <FiFacebook />
                           </a>
                         ) : (
-                          <a href="https://www.facebook.com/poradenstvostavkove.sk">
+                          <a target="_blank" href="https://www.facebook.com/poradenstvostavkove.sk">
                             <FiFacebook />
                           </a>
                         )}
                       </li>
                       <li>
                         {pageType === 'forex' ? (
-                          <a href="https://www.tiktok.com/@forexporadenstvo">
+                          <a target="_blank" href="https://www.tiktok.com/@forexporadenstvo">
                             <FaTiktok />
                           </a>
                         ) : (
-                          <a href="https://www.tiktok.com/@stavkoveporadenstvo">
+                          <a target="_blank" href="https://www.tiktok.com/@stavkoveporadenstvo">
                             <FaTiktok />
                           </a>
                         )}
                       </li>
                       <li>
                         {pageType === 'forex' ? (
-                          <a href="https://www.instagram.com/forexporadenstvo.official/">
+                          <a target="_blank" href="https://www.instagram.com/forexporadenstvo.official/">
                             <FiInstagram />
                           </a>
                         ) : (
-                          <a href="https://www.instagram.com/stavkoveporadenstvo.official/">
+                          <a target="_blank" href="https://www.instagram.com/stavkoveporadenstvo.official/">
                             <FiInstagram />
                           </a>
                         )}
                       </li>
                       <li>
                         {pageType === 'forex' ? (
-                          <a href="https://t.me/forexporadenstvosk">
+                          <a target="_blank" href="https://t.me/forexporadenstvosk">
                             <FaTelegramPlane />
                           </a>
                         ) : (
-                          <a href="https://www.t.me/stavkoveporadenstvosk">
+                          <a target="_blank" href="https://www.t.me/stavkoveporadenstvosk">
                             <FaTelegramPlane />
                           </a>
                         )}

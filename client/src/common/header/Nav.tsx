@@ -32,7 +32,9 @@ const Nav = () => {
       </li>
 
       <li className="has-droupdown">
-        <a href="#">Ostatné</a>
+        <a href="#" style={{ textTransform: 'uppercase' }}>
+          Ostatné
+        </a>
         <ul className="submenu">
           <li>
             <ScrollLink to="proces" offset={-100}>
@@ -54,17 +56,19 @@ const Nav = () => {
 
           <li>
             {pageType !== 'forex' ? (
-              <a href="https://www.forexporadenstvo.sk" target="_blank">
+              <a style={{ textTransform: 'uppercase' }} href="https://www.forexporadenstvo.sk" target="_blank">
                 Forex poradenstvo
               </a>
             ) : (
-              <a href="https://www.stavkoveporadenstvo.sk" target="_blank">
+              <a style={{ textTransform: 'uppercase' }} href="https://www.stavkoveporadenstvo.sk" target="_blank">
                 Stávkové poradenstvo
               </a>
             )}
           </li>
           <li>
-            <a href="#">Free skupina</a>
+            <a style={{ textTransform: 'uppercase' }} href="#">
+              Free skupina
+            </a>
           </li>
         </ul>
       </li>
@@ -77,7 +81,14 @@ const Nav = () => {
 
 const ScrollLink = ({ to, children, offset = 0 }: any) => {
   return (
-    <Link to={to} href={'#' + to} duration={800} offset={offset} smooth="easeInOutQuart">
+    <Link
+      to={to}
+      href={'#' + to}
+      duration={800}
+      offset={offset}
+      style={{ textTransform: 'uppercase' }}
+      smooth="easeInOutQuart"
+    >
       {children}
     </Link>
   );

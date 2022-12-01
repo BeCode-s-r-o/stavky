@@ -5,8 +5,6 @@ import 'slick-carousel/slick/slick.css';
 const pageType = process.env.REACT_APP_WEBSITE_TYPE;
 const testimonialData = [
   {
-    // image: 'tesktimonial-01',
-
     image: pageType === 'forex' ? 1 : 20,
     name: pageType === 'forex' ? 'Filip Paštrák' : 'Samuel Golonka',
     designation: pageType === 'forex' ? 'revízny technik' : 'vysokoškolský študent',
@@ -17,7 +15,6 @@ const testimonialData = [
         : '“Vložil som 648.40€ a celkovo som vyhral až 6873.04€! Určite odporúčam.„',
   },
   {
-    // image: 'tesktimonial-01',
     image: 9,
     name: pageType === 'forex' ? 'Juraj Lacko' : 'Filip Jakubovič',
     designation: pageType === 'forex' ? 'architekt' : 'podnikateľ',
@@ -28,7 +25,6 @@ const testimonialData = [
         : '“Komunikácia na úrovni a najmä skvelé zdroje, dlhodobo úspešné a profitabilné!„',
   },
   {
-    // image: 'tesktimonial-01',
     image: 3,
     name: pageType === 'forex' ? 'Peter Tóth' : 'Martin Kubovčík',
     designation: pageType === 'forex' ? 'PR špecialista' : 'marketingový špecialista',
@@ -39,7 +35,6 @@ const testimonialData = [
         : '“Priniesli ste mi výhru až 1500.20€.    Vďaka Vám som sa naučil stávkovať!„',
   },
   {
-    // image: 'tesktimonial-01',
     image: pageType === 'forex' ? 13 : 22,
     name: pageType === 'forex' ? 'Dušan Fulla' : 'Elena Siváková',
     designation: pageType === 'forex' ? 'elektrotechnik' : 'mamička na materskej',
@@ -50,7 +45,6 @@ const testimonialData = [
         : '“Nikdy som nestávkovala, dala som na    odporúčania a zatiaľ mám zisk okolo 890€.„',
   },
   {
-    // image: 'tesktimonial-01',
     image: 5,
     name: pageType === 'forex' ? 'Dávid Tomčík' : 'Dávid Mataj',
     designation: pageType === 'forex' ? 'statik' : 'klampiar',
@@ -61,7 +55,6 @@ const testimonialData = [
         : '“Vďaka Stávkovému Poradenstvu mám        konečne pasívny príjem cez aplikáciu.„',
   },
   {
-    // image: 'tesktimonial-01',
     image: pageType === 'forex' ? 19 : 11,
     name: pageType === 'forex' ? 'Václav Macák' : 'Martina Lazuchová',
     designation: pageType === 'forex' ? 'predajca vozidiel' : 'zdravotná sestra',
@@ -72,7 +65,6 @@ const testimonialData = [
         : '“Som u Vás už 3 roky a musím uznať že    Vaše služby sú kvalitné a odborné.„',
   },
   {
-    // image: 'tesktimonial-01',
     image: pageType === 'forex' ? 12 : 18,
     name: pageType === 'forex' ? 'Tatiana Roháčová' : 'Tibor Lazár',
     designation: pageType === 'forex' ? 'mamička na materskej' : 'kuriér',
@@ -83,7 +75,6 @@ const testimonialData = [
         : '“Pri kombinovanom balíku som zaznamenal      najvyšší počet tipov a najlepšiu úspešnosť.„',
   },
   {
-    // image: 'tesktimonial-01',
     image: pageType === 'forex' ? 8 : 15,
     name: pageType === 'forex' ? 'Monika Kupčovie' : 'Samuel Krištofič',
     designation: pageType === 'forex' ? 'prekladateľka' : 'realitný maklér',
@@ -94,7 +85,6 @@ const testimonialData = [
         : '“Rýchla komunikácia a odpoveď na    všetky moje otázky, zatiaľ spokojnosť.„',
   },
   {
-    // image: 'tesktimonial-01',
     image: pageType === 'forex' ? 2 : 23,
     name: pageType === 'forex' ? 'Zuzana Vargová' : 'Mária Kaderová',
     designation: pageType === 'forex' ? 'recepčná' : 'účtovníčka',
@@ -111,7 +101,7 @@ const sliderSettings = {
   slidesToShow: 3,
   speed: 1000,
   slidesToScroll: 1,
-  arrows: true,
+  arrows: false,
   infinite: true,
   autoplay: true,
   autoplayspeed: 2000,
@@ -140,7 +130,7 @@ const TestimonialOne = ({ column, teamStyle }: any) => {
     <div className="row row--15">
       <Slider {...sliderSettings}>
         {testimonialData.map((data, index) => (
-          <div className={`${column} mx-4`} key={index}>
+          <div className={`${column} `} key={index}>
             <ScrollAnimation animateIn="fadeInUp" animateOut="fadeInOut" animateOnce={true}>
               <div className={`rn-box-card ${teamStyle}`}>
                 <div className="inner mx-2">
