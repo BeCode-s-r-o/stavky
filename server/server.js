@@ -91,7 +91,10 @@ app.post("/checkout", async (req, res) => {
         subject: "Vaša Objednávka", // Subject line
         text: `Dobrý deň ${token.card.name}, 
         
-Text musí začinať tu aby si mal spravne odsadenie`, // plain text body
+Text musí začinať tu aby si mal spravne odsadenie
+objednaný balík: ${storeItem.name} v cene ${
+          storeItem.priceInCents / 100 + " €"
+        }`, // plain text body
       });
 
       console.log("Message sent: %s", info.messageId);

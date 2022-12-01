@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { FiCheck } from 'react-icons/fi';
 import StripeCheckout from 'react-stripe-checkout';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 const PricingFive = () => {
   const pageType = process.env.REACT_APP_WEBSITE_TYPE;
@@ -36,7 +36,7 @@ const PricingFive = () => {
     if (response.status === 200) {
       /*       toast.success('Platba prebehla úspešne', {
         theme: 'colored',
-      }); */
+      }); 
       console.log('úspech');
     } else {
       /*       toast.error('Platba neprebehla úspešne', {
