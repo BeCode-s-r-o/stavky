@@ -123,7 +123,7 @@ const PricingFive = () => {
                 stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
                 token={(e) => handleToken(e, pricing.first.id)}
                 amount={pricing.first.value * 100}
-                name={'Balík ' + pricing.first.label}
+                name={'Balík STARTER - ' + pricing.first.label}
                 description={''}
                 billingAddress
               >
@@ -225,7 +225,7 @@ const PricingFive = () => {
                 stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
                 token={(e) => handleToken(e, pricing.second.id)}
                 amount={pricing.second.value * 100}
-                name={'Balík ' + pricing.second.label}
+                name={'Balík KOMBI - ' + pricing.second.label}
                 description={''}
                 billingAddress
               >
@@ -312,7 +312,7 @@ const PricingFive = () => {
                 stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
                 token={(e) => handleToken(e, pricing.third.id)}
                 amount={pricing.third.value * 100}
-                name={'Balík ' + pricing.third.label}
+                name={'Balík EXCLUSIVE - ' + pricing.third.label}
                 description={''}
                 billingAddress
               >
