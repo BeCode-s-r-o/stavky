@@ -127,9 +127,7 @@ const PricingFive = () => {
                 description={''}
                 billingAddress
               >
-                <a className="btn-default btn-border" href="#">
-                  Objednať
-                </a>
+                <a className="btn-default btn-border">Objednať</a>
               </StripeCheckout>
             </div>
           </div>
@@ -231,9 +229,7 @@ const PricingFive = () => {
                 description={''}
                 billingAddress
               >
-                <a className="btn-default btn-border" href="#">
-                  Objednať
-                </a>
+                <a className="btn-default btn-border">Objednať</a>
               </StripeCheckout>
             </div>
           </div>
@@ -320,9 +316,7 @@ const PricingFive = () => {
                 description={''}
                 billingAddress
               >
-                <a className="btn-default btn-border" href="#pricing">
-                  Objednať
-                </a>
+                <a className="btn-default btn-border">Objednať</a>
               </StripeCheckout>
             </div>
           </div>
