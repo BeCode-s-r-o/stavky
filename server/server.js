@@ -19,7 +19,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 
 app.use(bodyparser.json());
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5500;
 
 const storeItems = new Map([
   [1, { priceInCents: 3990, name: "Stavkove Starter 15" }],
