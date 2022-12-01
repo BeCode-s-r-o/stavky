@@ -34,14 +34,14 @@ const PricingFive = () => {
     });
 
     if (response.status === 200) {
-      /*       toast.success('Platba prebehla úspešne', {
+      /*              toast.success('Platba prebehla úspešne', {
         theme: 'colored',
-      }); 
+      });   */
       console.log('úspech');
     } else {
-      /*       toast.error('Platba neprebehla úspešne', {
+      /*         toast.error('Platba neprebehla úspešne', {
         theme: 'colored',
-      }); */
+      });  */
       console.log('ooo');
     }
   }
