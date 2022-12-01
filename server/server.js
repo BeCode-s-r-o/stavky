@@ -83,13 +83,15 @@ app.post("/checkout", async (req, res) => {
 
       // send mail with defined transport object
       let info = await transporter.sendMail({
-        from: '"KLUB YAMA" <yama@becode.sk>', // sender address
+        from:
+          package.id > 9
+            ? '"Forex Poradenstvo" <info@forexporadenstvo.sk>'
+            : '"Stavkove Poradenstvo" <info@stavkoveporadenstvo.sk>', // sender address
         to: token.email, // list of receivers
         subject: "Vaša Objednávka", // Subject line
         text: `Dobrý deň ${token.card.name}, 
         
-<--Text musí začinať tu aby si mal soravne odsadenie`, // plain text body
-        attachments: "Tu pridaj fakturu",
+Text musí začinať tu aby si mal spravne odsadenie`, // plain text body
       });
 
       console.log("Message sent: %s", info.messageId);
