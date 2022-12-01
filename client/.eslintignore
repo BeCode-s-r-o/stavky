@@ -1,0 +1,13 @@
+/build
+/node_modules
+/public
+/template
+/forex
+/stavky
+/.github
+/src/pages
+/src/components
+/src/assets
+/src/utils
+/src/elements
+/src/common
