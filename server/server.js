@@ -63,7 +63,7 @@ app.post("/checkout", async (req, res) => {
       description: storeItem.name,
       key: key,
     });
-    /*     async function sendEmail() {
+    async function sendEmail() {
       // Generate test SMTP service account from ethereal.email
       // Only needed if you don't have a real mail account for testing
 
@@ -73,7 +73,10 @@ app.post("/checkout", async (req, res) => {
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-          user: "yama@becode.sk", // generated ethereal user
+          user:
+            package.id > 9
+              ? "info@forexporadenstvo.sk"
+              : "info@stavkoveporadenstvo.sk", // generated ethereal user
           pass: process.env.ACOUNT_PASSWORD, // generated ethereal password
         },
       });
@@ -93,7 +96,7 @@ app.post("/checkout", async (req, res) => {
       // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
     }
 
-    sendEmail().catch(console.error); */
+    sendEmail().catch(console.error);
 
     status = "success";
 
