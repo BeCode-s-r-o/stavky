@@ -1,7 +1,6 @@
-import React from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 import { FiActivity, FiCast, FiMap } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import ScrollAnimation from 'react-animate-on-scroll';
 
 const ServiceList = [
   {
@@ -19,7 +18,7 @@ const ServiceList = [
   {
     icon: <FiMap />,
     title: 'EFEKTVÍNA KOMUNIKÁCIA ',
-    description: 'Rozumieme potrebám a obavám našich klientov, preto radi zodpovieme  Vaše otázky. ',
+    description: 'Rozumieme potrebám a obavám našich klientov, preto radi zodpovieme Vaše otázky do 24 hodín. ',
   },
 ];
 
@@ -38,6 +37,7 @@ const ServiceOne = ({ textAlign, serviceStyle }: any) => {
                 <p
                   className="description b1 color-gray mb--0"
                   dangerouslySetInnerHTML={{ __html: val.description }}
+                  // style={{ textAlign: 'justify' }}
                 ></p>
               </div>
             </div>

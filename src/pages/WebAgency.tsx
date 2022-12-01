@@ -46,7 +46,7 @@ const WebAgency = ({ pageType }: PageType) => {
                         }}
                       ></p>
                       <div className="button-group mt--30">
-                        <Link to="packages" className="btn-default btn-large round" offset={-100}>
+                        <Link to="packages" href="#packages" className="btn-default btn-large round" offset={-100}>
                           PONUKA SLUŽIEB
                         </Link>
                         <a className="btn-default btn-border btn-large round" href="#">

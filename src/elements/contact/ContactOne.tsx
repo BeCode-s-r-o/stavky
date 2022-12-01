@@ -1,4 +1,4 @@
-import { FiMail, FiPhone } from 'react-icons/fi';
+import { FiInstagram, FiMail } from 'react-icons/fi';
 
 const ContactOne = () => {
   return (
@@ -11,12 +11,19 @@ const ContactOne = () => {
               <div className="col-lg-4 col-md-6 col-12">
                 <div className="rn-address">
                   <div className="icon">
-                    <FiPhone />
+                    <FiInstagram />
                   </div>
                   <div className="inner">
-                    <h4 className="title">Telefónne číslo</h4>
+                    <h4 className="title">Instagram Support</h4>
                     <p>
-                      <a href="tel:+421 123 123 123">+421 123 123 123</a>
+                      <a
+                        href={`https://instagram.com/${
+                          process.env.REACT_APP_WEBSITE_TYPE === 'forex' ? 'forexporadenstvo' : 'stavkoveporadenstvo'
+                        }.official`}
+                      >
+                        @{process.env.REACT_APP_WEBSITE_TYPE === 'forex' ? 'forexporadenstvo' : 'stavkoveporadenstvo'}
+                        .official
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -38,20 +45,6 @@ const ContactOne = () => {
                   </div>
                 </div>
               </div>
-
-              {/* <div className="col-lg-4 col-md-6 col-12">
-                <div className="rn-address">
-                  <div className="icon">
-                    <FiMapPin />
-                  </div>
-                  <div className="inner">
-                    <h4 className="title">Our Location</h4>
-                    <p>
-                      5678 Bangla Main Road, cities 580 <br /> GBnagla, example 54786
-                    </p>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>

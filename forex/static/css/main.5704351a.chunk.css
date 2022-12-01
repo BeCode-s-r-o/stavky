@@ -13228,7 +13228,7 @@ button.btn-default.rounded-player.sm-size {
 }
 .rn-address .icon {
   color: #059dff;
-  color: var(--color-primary);
+  color: var(--color-pink);
   border-radius: 100%;
   font-size: 40px;
   display: inline-block;

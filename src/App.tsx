@@ -20,8 +20,6 @@ import Timeline from './elements/timeline/Timeline';
 
 import Contact from './elements/contact/Contact';
 
-import BlogGridView from './components/blog/BlogGridView';
-
 // Import Css Here
 
 import { useEffect } from 'react';
@@ -89,7 +87,7 @@ const App = () => {
           <RnAccordion pageType={pageType} />
           <WhyUs pageType={pageType} />
           <Social pageType={pageType} />
-          <BlogGridView pageType={pageType} />
+          {/* <BlogGridView pageType={pageType} /> */}
           <Contact pageType={pageType} />
           <Copyright pageType={pageType} />
         </PageScrollTop>
