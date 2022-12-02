@@ -16,11 +16,11 @@ const Copyright = ({ pageType }: PageType) => {
                     Spracovanie osobných údajov
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href={pageType === 'forex' ? '/COOKIES-forex.pdf' : '/COOKIES-stavky.pdf'} target="_blank">
                     Cookies
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
