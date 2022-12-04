@@ -5,25 +5,22 @@ const TimelineData = [
   {
     id: '1',
     title: 'SLUŽBA',
-    description:
-      'Pre uskutočnenie spolupráce \
-    je dôležitý výber a\
-    vloženie služby do košíka. ',
+    description: 'Pre uskutočnenie spolupráce je dôležitý výber a objednávka požadovanej služby.',
   },
   {
     id: '2',
     title: 'OBJEDNÁVKA',
-    description: 'Následne prebehne realizácia objednávky a úhrada zvoleného poplatku.',
+    description: 'Následne prebehne realizácia objednávky a úhrada poplatku <br/> cez platobnú bránu. ',
   },
   {
     id: '3',
     title: 'AKTIVÁCIA',
-    description: 'Po úhrade obdržíte mail so vstupnými informáciami a inštrukciami.',
+    description: 'Po úhrade služby obdržíte mail s informáciami a vstupnými inštrukciami pre aktiváciu členstva. ',
   },
   {
     id: '4',
     title: 'ZÁROBOK',
-    description: 'Po vstupnej konzultácií a nastavení Vášho účtu nasleduje zárobok.',
+    description: 'Po vstupnej konzultácii a nastavení Vášho účtu nasleduje zárobok <br/> cez jednoduchú aplikáciu.',
   },
 ];
 

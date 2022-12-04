@@ -21,13 +21,13 @@ const WebAgency = ({ pageType }: PageType) => {
             <div key={index} className="single-slide" style={{ position: 'relative' }}>
               <div className="container">
                 <div className="row align-items-center">
-                  <div className="col-lg-12" style={{ marginTop: '-2em' }}>
+                  <div className="col-lg-12" style={{ marginTop: '-5em' }}>
                     <div className="inner text-center">
                       <span className="subtitle theme-gradient">
                         {pageType === 'forex' ? 'FOREX PORADENSTVO' : 'STÁVKOVÉ PORADENSTVO'}
                       </span>
                       <h1
-                        className="title px-3"
+                        className="title "
                         style={{ paddingTop: '2rem' }}
                         dangerouslySetInnerHTML={{
                           __html:
@@ -45,7 +45,7 @@ const WebAgency = ({ pageType }: PageType) => {
                               : 'Investujte s našimi službami jednoducho a efektívne cez aplikáciu. Naučíme Vás celý postup ako začať <br/> zarábať na stávkovaní športových zápasov. Tipovanie s vysokou mierou úspešnosti.',
                         }}
                       ></p>
-                      <div className="button-group mt--30">
+                      <div className="button-group mt-1">
                         <Link to="packages" href="#packages" className="btn-default btn-large round" offset={-100}>
                           PONUKA SLUŽIEB
                         </Link>

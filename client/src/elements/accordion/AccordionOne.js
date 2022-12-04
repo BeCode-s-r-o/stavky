@@ -52,7 +52,7 @@ const AccordionOne = ({ customStyle }) => {
       <Card>
         <Card.Header>
           <Accordion.Toggle as={Button} variant="link" eventKey="3">
-            Ako často sú signály odosielané?
+            Ako často sú {pageType === 'forex' ? 'signály' : 'tipy'} odosielané?
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="3">

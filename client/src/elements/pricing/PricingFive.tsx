@@ -2,23 +2,8 @@ import axios from 'axios';
 import { useState } from 'react';
 import { FiCheck } from 'react-icons/fi';
 import StripeCheckout from 'react-stripe-checkout';
-// import { toast, ToastContainer } from 'react-toastify';
 import Modal from 'react-modal';
 Modal.setAppElement('body');
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    zIndex: 999,
-    transform: 'translate(-50%, -50%)',
-    background: '#000',
-    borderRadius: '25px',
-  },
-};
 
 const PricingFive = () => {
   const pageType = process.env.REACT_APP_WEBSITE_TYPE;
@@ -26,16 +11,19 @@ const PricingFive = () => {
   const [currentPackage, setCurrentPackage] = useState<any>(null);
   const [pricing, setPricing] = useState({
     first: {
+      name: 'STARTER',
       label: '30 dní',
       value: 69.9,
       id: pageType === 'stavkove' ? 2 : 12,
     },
     second: {
+      name: 'COMBI',
       label: '30 dní',
       value: 129.9,
       id: pageType === 'stavkove' ? 5 : 15,
     },
     third: {
+      name: 'EXCLUSIVE',
       label: '30 dní',
       value: 99.9,
       id: pageType === 'stavkove' ? 8 : 18,
@@ -65,7 +53,7 @@ const PricingFive = () => {
 
   return (
     <div className="row row--15 align-items-center">
-      <div className="col-lg-4 col-md-6 col-12 px-md-4 px-5 " style={{ zIndex: -1 }}>
+      <div className="col-lg-4 col-md-6 col-12 px-md-4 px-5 " style={{ zIndex: 0 }}>
         <div className="rn-pricing style-5 ">
           <div className="pricing-table-inner">
             <div className="pricing-header">
@@ -132,7 +120,7 @@ const PricingFive = () => {
               </select>
             </div>
             <div className="pricing-footer">
-              <a
+              <button
                 className="btn-default btn-border"
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
@@ -141,14 +129,14 @@ const PricingFive = () => {
                 }}
               >
                 Objednať
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
       {/* End PRicing Table Area  */}
       {/* Start PRicing Table Area  */}
-      <div className="col-lg-4 col-md-6 col-12 px-md-4 px-5" style={{ zIndex: -1 }}>
+      <div className="col-lg-4 col-md-6 col-12 px-md-4 px-5" style={{ zIndex: 0 }}>
         <div className="rn-pricing style-5 active">
           <div className="pricing-table-inner">
             <div className="pricing-header">
@@ -230,9 +218,7 @@ const PricingFive = () => {
               </select>
             </div>
             <div className="pricing-footer">
-              {/* @ts-ignore */}
-
-              <a
+              <button
                 className="btn-default btn-border"
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
@@ -241,14 +227,13 @@ const PricingFive = () => {
                 }}
               >
                 Objednať
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
-      {/* End PRicing Table Area  */}
-      {/* Start PRicing Table Area  */}
-      <div className="col-lg-4 col-md-6 col-12 px-md-4 px-5" style={{ zIndex: -1 }}>
+
+      <div className="col-lg-4 col-md-6 col-12 px-md-4 px-5" style={{ zIndex: 0 }}>
         <div className="rn-pricing style-5">
           <div className="pricing-table-inner">
             <div className="pricing-header">
@@ -314,8 +299,9 @@ const PricingFive = () => {
                 </option>
               </select>
             </div>
+
             <div className="pricing-footer">
-              <a
+              <button
                 className="btn-default btn-border"
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
@@ -324,37 +310,55 @@ const PricingFive = () => {
                 }}
               >
                 Objednať
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
-      {/* <Modal
+      <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => {
           setIsOpen(false);
         }}
-        style={customStyles}
+        style={{
+          content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            zIndex: 999,
+            transform: 'translate(-50%, -50%)',
+            background: '#000',
+            borderRadius: '25px',
+          },
+        }}
       >
         <h2>Máte zľavový kód?</h2>
         <input className="mb-5" />
         <div className="d-flex flex-column justify-content-evenly align-items-center">
+          {/* @ts-ignore */}
           <StripeCheckout
+            locale="auto"
             currency="EUR"
             stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
             token={(e) => handleToken(e, currentPackage?.id)}
             amount={currentPackage?.value ? currentPackage.value * 100 : 0}
-            name={'Balík - ' + (currentPackage?.label || '')}
+            name={`Balík ${currentPackage?.name} - ` + (currentPackage?.label || '')}
+            description={currentPackage?.value ? Number(currentPackage.value).toFixed(2) + '€' : ''}
             billingAddress
           >
             <button className="btn-default btn-small">Uplatniť a pokračovať k platbe</button>
           </StripeCheckout>
+          {/* @ts-ignore */}
           <StripeCheckout
+            locale="auto"
             currency="EUR"
             stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
             token={(e) => handleToken(e, currentPackage?.id)}
             amount={currentPackage?.value ? currentPackage.value * 100 : 0}
-            name={'Balík - ' + (currentPackage?.label || '')}
+            name={`Balík ${currentPackage?.name} - ` + (currentPackage?.label || '')}
+            description={currentPackage?.value ? Number(currentPackage.value).toFixed(2) + '€' : ''}
             billingAddress
           >
             <button className="btn btn-default btn-border btn-small mt-4">Nemám, chcem pokračovať k platbe</button>
@@ -363,7 +367,7 @@ const PricingFive = () => {
             Zatvoriť
           </button>
         </div>
-      </Modal> */}
+      </Modal>
     </div>
   );
 };

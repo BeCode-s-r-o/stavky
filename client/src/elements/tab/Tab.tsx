@@ -21,7 +21,7 @@ const Tab = ({ pageType }: PageType) => {
                       textAlign="text-center"
                       radiusRounded=""
                       subtitle="PREČO SI VYBRAŤ NÁS "
-                      title="Začnite si plniť svoje sny"
+                      title="Začnite si plniť sny"
                       description=""
                     />
                   </div>
