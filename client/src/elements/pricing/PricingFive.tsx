@@ -1,14 +1,20 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FiCheck } from 'react-icons/fi';
 import StripeCheckout from 'react-stripe-checkout';
 import Modal from 'react-modal';
+import { getDatabase, ref, onValue, set } from 'firebase/database';
+import * as _ from 'lodash';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 Modal.setAppElement('body');
 
 const PricingFive = () => {
   const pageType = process.env.REACT_APP_WEBSITE_TYPE;
   const [modalIsOpen, setIsOpen] = useState(false);
   const [currentPackage, setCurrentPackage] = useState<any>(null);
+  const [code, setCode] = useState('');
+  const [currentDiscount, setCurrentDiscount] = useState(0);
   const [pricing, setPricing] = useState({
     first: {
       name: 'STARTER',
@@ -34,22 +40,40 @@ const PricingFive = () => {
   const url = isProd ? 'https://api.forexporadenstvo.sk/checkout' : 'http://localhost:5500/checkout';
 
   async function handleToken(token: any, id: number) {
+    setIsOpen(false);
     const response = await axios.post(url, {
       token,
       package: { id: id, quantity: 1 },
       discount: 1,
     });
 
-    // if (response.status === 200) {
-    //   toast.success('Platba prebehla úspešne', {
-    //     theme: 'colored',
-    //   });
-    // } else {
-    //   toast.error('Platba neprebehla úspešne', {
-    //     theme: 'colored',
-    //   });
-    // }
+    if (response.status === 200) {
+      toast.success('Platba prebehla úspešne', {
+        theme: 'colored',
+      });
+    } else {
+      toast.error('Platba neprebehla úspešne', {
+        theme: 'colored',
+      });
+    }
   }
+
+  const [currentCodes, setCurrentCodes] = useState<any>({});
+
+  useEffect(() => {
+    onValue(ref(getDatabase(), 'codes'), (snapshot) => {
+      const dataFirebase = snapshot.val();
+      setCurrentCodes(dataFirebase);
+    });
+  }, []);
+
+  const checkForCode = ({ target: { value } }: any) => {
+    setCode(value);
+    setCurrentDiscount(0);
+    if (currentCodes[value] || currentCodes[String(value).toLowerCase()]) {
+      setCurrentDiscount(currentCodes[value] ? currentCodes[value] : currentCodes[String(value).toLowerCase()]);
+    }
+  };
 
   return (
     <div className="row row--15 align-items-center">
@@ -83,7 +107,9 @@ const PricingFive = () => {
               </ul>
             </div>
             <div className="container w-50 mb-5">
-              <p style={{ textAlign: 'center', marginBottom: 0 }}>Vybrať dĺžku členstva:</p>
+              <p style={{ textAlign: 'center', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
+                VYBRAŤ DĹŽKU ČLENSTVA:
+              </p>
               <select
                 value={JSON.stringify(pricing.first)}
                 onChange={(e) => {
@@ -128,7 +154,7 @@ const PricingFive = () => {
                   setIsOpen(true);
                 }}
               >
-                Objednať
+                OBJEDNAŤ
               </button>
             </div>
           </div>
@@ -178,7 +204,9 @@ const PricingFive = () => {
               </ul>
             </div>
             <div className="container w-50 mb-5">
-              <p style={{ textAlign: 'center', marginBottom: 0 }}>Vybrať dĺžku členstva:</p>
+              <p style={{ textAlign: 'center', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
+                VYBRAŤ DĹŽKU ČLENSTVA:
+              </p>
               <select
                 value={JSON.stringify(pricing.second)}
                 onChange={(e) => {
@@ -226,7 +254,7 @@ const PricingFive = () => {
                   setIsOpen(true);
                 }}
               >
-                Objednať
+                OBJEDNAŤ
               </button>
             </div>
           </div>
@@ -263,7 +291,9 @@ const PricingFive = () => {
               </ul>
             </div>
             <div className="container w-50 mb-5">
-              <p style={{ textAlign: 'center', marginBottom: 0 }}>Vybrať dĺžku členstva:</p>
+              <p style={{ textAlign: 'center', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
+                VYBRAŤ DĹŽKU ČLENSTVA:
+              </p>
               <select
                 value={JSON.stringify(pricing.third)}
                 onChange={(e) => {
@@ -309,7 +339,7 @@ const PricingFive = () => {
                   setIsOpen(true);
                 }}
               >
-                Objednať
+                OBJEDNAŤ
               </button>
             </div>
           </div>
@@ -335,39 +365,63 @@ const PricingFive = () => {
         }}
       >
         <h2>Máte zľavový kód?</h2>
-        <input className="mb-5" />
+        <input className="mb-5" value={code.toUpperCase()} onChange={checkForCode} />
+        {currentDiscount > 0 && (
+          <p style={{ color: 'green', textAlign: 'center' }}>
+            Zľava {currentDiscount}%{' - '}
+            <span style={{ textDecoration: 'line-through' }}>{Number(currentPackage.value).toFixed(2)}€</span> (
+            {Number(currentPackage.value - currentPackage?.value * (currentDiscount / 100))}€)
+          </p>
+        )}
         <div className="d-flex flex-column justify-content-evenly align-items-center">
-          {/* @ts-ignore */}
-          <StripeCheckout
-            locale="auto"
-            currency="EUR"
-            stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
-            token={(e) => handleToken(e, currentPackage?.id)}
-            amount={currentPackage?.value ? currentPackage.value * 100 : 0}
-            name={`Balík ${currentPackage?.name} - ` + (currentPackage?.label || '')}
-            description={currentPackage?.value ? Number(currentPackage.value).toFixed(2) + '€' : ''}
-            billingAddress
-          >
-            <button className="btn-default btn-small">Uplatniť a pokračovať k platbe</button>
-          </StripeCheckout>
-          {/* @ts-ignore */}
-          <StripeCheckout
-            locale="auto"
-            currency="EUR"
-            stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
-            token={(e) => handleToken(e, currentPackage?.id)}
-            amount={currentPackage?.value ? currentPackage.value * 100 : 0}
-            name={`Balík ${currentPackage?.name} - ` + (currentPackage?.label || '')}
-            description={currentPackage?.value ? Number(currentPackage.value).toFixed(2) + '€' : ''}
-            billingAddress
-          >
-            <button className="btn btn-default btn-border btn-small mt-4">Nemám, chcem pokračovať k platbe</button>
-          </StripeCheckout>
+          {currentDiscount > 0 && (
+            <>
+              {/* @ts-ignore */}
+              <StripeCheckout
+                locale="auto"
+                currency="EUR"
+                stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
+                token={(e) => handleToken(e, currentPackage?.id)}
+                amount={
+                  currentPackage?.value
+                    ? Number(currentPackage.value - currentPackage?.value * (currentDiscount / 100)) * 100
+                    : 0
+                }
+                name={`Balík ${currentPackage?.name} - ` + (currentPackage?.label || '')}
+                description={
+                  currentPackage?.value
+                    ? Number(currentPackage.value - currentPackage?.value * (currentDiscount / 100)).toFixed(2) + '€'
+                    : ''
+                }
+                billingAddress
+              >
+                <button className="btn-default btn-small">Uplatniť a pokračovať k platbe</button>
+              </StripeCheckout>
+            </>
+          )}
+          {!currentDiscount && (
+            <>
+              {/* @ts-ignore */}
+              <StripeCheckout
+                locale="auto"
+                currency="EUR"
+                stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
+                token={(e) => handleToken(e, currentPackage?.id)}
+                amount={currentPackage?.value ? currentPackage.value * 100 : 0}
+                name={`Balík ${currentPackage?.name} - ` + (currentPackage?.label || '')}
+                description={currentPackage?.value ? Number(currentPackage.value).toFixed(2) + '€' : ''}
+                billingAddress
+              >
+                <button className="btn-default btn-small mt-4">Nemám, chcem pokračovať k platbe</button>
+              </StripeCheckout>
+            </>
+          )}
           <button className="btn btn-default btn-border btn-small mt-4" onClick={() => setIsOpen(false)}>
             Zatvoriť
           </button>
         </div>
       </Modal>
+      <ToastContainer />
     </div>
   );
 };

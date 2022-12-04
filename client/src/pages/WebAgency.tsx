@@ -1,13 +1,6 @@
 import { Element, Link } from 'react-scroll';
 import HeaderOne from '../common/header/HeaderOne';
-const BannerData = [
-  {
-    image: '/images/bg/bg-image-20.jpg',
-    title: 'Our Web <br /> Agecny Plan.',
-    description:
-      'We help our clients succeed by creating brand identities, <br /> digital experiences, and print materials.',
-  },
-];
+const BannerData = [{}];
 
 const WebAgency = ({ pageType }: PageType) => {
   return (
