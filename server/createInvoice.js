@@ -4,7 +4,7 @@ const PDFDocument = require("pdfkit");
 function createInvoice(invoice, path) {
   let doc = new PDFDocument({ size: "A4", margin: 50 });
 
-  generateHeader(doc);
+  generateHeader(doc, invoice);
   generateCustomerInformation(doc, invoice);
   generateInvoiceTable(doc, invoice);
   generateFooter(doc);
@@ -13,11 +13,11 @@ function createInvoice(invoice, path) {
   doc.pipe(fs.createWriteStream(path));
 }
 
-function generateHeader(doc) {
+function generateHeader(doc, invoice) {
   doc
     .rect(50, 40, 120, 40)
     .fill("#444444")
-    .image("forex.png", 60, 45, {
+    .image(`${invoice.pageType}.png`, 60, 45, {
       width: 100,
       align: "center",
       valign: "center",
@@ -32,7 +32,11 @@ function generateHeader(doc) {
 }
 
 function generateCustomerInformation(doc, invoice) {
-  doc.fillColor("#444444").fontSize(20).text("Detaily", 50, 160);
+  doc
+    .fillColor("#444444")
+    .fontSize(20)
+    .font("Helvetica-Bold")
+    .text("Faktúra", 50, 160);
 
   generateHr(doc, 185);
 
@@ -40,8 +44,7 @@ function generateCustomerInformation(doc, invoice) {
 
   doc
     .fontSize(10)
-    .font("Helvetica")
-    .text("Faktúra:", 50, customerInformationTop)
+    .text("Číslo:", 50, customerInformationTop)
     .font("Helvetica-Bold")
     .text(invoice.invoice_nr, 150, customerInformationTop)
     .font("Helvetica")
@@ -49,24 +52,22 @@ function generateCustomerInformation(doc, invoice) {
     .text(formatDate(new Date()), 150, customerInformationTop + 15)
     .text("Suma Spolu:", 50, customerInformationTop + 30)
     .text(
-      formatCurrency(invoice.subtotal - invoice.paid),
+      formatCurrency(invoice.subtotal - invoice.discount),
       150,
       customerInformationTop + 30
     )
 
     .font("Helvetica-Bold")
-    .text(invoice.shipping.name, 300, customerInformationTop)
+    .text(invoice.shipping.name, 300, customerInformationTop, {
+      align: "right",
+    })
     .font("Helvetica")
-    .text(invoice.shipping.address, 300, customerInformationTop + 15)
-    .text(
-      invoice.shipping.city +
-        ", " +
-        invoice.shipping.state +
-        ", " +
-        invoice.shipping.country,
-      300,
-      customerInformationTop + 30
-    )
+    .text(invoice.shipping.address, 300, customerInformationTop + 15, {
+      align: "right",
+    })
+    .text(invoice.shipping.city, 300, customerInformationTop + 30, {
+      align: "right",
+    })
     .moveDown();
 
   generateHr(doc, 252);
@@ -124,7 +125,7 @@ function generateInvoiceTable(doc, invoice) {
     "",
     "Zľava",
     "",
-    formatCurrency(invoice.paid)
+    formatCurrency(invoice.discount)
   );
 
   const duePosition = paidToDatePosition + 25;
@@ -136,7 +137,7 @@ function generateInvoiceTable(doc, invoice) {
     "",
     "Cena Spolu",
     "",
-    formatCurrency(invoice.subtotal - invoice.paid)
+    formatCurrency(invoice.subtotal - invoice.discount)
   );
   doc.font("Helvetica");
 }
@@ -181,7 +182,7 @@ function formatDate(date) {
   const month = date.getMonth() + 1;
   const year = date.getFullYear();
 
-  return year + "/" + month + "/" + day;
+  return day + "." + month + "." + year;
 }
 
 module.exports = {

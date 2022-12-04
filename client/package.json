@@ -28,12 +28,14 @@
     "react-slick": "^0.28.1",
     "react-stripe-checkout": "^2.6.3",
     "react-tabs": "^3.2.2",
-    "react-toastify": "^9.1.1",
     "react-triple-toggle": "^1.0.7",
     "react-typed": "^1.2.0",
     "sass": "^1.49.10",
     "slick-carousel": "^1.8.1",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "@types/react-modal": "^3.13.1",
+    "react-modal": "^3.16.1",
+    "react-toastify": "^8.0.0"
   },
   "scripts": {
     "start:forex": "REACT_APP_WEBSITE_TYPE=forex react-scripts start",

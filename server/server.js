@@ -9,9 +9,12 @@ const uuid = require("uuid").v4;
 const fs = require("fs");
 const cors = require("cors");
 const { text } = require("express");
-
+const { storeItems } = require("./storeItems.js");
 const sha1 = require("js-sha1");
-
+const admin = require("firebase-admin");
+const credentials = require("../key.json");
+admin.initializeApp({ credential: admin.credential.cert(credentials) });
+const db = admin.firestore();
 const nodemailer = require("nodemailer");
 const app = express();
 
@@ -22,72 +25,29 @@ app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
 const PORT = 5500;
+function formatDate(date) {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
 
-const storeItems = new Map([
-  [1, { priceInCents: 3990, name: "Stavkove Starter 15" }],
-  [2, { priceInCents: 6990, name: "Stavkove Starter 30" }],
-  [3, { priceInCents: 14990, name: "Stavkove Starter 90" }],
-  [4, { priceInCents: 12990, name: "Stavkove Kobmi 30" }],
-  [5, { priceInCents: 21990, name: "Stavkove Kobmi 90" }],
-  [6, { priceInCents: 29990, name: "Stavkove Kobmi 180" }],
-  [7, { priceInCents: 9900, name: "Stavkove Exclusive 30" }],
-  [8, { priceInCents: 16990, name: "Stavkove Exclusive 90" }],
-  [9, { priceInCents: 23990, name: "Stavkove Exclusive 180" }],
-  [11, { priceInCents: 3990, name: "Forex Starter 15" }],
-  [12, { priceInCents: 6990, name: "Forex Starter 30" }],
-  [13, { priceInCents: 14990, name: "Forex Starter 90" }],
-  [14, { priceInCents: 12990, name: "Forex Kombi 30" }],
-  [15, { priceInCents: 21990, name: "Forex Kombi 90" }],
-  [16, { priceInCents: 29990, name: "Forex Kombi 180" }],
-  [17, { priceInCents: 9900, name: "Forex Exclusive 30" }],
-  [18, { priceInCents: 16990, name: "Forex Exclusive 90" }],
-  [19, { priceInCents: 23990, name: "Forex Exclusive 180" }],
-]);
-const invoice = {
-  shipping: {
-    name: "John Doe",
-    address: "1234 Main Street",
-    city: "San Francisco",
-    state: "CA",
-    country: "US",
-    postal_code: 94111,
-  },
-  items: [
-    {
-      item: "TC 100",
-      description: "Toner Cartridge",
-      quantity: 2,
-      amount: 6000,
-    },
-    {
-      item: "USB_EXT",
-      description: "USB Cable Extender",
-      quantity: 1,
-      amount: 2000,
-    },
-  ],
-  subtotal: 8000,
-  paid: 0,
-  invoice_nr: 1234,
-};
-createInvoice(invoice, "invoice.pdf");
-
+  return day + "." + month + "." + year;
+}
 // post request
 app.post("/checkout", async (req, res) => {
   let error, status;
 
   try {
-    const { package, token } = req.body;
+    const { package, token, discount } = req.body;
     const customer = await stripe.customers.create({
       email: token.email,
       source: token.id,
     });
 
     const storeItem = storeItems.get(package.id);
-    console.log(storeItem);
+
     const key = uuid();
     const charge = await stripe.charges.create({
-      amount: storeItem.priceInCents,
+      amount: Math.round(storeItem.priceInCents * discount),
       currency: "eur",
       customer: customer.id,
       receipt_email: token.email,
@@ -98,6 +58,47 @@ app.post("/checkout", async (req, res) => {
     async function sendEmail() {
       // Generate test SMTP service account from ethereal.email
       // Only needed if you don't have a real mail account for testing
+      const invoice = {
+        shipping: {
+          name: token.card.name,
+          address: token.card.address_line1,
+          city: token.card.address_city,
+          postal_code: token.card.address_zip,
+        },
+        items: [
+          {
+            item: storeItem.name,
+            description: storeItem.description,
+            quantity: 1,
+            amount: storeItem.priceInCents,
+          },
+        ],
+        subtotal: storeItem.priceInCents,
+        discount: Math.round(
+          storeItem.priceInCents - storeItem.priceInCents * discount
+        ),
+        invoice_nr: key,
+        pageType: package.id > 9 ? "forex " : "stavkove",
+      };
+      createInvoice(invoice, `faktura_${key + ".pdf"}`);
+      try {
+        const docRef = db
+          .collection(
+            `${"Objednávky" + package.id > 9 ? "forex " : "stavkove"}`
+          )
+          .doc(key);
+        await docRef.set({
+          id: key,
+          meno: token.card.name,
+          adresa: token.card.address_line1,
+          mesto: token.card.address_city,
+          PSČ: token.card.address_zip,
+          balik: storeItem.name,
+          dátum: formatDate(new Date()),
+        });
+      } catch (err) {
+        console.log(err);
+      }
 
       // create reusable transporter object using the default SMTP transport
       let transporter = nodemailer.createTransport({
@@ -125,17 +126,21 @@ app.post("/checkout", async (req, res) => {
         
 Text musí začinať tu aby si mal spravne odsadenie
 objednaný balík: ${storeItem.name} v cene ${
-          storeItem.priceInCents / 100 + " €"
+          (storeItem.priceInCents / 100) * discount + " €"
         }`,
         attachments: [
           {
-            filename: "faktúra.pdf",
-            path: "output.pdf",
+            filename: `faktura_${key + ".pdf"}`,
+            path: `faktura_${key + ".pdf"}`,
             contentType: "application/pdf",
           },
         ], // plain text body
       });
-
+      fs.unlink(`faktura_${key + ".pdf"}`, (err) => {
+        if (err) {
+          throw err;
+        }
+      });
       console.log("Message sent: %s", info.messageId);
       // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
     }
