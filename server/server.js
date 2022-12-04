@@ -3,6 +3,7 @@ const express = require("express");
 const bodyparser = require("body-parser");
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 const PDFDocument = require("pdfkit");
+const { createInvoice } = require("./createInvoice.js");
 
 const uuid = require("uuid").v4;
 const fs = require("fs");
@@ -42,6 +43,35 @@ const storeItems = new Map([
   [18, { priceInCents: 16990, name: "Forex Exclusive 90" }],
   [19, { priceInCents: 23990, name: "Forex Exclusive 180" }],
 ]);
+const invoice = {
+  shipping: {
+    name: "John Doe",
+    address: "1234 Main Street",
+    city: "San Francisco",
+    state: "CA",
+    country: "US",
+    postal_code: 94111,
+  },
+  items: [
+    {
+      item: "TC 100",
+      description: "Toner Cartridge",
+      quantity: 2,
+      amount: 6000,
+    },
+    {
+      item: "USB_EXT",
+      description: "USB Cable Extender",
+      quantity: 1,
+      amount: 2000,
+    },
+  ],
+  subtotal: 8000,
+  paid: 0,
+  invoice_nr: 1234,
+};
+createInvoice(invoice, "invoice.pdf");
+
 // post request
 app.post("/checkout", async (req, res) => {
   let error, status;
