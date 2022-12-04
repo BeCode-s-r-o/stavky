@@ -73,9 +73,9 @@ const App = () => {
         <meta name="revisit-after" content="7 days" />
         <meta name="author" content="Stávkové poradenstvo" />
         <meta name="publisher" content="Stávkové poradenstvo" />
-        <link rel="stylesheet" href="cookieconsent/%REACT_APP_WEBSITE_TYPE%/cookieconsent.css" />
+        {/* <link rel="stylesheet" href="cookieconsent/stavkove/cookieconsent.css" />
         <script defer src="cookieconsent/cookieconsent.js"></script>
-        <script defer src="cookieconsent/cookieconsent-init.js"></script>
+        <script defer src="cookieconsent/cookieconsent-init.js"></script> */}
       </Helmet>
       <main className="page-wrapper" id="main">
         <PageScrollTop>

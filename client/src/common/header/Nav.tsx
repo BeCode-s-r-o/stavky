@@ -66,7 +66,10 @@ const Nav = () => {
             )}
           </li>
           <li>
-            <a style={{ textTransform: 'uppercase' }} href="#">
+            <a
+              style={{ textTransform: 'uppercase' }}
+              href={pageType === 'forex' ? 'https://t.me/forexporadenstvosk' : 'https://t.me/stavkoveporadenstvosk'}
+            >
               Free skupina
             </a>
           </li>

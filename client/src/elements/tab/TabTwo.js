@@ -42,8 +42,8 @@ const TabTwo = ({ pageType }) => {
                         <div className="inner">
                           <p>
                             {pageType === 'forex'
-                              ? 'Naša spoločnosť poskytuje odborné poradenstvo a konzultácie v oblasti obchodovania menových párov. Sme tím zložený z 5 členov, máme niekoľkoročné skúsenosti v oblasti akciových trhov a taktiež celkový prehľad v ekonomike a investíciách.'
-                              : 'Naša spoločnosť poskytuje odborné poradenstvo a konzultácie v oblasti stávkovania športových zápasov. Sme tím zložený z 5 členov, máme niekoľkoročné skúsenosti v oblasti stávkovania zápasov a taktiež celkový prehľad v športe a investíciách.'}
+                              ? 'Naša spoločnosť poskytuje odborné poradenstvo a konzultácie v oblasti obchodovania menových párov. Sme tím zložený z 5 členov, máme niekoľkoročné skúsenosti v oblasti akciových trhov a taktiež celkový všeobecný prehľad v ekonomike a investíciách.'
+                              : 'Naša spoločnosť poskytuje odborné poradenstvo a konzultácie v oblasti stávkovania športových zápasov. Sme tím zložený z 5 členov, máme niekoľkoročné skúsenosti v oblasti stávkovania zápasov a taktiež celkový všeobecný prehľad v športe a investíciách.'}
                           </p>
 
                           <p>
@@ -78,8 +78,8 @@ const TabTwo = ({ pageType }) => {
                         <div className="inner">
                           <p>
                             {pageType === 'forex'
-                              ? 'Spolupráca je dynamická a signály budete získavať priamo do Vášho telefónu prostredníctvom telegram notifikácie. Dbáme na serióznu spoluprácu, každý klient má prideleného osobného konzultanta v prípade akýchkoľvek otázok.'
-                              : 'Spolupráca je dynamická a tipy budete získavať priamo do Vášho telefónu prostredníctvom telegram notifikácie. Dbáme na serióznu spoluprácu, každý klient má prideleného osobného konzultanta v prípade akýchkoľvek otázok.'}
+                              ? 'Spolupráca je dynamická a signály budete získavať priamo do Vášho telefónu prostredníctvom telegram notifikácie. Dbáme na serióznu spoluprácu, každý klient má prideleného osobného konzultanta v prípade otázok.'
+                              : 'Spolupráca je dynamická a tipy budete získavať priamo do Vášho telefónu prostredníctvom telegram notifikácie. Dbáme na serióznu spoluprácu, každý klient má prideleného osobného konzultanta v prípade otázok.'}
                           </p>
 
                           <p>

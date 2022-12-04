@@ -18,7 +18,7 @@ const ServiceList = [
   {
     icon: <FiMap />,
     title: 'EFEKTVÍNA KOMUNIKÁCIA ',
-    description: 'Rozumieme potrebám a obavám našich klientov, preto radi zodpovieme Vaše otázky do 24 hodín. ',
+    description: 'Rozumieme potrebám a obavám našich klientov, preto radi zodpovieme <br/> Vaše otázky do 24 hodín. ',
   },
 ];
 

@@ -3,7 +3,7 @@ import { Accordion, Card, Button } from 'react-bootstrap';
 const pageType = process.env.REACT_APP_WEBSITE_TYPE;
 const AccordionOne = ({ customStyle }) => {
   return (
-    <Accordion className={`rn-accordion-style ${customStyle}`} defaultActiveKey="0">
+    <Accordion className={`rn-accordion-style ${customStyle}`} defaultActiveKey="">
       <Card>
         <Card.Header>
           <Accordion.Toggle as={Button} variant="link" eventKey="0">
@@ -22,7 +22,7 @@ const AccordionOne = ({ customStyle }) => {
       <Card>
         <Card.Header>
           <Accordion.Toggle as={Button} variant="link" eventKey="1">
-            {pageType === 'forex' ? 'Aký balík odporúčate novým klientom?' : 'Aký balík odporúčate novým klientom?'}
+            Aký balík odporúčate?
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="1">
@@ -37,14 +37,14 @@ const AccordionOne = ({ customStyle }) => {
       <Card>
         <Card.Header>
           <Accordion.Toggle as={Button} variant="link" eventKey="2">
-            {pageType === 'forex' ? 'Cez akú aplikáciu sa obchoduje? ' : 'Cez akú aplikáciu sa obchoduje?'}
+            Cez akú aplikáciu sa {pageType === 'forex' ? 'obchoduje' : 'stávkuje'}?
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="2">
           <Card.Body>
             {pageType === 'forex'
               ? 'Obchodujeme cez aplikáciu MetaTrader 5, niektorý klienti využívajú Vantage Trade Smarter. Sú to aplikácie dostupné pre každého, predtým však musíte mať registráciu u brokera, máme k dispozícií odporúčanie na 2 brokerské kancelárie, všetko Vám napíšeme po zakúpení členstva. Vklad a výber peňazí môžete realizovať kedykoľvek, svoje financie máte neustále pod kontrolou. Aplikácie nájdete dostupné v App Store alebo Google Play. '
-              : 'Obchodujeme cez aplikáciu Fortuna, niektorý klienti využívajú Tipsport. Sú to aplikácie dostupné pre každého, predtým však musíte mať registráciu v stávkovej kancelárií, máme k dispozícií odporúčanie na 2 stávkové kancelárie, všetko Vám napíšeme po zakúpení členstva. Vklad a výber peňazí môžete realizovať kedykoľvek, svoje financie máte neustále pod kontrolou. Aplikácie nájdete dostupné v App Store alebo Google Play.'}
+              : 'Stávkujeme cez aplikáciu Fortuna, niektorý klienti využívajú Tipsport. Sú to aplikácie dostupné pre každého, predtým však musíte mať registráciu v stávkovej kancelárií, máme k dispozícií odporúčanie na 2 stávkové kancelárie, všetko Vám napíšeme po zakúpení členstva. Vklad a výber peňazí môžete realizovať kedykoľvek, svoje financie máte neustále pod kontrolou. Aplikácie nájdete dostupné v App Store alebo Google Play.'}
           </Card.Body>
         </Accordion.Collapse>
       </Card>
@@ -52,9 +52,7 @@ const AccordionOne = ({ customStyle }) => {
       <Card>
         <Card.Header>
           <Accordion.Toggle as={Button} variant="link" eventKey="3">
-            {pageType === 'forex'
-              ? 'Ako často a kedy sú signály odosielané?'
-              : 'Ako často a kedy sú signály odosielané? '}
+            Ako často sú signály odosielané?
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="3">
@@ -68,7 +66,7 @@ const AccordionOne = ({ customStyle }) => {
       <Card>
         <Card.Header>
           <Accordion.Toggle as={Button} variant="link" eventKey="6">
-            {pageType === 'forex' ? 'Je úspešnosť služieb garantovaná? ' : 'Je úspešnosť služieb garantovaná? '}
+            Je úspešnosť služieb garantovaná?
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="6">

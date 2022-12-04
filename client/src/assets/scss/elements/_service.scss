@@ -23,7 +23,7 @@
             font-size: 45px;
             font-weight: 400;
             margin-bottom: 23px;
-            color: var(--color-primary);
+            color: var(--color-pink);
             text-align: center;
             border-radius: 100%;
             display: flex;
@@ -247,7 +247,7 @@
             .service {
                 &.service__style--1 {
                     .icon {
-                        color: var(--color-secondary);
+                        color: var(--color-pink);
                     }
                 }
             }
@@ -257,7 +257,7 @@
             .service {
                 &.service__style--1 {
                     .icon {
-                        color: var(--color-tertiary);
+                        color: var(--color-pink);
                     }
                 }
             }

@@ -21,13 +21,13 @@ const WebAgency = ({ pageType }: PageType) => {
             <div key={index} className="single-slide" style={{ position: 'relative' }}>
               <div className="container">
                 <div className="row align-items-center">
-                  <div className="col-lg-12">
+                  <div className="col-lg-12" style={{ marginTop: '-2em' }}>
                     <div className="inner text-center">
                       <span className="subtitle theme-gradient">
                         {pageType === 'forex' ? 'FOREX PORADENSTVO' : 'STÁVKOVÉ PORADENSTVO'}
                       </span>
                       <h1
-                        className="title"
+                        className="title px-3"
                         style={{ paddingTop: '2rem' }}
                         dangerouslySetInnerHTML={{
                           __html:
@@ -37,19 +37,27 @@ const WebAgency = ({ pageType }: PageType) => {
                         }}
                       ></h1>
                       <p
-                        className="description"
+                        className="description px-5"
                         dangerouslySetInnerHTML={{
                           __html:
                             pageType === 'forex'
-                              ? 'Investujte s našimi službami jednoducho a efektívne cez aplikáciu. Naučíme Vás celý postup ako začať zarábať na obchodovaní menových párov. Trading s vysokou mierou úspešnosti.'
-                              : 'Investujte s našimi službami jednoducho a efektívne cez aplikáciu. Naučíme Vás celý postup ako začať zarábať na stávkovaní športových zápasov. Tipovanie s vysokou mierou úspešnosti.',
+                              ? 'Investujte s našimi službami jednoducho a efektívne cez aplikáciu. Naučíme Vás celý postup ako začať <br/> zarábať na obchodovaní menových párov. Trading s vysokou mierou úspešnosti.'
+                              : 'Investujte s našimi službami jednoducho a efektívne cez aplikáciu. Naučíme Vás celý postup ako začať <br/> zarábať na stávkovaní športových zápasov. Tipovanie s vysokou mierou úspešnosti.',
                         }}
                       ></p>
                       <div className="button-group mt--30">
                         <Link to="packages" href="#packages" className="btn-default btn-large round" offset={-100}>
                           PONUKA SLUŽIEB
                         </Link>
-                        <a className="btn-default btn-border btn-large round" href="#">
+                        <a
+                          className="btn-default btn-border btn-large round"
+                          target="_blank"
+                          href={
+                            pageType === 'forex'
+                              ? 'https://t.me/forexporadenstvosk'
+                              : 'https://t.me/stavkoveporadenstvosk'
+                          }
+                        >
                           FREE SKUPINA
                         </a>
                       </div>

@@ -54,6 +54,9 @@ const AppForex = () => {
         <meta name="revisit-after" content="7 days" />
         <meta name="author" content="Forex poradenstvo" />
         <meta name="publisher" content="Forex poradenstvo" />
+        {/* <link rel="stylesheet" href="cookieconsent/forex/cookieconsent.css" />
+        <script defer src="/cookieconsent/cookieconsent.js"></script>
+        <script defer src="/cookieconsent/cookieconsent-init.js"></script> */}
       </Helmet>
       <main className="page-wrapper" id="main">
         <PageScrollTop>

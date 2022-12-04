@@ -19,7 +19,7 @@ const Service = ({ pageType }: PageType) => {
                       textAlign="text-center"
                       radiusRounded=""
                       subtitle="JEDNODUCHÉ A EFEKTÍVNE"
-                      title="Vysvetlenie našich služieb"
+                      title="Vysvetlenie služieb"
                       description={
                         pageType === 'forex'
                           ? 'Ponúkame kvalitné a odborné poradenstvo v oblasti obchodovania na forexe, vyhľadávame obchodné príležitosti na správne určenie pohybu trhu.'

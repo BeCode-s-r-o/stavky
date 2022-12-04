@@ -12,17 +12,19 @@ const Data = [
   {
     countNum: 8,
     countTitle: 'ROKOV PÔSOBENIA',
-    description: 'Na našom trhu pôsobíme už viac ako 8 rokov. ',
+    description: 'Na Slovenskom a Českom trhu pôsobíme už viac ako 8 rokov. ',
     suffix: '+',
   },
   {
     countNum: process.env.REACT_APP_WEBSITE_TYPE === 'forex' ? 87 : 86,
     countTitle: 'DLHODOBÁ ÚSPEŠNOSŤ ',
-    description: 'Naša úspešnosť služieb z dlhodobého hľadiska dosahuje až 87%. ',
+    description: `Naša úspešnosť služieb z dlhodobého hľadiska dosahuje až ${
+      process.env.REACT_APP_WEBSITE_TYPE === 'forex' ? 87 : 86
+    }%.`,
     suffix: '%',
   },
 ];
-const CounterUpTwo = ({ textALign, counterStyle, column }) => {
+const CounterUpTwo = ({ textALign, counterStyle, column }: any) => {
   return (
     <div className="row">
       {Data.map((data, index) => (

@@ -14,7 +14,9 @@ const ContactOne = () => {
                     <FiInstagram />
                   </div>
                   <div className="inner">
-                    <h4 className="title">Instagram Support</h4>
+                    <h4 className="title" style={{ textTransform: 'uppercase' }}>
+                      Instagram Support
+                    </h4>
                     <p>
                       <a
                         href={`https://instagram.com/${
@@ -35,9 +37,15 @@ const ContactOne = () => {
                     <FiMail />
                   </div>
                   <div className="inner">
-                    <h4 className="title">E-mail</h4>
+                    <h4 className="title" style={{ textTransform: 'uppercase' }}>
+                      E-mail support
+                    </h4>
                     <p>
-                      <a href="mailto:">
+                      <a
+                        href={`mailto:info@${
+                          process.env.REACT_APP_WEBSITE_TYPE === 'forex' ? 'forexporadenstvo' : 'stavkoveporadenstvo'
+                        }.sk`}
+                      >
                         info@
                         {process.env.REACT_APP_WEBSITE_TYPE === 'forex' ? 'forexporadenstvo' : 'stavkoveporadenstvo'}.sk
                       </a>

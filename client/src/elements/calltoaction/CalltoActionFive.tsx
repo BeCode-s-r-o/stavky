@@ -13,26 +13,41 @@ const callToActionData = {
 };
 
 const CalltoActionFive = () => {
+  const pageType = process.env.REACT_APP_WEBSITE_TYPE;
   return (
     <div className="rn-callto-action clltoaction-style-default style-5">
       <div className="container">
-        <div className="row row--0 align-items-center content-wrapper theme-shape">
+        <div className="row row--0 align-items-center content-wrapper theme-shape" style={{ zIndex: -1 }}>
           <div className="col-lg-12">
             <div className="inner">
               <div className="content text-center">
                 <ScrollAnimation animateIn="fadeInUp" animateOut="fadeInOut" animateOnce={true}>
-                  <h5 className="subtitle px-5">{callToActionData.subtitle}</h5>
+                  {callToActionData.subtitle}
                 </ScrollAnimation>
 
                 <ScrollAnimation animateIn="fadeInUp" animateOut="fadeInOut" animateOnce={true}>
                   <div className="d-flex justify-content-center">
                     <div className="call-to-btn text-center ">
-                      <a className="btn-default btn-icon mx-2" href="#">
+                      <a
+                        className="btn-default btn-icon mx-2"
+                        href={
+                          pageType === 'forex'
+                            ? 'https://www.instagram.com/forexporadenstvo.official/'
+                            : 'https://www.instagram.com/stavkoveporadenstvo.official/'
+                        }
+                      >
                         INSTAGRAM
                       </a>
                     </div>
                     <div className="call-to-btn text-center ">
-                      <a className=" btn-default btn-icon mx-2" href="#">
+                      <a
+                        className=" btn-default btn-icon mx-2"
+                        href={
+                          pageType === 'forex'
+                            ? 'https://t.me/forexporadenstvosk'
+                            : 'https://t.me/stavkoveporadenstvosk'
+                        }
+                      >
                         TELEGRAM
                       </a>
                     </div>

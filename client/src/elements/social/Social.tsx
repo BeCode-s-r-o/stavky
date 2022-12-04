@@ -1,6 +1,5 @@
 import { FaTelegramPlane, FaTiktok } from 'react-icons/fa';
-import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { FiFacebook, FiInstagram } from 'react-icons/fi';
 import { Element } from 'react-scroll';
 import Layout from '../../common/Layout';
 import SectionTitle from '../sectionTitle/SectionTitle';
@@ -29,7 +28,7 @@ const Social = ({ pageType }: PageType) => {
                 <div className="row mt--30">
                   <div className="col-lg-12">
                     <ul className="social-icon social-default">
-                      <li>
+                      <li style={{ zIndex: -1 }}>
                         {pageType === 'forex' ? (
                           <a target="_blank" href="https://www.facebook.com/poradenstvoforex.sk">
                             <FiFacebook />
@@ -40,7 +39,7 @@ const Social = ({ pageType }: PageType) => {
                           </a>
                         )}
                       </li>
-                      <li>
+                      <li style={{ zIndex: -1 }}>
                         {pageType === 'forex' ? (
                           <a target="_blank" href="https://www.tiktok.com/@forexporadenstvo">
                             <FaTiktok />
@@ -51,7 +50,7 @@ const Social = ({ pageType }: PageType) => {
                           </a>
                         )}
                       </li>
-                      <li>
+                      <li style={{ zIndex: -1 }}>
                         {pageType === 'forex' ? (
                           <a target="_blank" href="https://www.instagram.com/forexporadenstvo.official/">
                             <FiInstagram />
@@ -62,7 +61,7 @@ const Social = ({ pageType }: PageType) => {
                           </a>
                         )}
                       </li>
-                      <li>
+                      <li style={{ zIndex: -1 }}>
                         {pageType === 'forex' ? (
                           <a target="_blank" href="https://t.me/forexporadenstvosk">
                             <FaTelegramPlane />
@@ -78,7 +77,6 @@ const Social = ({ pageType }: PageType) => {
                 </div>
               </div>
             </div>
-            {/* End Elements Area  */}
             <Separator />
           </div>
         </Layout>

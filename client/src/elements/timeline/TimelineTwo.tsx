@@ -5,7 +5,10 @@ const TimelineData = [
   {
     id: '1',
     title: 'SLUŽBA',
-    description: 'Pre uskutočnenie spolupráce je dôležitý výber a vloženie služby do košíka. ',
+    description:
+      'Pre uskutočnenie spolupráce \
+    je dôležitý výber a\
+    vloženie služby do košíka. ',
   },
   {
     id: '2',
@@ -15,7 +18,7 @@ const TimelineData = [
   {
     id: '3',
     title: 'AKTIVÁCIA',
-    description: 'Po úhrade získate mail so vstupnými informáciami a inštrukciami.',
+    description: 'Po úhrade obdržíte mail so vstupnými informáciami a inštrukciami.',
   },
   {
     id: '4',
@@ -24,7 +27,7 @@ const TimelineData = [
   },
 ];
 
-const TimelineTwo = ({ classVar }) => {
+const TimelineTwo = ({ classVar }: any) => {
   return (
     <div className="timeline-style-two bg-color-blackest">
       <div className="row row--0">
@@ -44,7 +47,7 @@ const TimelineTwo = ({ classVar }) => {
                 </div>
               </div>
               <ScrollAnimation animateIn="fadeInUp" animateOut="fadeInOut" animateOnce={true}>
-                <p className="description">{data.description}</p>
+                <p className="description" dangerouslySetInnerHTML={{ __html: data.description || '' }} />
               </ScrollAnimation>
             </div>
           </div>
