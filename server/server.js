@@ -12,7 +12,7 @@ const { text } = require("express");
 const { storeItems } = require("./storeItems.js");
 const sha1 = require("js-sha1");
 const admin = require("firebase-admin");
-const credentials = require("../key.json");
+const credentials = require("./key.json");
 admin.initializeApp({ credential: admin.credential.cert(credentials) });
 const db = admin.firestore();
 const nodemailer = require("nodemailer");
@@ -83,9 +83,7 @@ app.post("/checkout", async (req, res) => {
       createInvoice(invoice, `faktura_${key + ".pdf"}`);
       try {
         const docRef = db
-          .collection(
-            `${"Objednávky" + package.id > 9 ? "forex " : "stavkove"}`
-          )
+          .collection(`objednávky-${package.id > 9 ? "forex" : "stavkove"}`)
           .doc(key);
         await docRef.set({
           id: key,

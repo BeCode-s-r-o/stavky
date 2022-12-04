@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "forex-stavkove-poradenstvo",
+  "private_key_id": "73a023bbda905e19770bb690a93ef64057c5cfa2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCxjoKqlHAZUBdw\n9SrnRin9+ii6evr4oA/dejn0f1JW7JiiHZhbbZknEYpOfxTGQI4FQSUm9GSInPgh\nnX0CyIa5rMolbHDvKQjsYfMrxP52Hu8ieZ5bZ29GP2sfjNoIGU3tjhLP5VdT0+Ca\n0ltWOPnxKeFXFABjKsj6VrPLzCkVj0r+jhQuQxn8ONG/7dg4NMrJqfkW6BWbGGTW\ntkdr7Cj9sFYrgcgTzi/xL2SUKN54NGytemRU3QUy2c6/4VpjqCV7lDJJ+D9I/7VF\njSrjXDSIeS9Zixv/55fOER4NXy9YcBjDQ063WDqaS3o+DkWQC1p4y6x6z3StHznI\nxBILSzKZAgMBAAECggEAKCJgJ0onv5UCw3HreXz643GPEL3ZKmdVxriIzpsUA9l1\nk9lwNaRjpLjahC1GBx0S7R2hVfmSmu2uSbzlQ8KLb39e7xAgw/KI1ZO7aWadJRqP\nb8HBWYRbGuwdXPOT2hZMLtj5KBx9PZHMOHq5khcNaiWPDcWT49aJOMrt17Bljf1m\nL9P6rxZiCgx+xNwTB+SXNccngayW4gSVhWSXLQfPU4daGZEloO2Xzp4ZJELp8ApL\nI9O+pg4qzKn4hA0ayQenW8kScFa2/CY+oLVB39gu80a/RsLznLj4HJH0Q8jVmJ6l\nR7SMSmkBXh72MmHzJzCM9E1Aqe6RF1v9sa5G83CVLQKBgQDYN78SI8uuu2jzO/0Q\n9D0o4f12MzuJGkvZZs1svzYfuj5k0ilnTo0UT9/rSZKSwCy94+x36TAtx4GBNLcN\nAIBJhuAi/cleF4//2GYFc+glung9do78iWkUTjw01fXJzi8TFfwd+4izZeYjnVAc\nSrgPxpiUcA/kPb067C/mZ3ZsjQKBgQDSOcGaEksxrpCHKCq5akcZNDgar7mWKDuz\nhpSlVYF/1lC2ibuWE9mThhOsAW4pNYJqVHVsZ5UrLzXOcsZm+oBlsnLCOqco/7+y\n4wjZzWA7LMvpgmnQPh33Wz8EMDd4CCKQ0t0KWBWJzaYbePr/zDgeba0G0WsJc9yN\nnndX1CPpPQKBgQCRR2vAAYNDRbNv87fHo4RQqwBGYog3SA785aFT12rDiL2RutCN\nFG+g3UaEbqvopO2rLbFepLV1nR68NTJlrxeDz/dcK5AZA9YCv2FVepradt+B1N6g\neqe7OBImIjmDPmHM/jGn57HjcK1g8ru4NtBT8UnmOyHCZ2V1aOuKcaxVpQKBgGv7\nbL12Dher4eL6t89bjr+cegEDKCG/8sKJK0ste4ItlHHel3NEKOtE4E/mwC38pUt2\nrIYNQqrW6h1sCQsWOuOB4L5xoDFIBLCfO4mcm4Rpwyfja/SiI4RN4zWEisll7FNV\nbGKG0jFhZ6QO5WaFAIJotYqeAQvu7mfz8Ls1ZWjFAoGAZdH4NfrEJuf710FXoZwt\n0S0qrnUC95Kl8KMYtSl9/5V2NDO9RtiuAenhMr65w2UhVKfqym+t2pdqZquglAg0\n8uNCt2AYSmyYR11hUQE/0NTH0CsXujh0E4SJnAYfxLATmVOGfAoJ4fhwOK6xZ3ua\nglKuqphBifgUk07RsGkpgmQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-wr4wh@forex-stavkove-poradenstvo.iam.gserviceaccount.com",
+  "client_id": "111343664724984363754",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-wr4wh%40forex-stavkove-poradenstvo.iam.gserviceaccount.com"
+}

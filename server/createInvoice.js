@@ -23,11 +23,13 @@ function generateHeader(doc, invoice) {
       valign: "center",
     })
     .fillColor("#444444")
+    .font("./Roboto-Medium.ttf")
     .fontSize(10)
     .text(" DIGITAL G s.r.o", 200, 50, { align: "right" })
     .text("Cintorínska 187/11", 200, 65, { align: "right" })
     .text("031 04 Liptovský Mikuláš", 200, 80, { align: "right" })
     .text("IČO: 54103363", 200, 95, { align: "right" })
+    .text("DIČ: 2121576897", 200, 110, { align: "right" })
     .moveDown();
 }
 
@@ -35,7 +37,7 @@ function generateCustomerInformation(doc, invoice) {
   doc
     .fillColor("#444444")
     .fontSize(20)
-    .font("Helvetica-Bold")
+    .font("./Roboto-Medium.ttf")
     .text("Faktúra", 50, 160);
 
   generateHr(doc, 185);
@@ -45,9 +47,9 @@ function generateCustomerInformation(doc, invoice) {
   doc
     .fontSize(10)
     .text("Číslo:", 50, customerInformationTop)
-    .font("Helvetica-Bold")
+    .font("./Roboto-Bold.ttf")
     .text(invoice.invoice_nr, 150, customerInformationTop)
-    .font("Helvetica")
+    .font("./Roboto-Medium.ttf")
     .text("Dátum:", 50, customerInformationTop + 15)
     .text(formatDate(new Date()), 150, customerInformationTop + 15)
     .text("Suma Spolu:", 50, customerInformationTop + 30)
@@ -57,11 +59,11 @@ function generateCustomerInformation(doc, invoice) {
       customerInformationTop + 30
     )
 
-    .font("Helvetica-Bold")
+    .font("./Roboto-Bold.ttf")
     .text(invoice.shipping.name, 300, customerInformationTop, {
       align: "right",
     })
-    .font("Helvetica")
+    .font("./Roboto-Medium.ttf")
     .text(invoice.shipping.address, 300, customerInformationTop + 15, {
       align: "right",
     })
@@ -77,7 +79,7 @@ function generateInvoiceTable(doc, invoice) {
   let i;
   const invoiceTableTop = 330;
 
-  doc.font("Helvetica-Bold");
+  doc.font("./Roboto-Bold.ttf");
   generateTableRow(
     doc,
     invoiceTableTop,
@@ -88,7 +90,7 @@ function generateInvoiceTable(doc, invoice) {
     "Spolu"
   );
   generateHr(doc, invoiceTableTop + 20);
-  doc.font("Helvetica");
+  doc.font("./Roboto-Medium.ttf");
 
   for (i = 0; i < invoice.items.length; i++) {
     const item = invoice.items[i];
@@ -118,6 +120,7 @@ function generateInvoiceTable(doc, invoice) {
   );
 
   const paidToDatePosition = subtotalPosition + 20;
+
   generateTableRow(
     doc,
     paidToDatePosition,
@@ -129,7 +132,7 @@ function generateInvoiceTable(doc, invoice) {
   );
 
   const duePosition = paidToDatePosition + 25;
-  doc.font("Helvetica-Bold");
+  doc.font("./Roboto-Bold.ttf");
   generateTableRow(
     doc,
     duePosition,
@@ -143,12 +146,10 @@ function generateInvoiceTable(doc, invoice) {
 }
 
 function generateFooter(doc) {
-  doc
-    .fontSize(10)
-    .text("Neviem či cheš ale ak hej tak si tu pridaj nejaký text", 50, 780, {
-      align: "center",
-      width: 500,
-    });
+  doc.font("./Roboto-Bold.ttf").fontSize(10).text("Strana 1/1", 50, 780, {
+    align: "center",
+    width: 500,
+  });
 }
 
 function generateTableRow(
@@ -174,7 +175,7 @@ function generateHr(doc, y) {
 }
 
 function formatCurrency(cents) {
-  return "€" + (cents / 100).toFixed(2);
+  return (cents / 100).toFixed(2) + "€";
 }
 
 function formatDate(date) {
