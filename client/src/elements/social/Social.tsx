@@ -28,7 +28,7 @@ const Social = ({ pageType }: PageType) => {
                 <div className="row mt--30">
                   <div className="col-lg-12">
                     <ul className="social-icon social-default">
-                      <li style={{ zIndex: -1 }}>
+                      <li style={{ zIndex: 0 }}>
                         {pageType === 'forex' ? (
                           <a target="_blank" href="https://www.facebook.com/poradenstvoforex.sk">
                             <FiFacebook />
@@ -39,7 +39,7 @@ const Social = ({ pageType }: PageType) => {
                           </a>
                         )}
                       </li>
-                      <li style={{ zIndex: -1 }}>
+                      <li style={{ zIndex: 0 }}>
                         {pageType === 'forex' ? (
                           <a target="_blank" href="https://www.tiktok.com/@forexporadenstvo">
                             <FaTiktok />
@@ -50,7 +50,7 @@ const Social = ({ pageType }: PageType) => {
                           </a>
                         )}
                       </li>
-                      <li style={{ zIndex: -1 }}>
+                      <li style={{ zIndex: 0 }}>
                         {pageType === 'forex' ? (
                           <a target="_blank" href="https://www.instagram.com/forexporadenstvo.official/">
                             <FiInstagram />
@@ -61,7 +61,7 @@ const Social = ({ pageType }: PageType) => {
                           </a>
                         )}
                       </li>
-                      <li style={{ zIndex: -1 }}>
+                      <li style={{ zIndex: 0 }}>
                         {pageType === 'forex' ? (
                           <a target="_blank" href="https://t.me/forexporadenstvosk">
                             <FaTelegramPlane />
