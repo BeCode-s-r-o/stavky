@@ -14,20 +14,25 @@ function createInvoice(invoice, path) {
 }
 
 function generateHeader(doc) {
-  /* .image("logo.png", 50, 45, { width: 50 }) */
   doc
+    .rect(50, 40, 120, 40)
+    .fill("#444444")
+    .image("forex.png", 60, 45, {
+      width: 100,
+      align: "center",
+      valign: "center",
+    })
     .fillColor("#444444")
-    .fontSize(20)
-    .text("ACME Inc.", 110, 57)
     .fontSize(10)
-    .text("ACME Inc.", 200, 50, { align: "right" })
-    .text("123 Main Street", 200, 65, { align: "right" })
-    .text("New York, NY, 10025", 200, 80, { align: "right" })
+    .text(" DIGITAL G s.r.o", 200, 50, { align: "right" })
+    .text("Cintorínska 187/11", 200, 65, { align: "right" })
+    .text("031 04 Liptovský Mikuláš", 200, 80, { align: "right" })
+    .text("IČO: 54103363", 200, 95, { align: "right" })
     .moveDown();
 }
 
 function generateCustomerInformation(doc, invoice) {
-  doc.fillColor("#444444").fontSize(20).text("Invoice", 50, 160);
+  doc.fillColor("#444444").fontSize(20).text("Detaily", 50, 160);
 
   generateHr(doc, 185);
 
@@ -35,13 +40,14 @@ function generateCustomerInformation(doc, invoice) {
 
   doc
     .fontSize(10)
-    .text("Invoice Number:", 50, customerInformationTop)
+    .font("Helvetica")
+    .text("Faktúra:", 50, customerInformationTop)
     .font("Helvetica-Bold")
     .text(invoice.invoice_nr, 150, customerInformationTop)
     .font("Helvetica")
-    .text("Invoice Date:", 50, customerInformationTop + 15)
+    .text("Dátum:", 50, customerInformationTop + 15)
     .text(formatDate(new Date()), 150, customerInformationTop + 15)
-    .text("Balance Due:", 50, customerInformationTop + 30)
+    .text("Suma Spolu:", 50, customerInformationTop + 30)
     .text(
       formatCurrency(invoice.subtotal - invoice.paid),
       150,
@@ -74,11 +80,11 @@ function generateInvoiceTable(doc, invoice) {
   generateTableRow(
     doc,
     invoiceTableTop,
-    "Item",
-    "Description",
-    "Unit Cost",
-    "Quantity",
-    "Line Total"
+    "Názov Prouktu",
+    "Popis",
+    "Cena Ks",
+    "Množstvo",
+    "Spolu"
   );
   generateHr(doc, invoiceTableTop + 20);
   doc.font("Helvetica");
@@ -105,7 +111,7 @@ function generateInvoiceTable(doc, invoice) {
     subtotalPosition,
     "",
     "",
-    "Subtotal",
+    "Spolu",
     "",
     formatCurrency(invoice.subtotal)
   );
@@ -116,7 +122,7 @@ function generateInvoiceTable(doc, invoice) {
     paidToDatePosition,
     "",
     "",
-    "Paid To Date",
+    "Zľava",
     "",
     formatCurrency(invoice.paid)
   );
@@ -128,7 +134,7 @@ function generateInvoiceTable(doc, invoice) {
     duePosition,
     "",
     "",
-    "Balance Due",
+    "Cena Spolu",
     "",
     formatCurrency(invoice.subtotal - invoice.paid)
   );
@@ -138,12 +144,10 @@ function generateInvoiceTable(doc, invoice) {
 function generateFooter(doc) {
   doc
     .fontSize(10)
-    .text(
-      "Payment is due within 15 days. Thank you for your business.",
-      50,
-      780,
-      { align: "center", width: 500 }
-    );
+    .text("Neviem či cheš ale ak hej tak si tu pridaj nejaký text", 50, 780, {
+      align: "center",
+      width: 500,
+    });
 }
 
 function generateTableRow(
@@ -169,7 +173,7 @@ function generateHr(doc, y) {
 }
 
 function formatCurrency(cents) {
-  return "$" + (cents / 100).toFixed(2);
+  return "€" + (cents / 100).toFixed(2);
 }
 
 function formatDate(date) {
