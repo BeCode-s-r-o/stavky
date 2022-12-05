@@ -21,12 +21,12 @@ const Nav = () => {
         <ScrollLink to="proces">Proces objednávky</ScrollLink>
       </li> */}
       <li className="has-droupdown">
-        <ScrollLink to="ref" offset={-100}>
+        <ScrollLink to="ref" offset={-10}>
           Referencie
         </ScrollLink>
       </li>
       <li className="has-droupdown">
-        <ScrollLink to="faq" as="a" offset={-100}>
+        <ScrollLink to="faq" as="a" offset={-10}>
           Časté otázky
         </ScrollLink>
       </li>
@@ -43,7 +43,7 @@ const Nav = () => {
           </li>
 
           <li>
-            <ScrollLink to="social" offset={-200}>
+            <ScrollLink to="social" offset={-50}>
               Sledujte nás
             </ScrollLink>
           </li>

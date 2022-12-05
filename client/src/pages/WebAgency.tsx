@@ -14,7 +14,7 @@ const WebAgency = ({ pageType }: PageType) => {
             <div key={index} className="single-slide" style={{ position: 'relative' }}>
               <div className="container">
                 <div className="row align-items-center">
-                  <div className="col-lg-12" style={{ marginTop: '-5em' }}>
+                  <div className="col-lg-12" style={{ marginTop: '-3em' }}>
                     <div className="inner text-center">
                       <span className="subtitle theme-gradient">
                         {pageType === 'forex' ? 'FOREX PORADENSTVO' : 'STÁVKOVÉ PORADENSTVO'}

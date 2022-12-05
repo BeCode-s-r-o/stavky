@@ -18,8 +18,8 @@ const PricingFive = () => {
   const [pricing, setPricing] = useState({
     first: {
       name: 'STARTER',
-      label: '30 dní',
-      value: 69.9,
+      label: '15 dní',
+      value: 39.9,
       id: pageType === 'stavkove' ? 2 : 12,
     },
     second: {
@@ -36,7 +36,7 @@ const PricingFive = () => {
     },
   });
 
-  const isProd = false;
+  const isProd = true;
   const url = isProd ? 'https://api.forexporadenstvo.sk/checkout' : 'http://localhost:5500/checkout';
 
   async function handleToken(token: any, id: number) {
@@ -148,7 +148,7 @@ const PricingFive = () => {
             <div className="pricing-footer">
               <button
                 className="btn-default btn-border"
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: 'pointer', border: '1px solid var(--color-pink)' }}
                 onClick={() => {
                   setCurrentPackage(pricing.first);
                   setIsOpen(true);
@@ -165,8 +165,10 @@ const PricingFive = () => {
       <div className="col-lg-4 col-md-6 col-12 px-md-4 px-5" style={{ zIndex: 0 }}>
         <div className="rn-pricing style-5 active">
           <div className="pricing-table-inner">
-            <div className="pricing-header">
-              <h4 className="title">KOMBI</h4>
+            <div className="pricing-header pt-4">
+              <small style={{ color: 'var(--color-pink)' }}>ODPORÚČANÝ</small>
+              <h4 className="title pt-0">KOMBI</h4>
+
               <div className="pricing" style={{ background: 'var(--color-pink)' }}>
                 <div className="price-wrapper">
                   <span className="price">{pricing.second.value}0</span>
@@ -247,7 +249,7 @@ const PricingFive = () => {
             </div>
             <div className="pricing-footer">
               <button
-                className="btn-default btn-border"
+                className="btn-default btn-small"
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
                   setCurrentPackage(pricing.second);
@@ -333,7 +335,7 @@ const PricingFive = () => {
             <div className="pricing-footer">
               <button
                 className="btn-default btn-border"
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: 'pointer', border: '1px solid var(--color-pink)' }}
                 onClick={() => {
                   setCurrentPackage(pricing.third);
                   setIsOpen(true);

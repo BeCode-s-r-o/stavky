@@ -15,16 +15,20 @@ const CalltoActionSix = ({ pageType }: PageType) => {
           <div className="col-lg-6 col-12">
             <div className="inner">
               <div className="content text-start">
-                <h6 className="subtitle">{callToActionData.title}</h6>
+                <h6 className="subtitle px-4" style={{ textAlign: window.innerWidth > 800 ? 'left' : 'center' }}>
+                  {callToActionData.title}
+                </h6>
               </div>
             </div>
           </div>
           <div className="col-lg-4 col-12">
-            <div className="call-to-btn text-start text-lg-right mt_md--20 mt_sm--20">
-              <Link className="btn-default" href="#packages" to="packages">
-                {callToActionData.btnText}
-              </Link>
-            </div>
+            <center>
+              <div className="call-to-btn  text-lg-right mt_md--20 mt_sm--20">
+                <Link className="btn-default" href="#packages" to="packages">
+                  {callToActionData.btnText}
+                </Link>
+              </div>
+            </center>
           </div>
         </div>
       </div>
