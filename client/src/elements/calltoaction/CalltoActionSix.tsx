@@ -22,12 +22,14 @@ const CalltoActionSix = ({ pageType }: PageType) => {
             </div>
           </div>
           <div className="col-lg-4 col-12">
+            {/* @ts-ignore */}
             <center>
               <div className="call-to-btn  text-lg-right mt_md--20 mt_sm--20">
                 <Link className="btn-default" href="#packages" to="packages">
                   {callToActionData.btnText}
                 </Link>
               </div>
+              {/* @ts-ignore */}
             </center>
           </div>
         </div>

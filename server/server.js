@@ -58,6 +58,7 @@ app.post("/checkout", async (req, res) => {
     async function sendEmail() {
       // Generate test SMTP service account from ethereal.email
       // Only needed if you don't have a real mail account for testing
+      invoiceNumber = await Date.now();
       const invoice = {
         shipping: {
           name: token.card.name,
@@ -77,16 +78,17 @@ app.post("/checkout", async (req, res) => {
         discount: Math.round(
           storeItem.priceInCents - storeItem.priceInCents * discount
         ),
-        invoice_nr: key,
+        invoice_nr: invoiceNumber,
         pageType: package.id > 9 ? "forex " : "stavkove",
       };
-      createInvoice(invoice, `faktura_${key + ".pdf"}`);
+      createInvoice(invoice, `faktura_${invoiceNumber + ".pdf"}`);
       try {
         const docRef = db
           .collection(`objednávky-${package.id > 9 ? "forex" : "stavkove"}`)
-          .doc(key);
+          .doc(String(invoiceNumber));
         await docRef.set({
           id: key,
+          číslo: invoiceNumber,
           meno: token.card.name,
           adresa: token.card.address_line1,
           mesto: token.card.address_city,
@@ -111,30 +113,70 @@ app.post("/checkout", async (req, res) => {
           pass: process.env.ACOUNT_PASSWORD, // generated ethereal password
         },
       });
-
       // send mail with defined transport object
       let info = await transporter.sendMail({
         from:
           package.id > 9
-            ? '"Forex Poradenstvo" <info@forexporadenstvo.sk>'
-            : '"Stavkove Poradenstvo" <info@stavkoveporadenstvo.sk>', // sender address
+            ? `"Objednávka č. ${invoiceNumber} | Forex Poradenstvo" <info@forexporadenstvo.sk>`
+            : `"Objednávka č. ${invoiceNumber} | Stavkove Poradenstvo" <info@stavkoveporadenstvo.sk>`, // sender address
         to: token.email, // list of receivers
         subject: "Vaša Objednávka", // Subject line
-        text: `Dobrý deň ${token.card.name}, 
+        html: `<div style=text-align:center;><h2>Dobrý deň ${
+          token.card.name
+        }</h2>
+
+        <h1>ĎAKUJEME ZA PLATBU A DÔVERU</h1> 
         
-Text musí začinať tu aby si mal spravne odsadenie
-objednaný balík: ${storeItem.name} v cene ${
-          (storeItem.priceInCents / 100) * discount + " €"
-        }`,
+        <p>Objednávka a platba je <strong>úspešne</strong> zrealizovaná. V prílohe <br/>
+        nájdete <strong>faktúru</strong> za uhradené poradenské služby. Aktuálne <br/> 
+        musíte vykonať <strong>3 kroky pre aktiváciu</strong>  členstva.</p>  
+
+        <p>Stiahnite si aplikáciu <strong>Telegram Messenger</strong> pre odber a komunikáciu <br/>
+        Napíšte nám na náš <strong>support chat</strong> na telegrame <strong>@digitalgroupsupport</strong> <br/>
+        Odošlite nám <strong>screenshot e-mailu</strong> s <strong>potvrdením o úhrade </strong> <br/>
+        služby
+        </p>
+
+        <h1>HOTOVO! DO 48 HODÍN VÁS BUDEME <br/> KONTAKTOVAŤ</h1>
+
+        <p>Do <strong>48 hodín</strong> Vás bude kontaktovať náš <strong>support team</strong><br/> s ďalšími inštrukciami, uvítacím <br/>
+        <strong>e-bookom</strong> a potrebnými <strong>linkami</strong> na odber našich <strong>alertov</strong>.
+        </p>
+
+        <hr>
+        <h1>VAŠA OBJEDNÁVKA č. ${invoiceNumber} | ${
+          package.id > 9 ? "Forex" : "Stavkove"
+        } Poradenstvo</h1>
+        <h2>${storeItem.name} v hodnote ${
+          (storeItem.priceInCents / 100).toFixed(2) + "€"
+        } (s DPH)</h2>
+        <h2>FAKTURAČNÉ ÚDAJE</h2>
+
+        <p>${token.card.name}</p>
+        <p>${token.email}</p>
+        <p>${token.card.address_line1}</p>
+        <p>${token.card.address_zip + ", " + token.card.address_city}</p>
+        <p>${token.card.address_country}</p>
+
+        <hr>
+
+        <h1>V PRÍPADE AKÝCHKOĽVEK OTÁZOK NÁS  <br/> NEVÁHAJTE KONTAKTOVAŤ</h1>
+        <p>
+${package.id > 9 ? "info@forexporadenstvo.sk" : "info@stavkoveporadenstvo.sk"}
+        </p>
+        <h2>PRAJEME VÁM PRÍJEMNY DEŇ</h2>
+        <p>tím ${
+          package.id > 9 ? "Forex" : "Stavkove"
+        } Poradenstvo! </p></div>`,
         attachments: [
           {
-            filename: `faktura_${key + ".pdf"}`,
-            path: `faktura_${key + ".pdf"}`,
+            filename: `faktura_${invoiceNumber + ".pdf"}`,
+            path: `faktura_${invoiceNumber + ".pdf"}`,
             contentType: "application/pdf",
           },
         ], // plain text body
       });
-      fs.unlink(`faktura_${key + ".pdf"}`, (err) => {
+      fs.unlink(`faktura_${invoiceNumber + ".pdf"}`, (err) => {
         if (err) {
           throw err;
         }
