@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './assets/scss/style-forex.scss';
 import Copyright from './common/footer/Copyright';
+import NewsletterOne from './common/footer/NewsletterOne';
 import PageScrollTop from './components/pageToTop/PageScrollTop';
 import RnAccordion from './elements/accordion/RnAccordion';
 import CalltoAction from './elements/calltoaction/CalltoAction';
@@ -72,6 +73,7 @@ const AppForex = () => {
           <WhyUs pageType={pageType} />
           <Social pageType={pageType} />
           {/* <BlogGridView pageType={pageType} /> */}
+          <NewsletterOne pageType={pageType} />
           <Contact pageType={pageType} />
           <Copyright pageType={pageType} />
         </PageScrollTop>

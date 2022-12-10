@@ -7,7 +7,9 @@ const ServiceList = [
     icon: <FiActivity />,
     title: 'INOVATÍVNE OVLÁDANIE',
     description:
-      'Obchodné signály zadávate do modernej aplikácie. Vďaka jednoduchému ovládaniu to zvládne absolútne každý.',
+      process.env.REACT_APP_WEBSITE_TYPE === 'forex'
+        ? 'Obchodné signály zadávate do modernej aplikácie. Vďaka jednoduchému ovládaniu to zvládne absolútne každý.'
+        : 'Stávkové tipy zadávate do modernej aplikácie. Vďaka jednoduchému ovládaniu to zvládne absolútne každý.',
   },
   {
     icon: <FiCast />,

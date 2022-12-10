@@ -11,12 +11,12 @@ const WhyUs = ({ pageType }: PageType) => {
           <div className="rwt-callto-action-area rn-section-gapBottom">
             <div className="wrapper">
               <div className="row">
-                <div className="col-lg-12 mb--40">
+                <div className="col-lg-12 ">
                   <SectionTitle
                     textAlign="text-center"
                     radiusRounded=""
                     subtitle="ZAČNITE UŽ DNES"
-                    title="Jednoduchý pasívny príjem"
+                    title="Jednoduchý zárobok"
                     description=""
                   />
                 </div>

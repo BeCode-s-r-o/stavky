@@ -21,7 +21,7 @@ const Nav = () => {
         <ScrollLink to="proces">Proces objednávky</ScrollLink>
       </li> */}
       <li className="has-droupdown">
-        <ScrollLink to="ref" offset={-10}>
+        <ScrollLink to="ref" offset={-80}>
           Referencie
         </ScrollLink>
       </li>

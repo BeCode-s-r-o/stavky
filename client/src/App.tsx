@@ -26,6 +26,7 @@ import { useEffect } from 'react';
 import './assets/scss/style.scss';
 import Copyright from './common/footer/Copyright';
 import WhyUs from './pages/WhyUs';
+import NewsletterOne from './common/footer/NewsletterOne';
 
 const App = () => {
   const pageType = process.env.REACT_APP_WEBSITE_TYPE;
@@ -91,6 +92,7 @@ const App = () => {
           <WhyUs pageType={pageType} />
           <Social pageType={pageType} />
           {/* <BlogGridView pageType={pageType} /> */}
+          <NewsletterOne pageType={pageType} />
           <Contact pageType={pageType} />
           <Copyright pageType={pageType} />
         </PageScrollTop>

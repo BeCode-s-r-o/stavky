@@ -2,7 +2,7 @@ import { Link } from 'react-scroll';
 
 const callToActionData = {
   title:
-    'Delí Vás už len posledný krok od spolupráce. Prezrite si ešte raz našu ponuku služieb. Zvoľte si ten správny balík pre Vás.',
+    'Delí Vás už len posledný krok od spolupráce. Prezrite si ešte raz našu ponuku služieb. Zvoľte si ten správny balík pre Váš online zárobok.',
   subtitle: 'Finest choice for your home & office',
   btnText: 'PONUKA SLUŽIEB',
 };

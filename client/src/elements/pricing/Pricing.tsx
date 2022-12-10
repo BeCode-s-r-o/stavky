@@ -17,8 +17,8 @@ const Pricing = ({ pageType }: PageType) => {
                     <SectionTitle
                       textAlign="text-center"
                       radiusRounded=""
-                      subtitle="CENNÍK"
-                      title="Služby, ktoré ponúkame"
+                      subtitle="AKTUÁLNY CENNÍK"
+                      title="PONUKA SLUŽIEB"
                       description=""
                     />
                   </div>

@@ -18,8 +18,8 @@ const PricingFive = () => {
   const [pricing, setPricing] = useState({
     first: {
       name: 'STARTER',
-      label: '15 dní',
-      value: 39.9,
+      label: '30 dní',
+      value: 69.9,
       id: pageType === 'stavkove' ? 2 : 12,
     },
     second: {
@@ -106,11 +106,12 @@ const PricingFive = () => {
                 </li>
               </ul>
             </div>
-            <div className="container w-50 mb-5">
+            <div className="container w-50 mb-0">
               <p style={{ textAlign: 'center', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
                 VYBRAŤ DĹŽKU ČLENSTVA:
               </p>
               <select
+                className="my-5"
                 value={JSON.stringify(pricing.first)}
                 onChange={(e) => {
                   setPricing({ ...pricing, first: JSON.parse(e.target.value) });
@@ -118,6 +119,7 @@ const PricingFive = () => {
               >
                 <option
                   value={JSON.stringify({
+                    name: 'STARTER',
                     label: '15 dní',
                     value: 39.9,
                     id: pageType === 'stavkove' ? 1 : 11,
@@ -127,6 +129,7 @@ const PricingFive = () => {
                 </option>
                 <option
                   value={JSON.stringify({
+                    name: 'STARTER',
                     label: '30 dní',
                     value: 69.9,
                     id: pageType === 'stavkove' ? 2 : 12,
@@ -136,6 +139,7 @@ const PricingFive = () => {
                 </option>
                 <option
                   value={JSON.stringify({
+                    name: 'STARTER',
                     label: '90 dní',
                     value: 149.9,
                     id: pageType === 'stavkove' ? 3 : 13,
@@ -205,11 +209,12 @@ const PricingFive = () => {
                 </li>
               </ul>
             </div>
-            <div className="container w-50 mb-5">
+            <div className="container w-50 mb-0">
               <p style={{ textAlign: 'center', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
                 VYBRAŤ DĹŽKU ČLENSTVA:
               </p>
               <select
+                className="my-5"
                 value={JSON.stringify(pricing.second)}
                 onChange={(e) => {
                   setPricing({
@@ -220,6 +225,7 @@ const PricingFive = () => {
               >
                 <option
                   value={JSON.stringify({
+                    name: 'KOMBI',
                     label: '30 dní',
                     value: 129.9,
                     id: pageType === 'stavkove' ? 4 : 14,
@@ -229,6 +235,7 @@ const PricingFive = () => {
                 </option>
                 <option
                   value={JSON.stringify({
+                    name: 'KOMBI',
                     label: '90 dní',
                     value: 219.9,
                     id: pageType === 'stavkove' ? 5 : 15,
@@ -238,6 +245,7 @@ const PricingFive = () => {
                 </option>
                 <option
                   value={JSON.stringify({
+                    name: 'KOMBI',
                     label: '180 dní',
                     value: 299.9,
                     id: pageType === 'stavkove' ? 6 : 16,
@@ -250,7 +258,7 @@ const PricingFive = () => {
             <div className="pricing-footer">
               <button
                 className="btn-default btn-small"
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: 'pointer', minHeight: '50px', minWidth: '130px' }}
                 onClick={() => {
                   setCurrentPackage(pricing.second);
                   setIsOpen(true);
@@ -292,11 +300,12 @@ const PricingFive = () => {
                 </li>
               </ul>
             </div>
-            <div className="container w-50 mb-5">
+            <div className="container w-50 mb-0">
               <p style={{ textAlign: 'center', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
                 VYBRAŤ DĹŽKU ČLENSTVA:
               </p>
               <select
+                className="my-5"
                 value={JSON.stringify(pricing.third)}
                 onChange={(e) => {
                   setPricing({ ...pricing, third: JSON.parse(e.target.value) });
@@ -304,6 +313,7 @@ const PricingFive = () => {
               >
                 <option
                   value={JSON.stringify({
+                    name: 'EXCLUSIVE',
                     label: '30 dní',
                     value: 99.9,
                     id: pageType === 'stavkove' ? 7 : 17,
@@ -313,6 +323,7 @@ const PricingFive = () => {
                 </option>
                 <option
                   value={JSON.stringify({
+                    name: 'EXCLUSIVE',
                     label: '90 dní',
                     value: 169.9,
                     id: pageType === 'stavkove' ? 8 : 18,
@@ -322,6 +333,7 @@ const PricingFive = () => {
                 </option>
                 <option
                   value={JSON.stringify({
+                    name: 'EXCLUSIVE',
                     label: '180 dní',
                     value: 239.9,
                     id: pageType === 'stavkove' ? 9 : 19,
@@ -334,7 +346,7 @@ const PricingFive = () => {
 
             <div className="pricing-footer">
               <button
-                className="btn-default btn-border"
+                className="btn-default btn-border "
                 style={{ cursor: 'pointer', border: '1px solid var(--color-pink)' }}
                 onClick={() => {
                   setCurrentPackage(pricing.third);
@@ -366,8 +378,9 @@ const PricingFive = () => {
           },
         }}
       >
-        <h2>Máte zľavový kód?</h2>
+        <h2 style={{ textTransform: 'uppercase' }}>Máte zľavový kód?</h2>
         <input className="mb-5" value={code.toUpperCase()} onChange={checkForCode} />
+
         {currentDiscount > 0 && (
           <p style={{ color: 'green', textAlign: 'center' }}>
             Zľava {currentDiscount}%{' - '}
@@ -421,6 +434,11 @@ const PricingFive = () => {
           <button className="btn btn-default btn-border btn-small mt-4" onClick={() => setIsOpen(false)}>
             Zatvoriť
           </button>
+          <center>
+            <small style={{ textAlign: 'center', fontSize: '10px' }}>
+              Pokračovaním v objednávke súhlasíte s Obchodnými podmienkami a Spracovaním osobných údajov
+            </small>
+          </center>
         </div>
       </Modal>
       <ToastContainer />
