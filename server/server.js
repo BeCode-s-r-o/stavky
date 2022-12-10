@@ -65,6 +65,7 @@ app.post("/checkout", async (req, res) => {
           address: token.card.address_line1,
           city: token.card.address_city,
           postal_code: token.card.address_zip,
+          email: token.email,
         },
         items: [
           {
@@ -121,10 +122,10 @@ app.post("/checkout", async (req, res) => {
             : `"Objednávka č. ${invoiceNumber} | Stavkove Poradenstvo" <info@stavkoveporadenstvo.sk>`, // sender address
         to: token.email, // list of receivers
         subject: "Vaša Objednávka", // Subject line
-        html: `<div style=text-align:center;><h2>Dobrý deň ${
+        html: `<div style=text-align:center;><h2>Dobrý deň <strong>${
           token.card.name
-        }</h2>
-
+        }</strong></h2>
+        <i class='fab fa-node-js'></i>
         <h1>ĎAKUJEME ZA PLATBU A DÔVERU</h1> 
         
         <p>Objednávka a platba je <strong>úspešne</strong> zrealizovaná. V prílohe <br/>

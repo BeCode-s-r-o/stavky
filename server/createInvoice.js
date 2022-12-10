@@ -25,11 +25,27 @@ function generateHeader(doc, invoice) {
     .fillColor("#444444")
     .font("./Roboto-Medium.ttf")
     .fontSize(10)
-    .text(" DIGITAL G s.r.o", 200, 50, { align: "right" })
-    .text("Cintorínska 187/11", 200, 65, { align: "right" })
-    .text("031 04 Liptovský Mikuláš", 200, 80, { align: "right" })
-    .text("IČO: 54103363", 200, 95, { align: "right" })
-    .text("DIČ: 2121576897", 200, 110, { align: "right" })
+    .fillColor("#aaaaaa")
+    .text("DODÁVATEĽ", 50, 95)
+    .fillColor("#000000")
+    .text("DIGITAL G s.r.o", 50, 110)
+    .text("Cintorínska 187/11", 50, 125)
+    .text("031 04 Liptovský Mikuláš", 50, 140)
+    .text("IČO: 54103363", 50, 155)
+    .text("DIČ: 2121576897", 50, 170)
+    .fillColor("#aaaaaa")
+    .text("ODOBERATEĽ", 250, 95)
+    .font("./Roboto-Bold.ttf")
+    .fillColor("#000000")
+    .text(invoice.shipping.name, 250, 110)
+    .font("./Roboto-Medium.ttf")
+    .text(invoice.shipping.address, 250, 125)
+    .text(
+      `${invoice.shipping.postal_code + ", " + invoice.shipping.city}`,
+      250,
+      140
+    )
+    .text(invoice.shipping.email, 250, 155)
     .moveDown();
 }
 
@@ -38,11 +54,11 @@ function generateCustomerInformation(doc, invoice) {
     .fillColor("#444444")
     .fontSize(20)
     .font("./Roboto-Medium.ttf")
-    .text("Faktúra", 50, 160);
+    .text("Faktúra", 50, 205);
 
-  generateHr(doc, 185);
+  generateHr(doc, 235);
 
-  const customerInformationTop = 200;
+  const customerInformationTop = 240;
 
   doc
     .fontSize(10)
@@ -50,44 +66,37 @@ function generateCustomerInformation(doc, invoice) {
     .font("./Roboto-Bold.ttf")
     .text(invoice.invoice_nr, 150, customerInformationTop)
     .font("./Roboto-Medium.ttf")
-    .text("Dátum:", 50, customerInformationTop + 15)
-    .text(formatDate(new Date()), 150, customerInformationTop + 15)
-    .text("Suma Spolu:", 50, customerInformationTop + 30)
+    .text("Dátum vystavenia:", 50, customerInformationTop + 15)
+    .text(formatDate(new Date(), 0), 150, customerInformationTop + 15)
+    .text("Dátum dodania:", 50, customerInformationTop + 30)
+    .text(formatDate(new Date(), 0), 150, customerInformationTop + 30)
+    .text("Dátum splatnosti:", 50, customerInformationTop + 45)
+    .text(formatDate(new Date(), 14), 150, customerInformationTop + 45)
     .text(
-      formatCurrency(invoice.subtotal - invoice.discount),
-      150,
-      customerInformationTop + 30
-    )
+      "Uhrada bola vykonaná cez platobnú bránu STRIPE. Služba je dodávaná v digitálnej podobe",
+      50,
+      customerInformationTop + 70,
+      {
+        align: "center",
+      }
+    );
 
-    .font("./Roboto-Bold.ttf")
-    .text(invoice.shipping.name, 300, customerInformationTop, {
-      align: "right",
-    })
-    .font("./Roboto-Medium.ttf")
-    .text(invoice.shipping.address, 300, customerInformationTop + 15, {
-      align: "right",
-    })
-    .text(invoice.shipping.city, 300, customerInformationTop + 30, {
-      align: "right",
-    })
-    .moveDown();
-
-  generateHr(doc, 252);
+  generateHr(doc, 337);
 }
 
 function generateInvoiceTable(doc, invoice) {
   let i;
-  const invoiceTableTop = 330;
+  const invoiceTableTop = 360;
 
   doc.font("./Roboto-Bold.ttf");
   generateTableRow(
     doc,
     invoiceTableTop,
-    "Názov Prouktu",
-    "Popis",
-    "Cena Ks",
-    "Množstvo",
-    "Spolu"
+    "Názov Produktu",
+    "Počet",
+    "Cena bez DPH",
+    "DPH",
+    "Spolu s DPH"
   );
   generateHr(doc, invoiceTableTop + 20);
   doc.font("./Roboto-Medium.ttf");
@@ -99,9 +108,9 @@ function generateInvoiceTable(doc, invoice) {
       doc,
       position,
       item.item,
-      item.description,
-      formatCurrency(item.amount / item.quantity),
       item.quantity,
+      formatCurrency(item.amount * 0.8),
+      "20 %",
       formatCurrency(item.amount)
     );
 
@@ -114,16 +123,25 @@ function generateInvoiceTable(doc, invoice) {
     subtotalPosition,
     "",
     "",
-    "Spolu",
+    "Základ DPH 20 %",
     "",
-    formatCurrency(invoice.subtotal)
+    formatCurrency(invoice.subtotal * 0.8)
   );
 
   const paidToDatePosition = subtotalPosition + 20;
-
   generateTableRow(
     doc,
     paidToDatePosition,
+    "",
+    "",
+    "DPH 20%",
+    "",
+    formatCurrency(invoice.subtotal * 0.2)
+  );
+  const discountPosition = paidToDatePosition + 20;
+  generateTableRow(
+    doc,
+    discountPosition,
     "",
     "",
     "Zľava",
@@ -131,14 +149,14 @@ function generateInvoiceTable(doc, invoice) {
     formatCurrency(invoice.discount)
   );
 
-  const duePosition = paidToDatePosition + 25;
+  const duePosition = paidToDatePosition + 40;
   doc.font("./Roboto-Bold.ttf");
   generateTableRow(
     doc,
     duePosition,
     "",
     "",
-    "Cena Spolu",
+    "Celkom",
     "",
     formatCurrency(invoice.subtotal - invoice.discount)
   );
@@ -164,8 +182,8 @@ function generateTableRow(
   doc
     .fontSize(10)
     .text(item, 50, y)
-    .text(description, 150, y)
-    .text(unitCost, 280, y, { width: 90, align: "right" })
+    .text(description, 250, y)
+    .text(unitCost, 310, y, { width: 90, align: "left" })
     .text(quantity, 370, y, { width: 90, align: "right" })
     .text(lineTotal, 0, y, { align: "right" });
 }
@@ -178,7 +196,8 @@ function formatCurrency(cents) {
   return (cents / 100).toFixed(2) + "€";
 }
 
-function formatDate(date) {
+function formatDate(date, plusDays) {
+  date.setDate(date.getDate() + plusDays);
   const day = date.getDate();
   const month = date.getMonth() + 1;
   const year = date.getFullYear();

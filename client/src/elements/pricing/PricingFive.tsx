@@ -26,17 +26,17 @@ const PricingFive = () => {
       name: 'COMBI',
       label: '30 dní',
       value: 129.9,
-      id: pageType === 'stavkove' ? 5 : 15,
+      id: pageType === 'stavkove' ? 4 : 14,
     },
     third: {
       name: 'EXCLUSIVE',
       label: '30 dní',
       value: 99.9,
-      id: pageType === 'stavkove' ? 8 : 18,
+      id: pageType === 'stavkove' ? 7 : 17,
     },
   });
 
-  const isProd = true;
+  const isProd = false;
   const url = isProd ? 'https://api.forexporadenstvo.sk/checkout' : 'http://localhost:5500/checkout';
 
   async function handleToken(token: any, id: number) {
