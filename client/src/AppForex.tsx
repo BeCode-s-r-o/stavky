@@ -73,7 +73,7 @@ const AppForex = () => {
           <WhyUs pageType={pageType} />
           <Social pageType={pageType} />
           {/* <BlogGridView pageType={pageType} /> */}
-          <NewsletterOne pageType={pageType} />
+          <NewsletterOne />
           <Contact pageType={pageType} />
           <Copyright pageType={pageType} />
         </PageScrollTop>

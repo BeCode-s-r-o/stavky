@@ -36,7 +36,7 @@ const PricingFive = () => {
     },
   });
 
-  const isProd = false;
+  const isProd = true;
   const url = isProd ? 'https://api.forexporadenstvo.sk/checkout' : 'http://localhost:5500/checkout';
 
   async function handleToken(token: any, id: number) {
