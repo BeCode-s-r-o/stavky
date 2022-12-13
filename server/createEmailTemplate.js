@@ -26,9 +26,9 @@ const createEmailTemplate = ({
   <strong>e-bookom</strong> a potrebnými <strong>linkami</strong> na odber našich <strong>alertov</strong>.
   </p>
 
-  <hr>
-  <h1>VAŠA OBJEDNÁVKA č. ${invoiceNumber} | ${
-    isForex ? "Forex" : "Stavkove"
+  <hr style=width:50%;>
+  <h1>VAŠA OBJEDNÁVKA č. ${invoiceNumber} <br/> ${
+    isForex ? "Forex" : "Stávkové"
   } Poradenstvo</h1>
   <h2>${storeItem.name} v hodnote ${
     (storeItem.priceInCents / 100).toFixed(2) + "€"
@@ -41,28 +41,28 @@ const createEmailTemplate = ({
   <p>${address.zip + ", " + address.city}</p>
   <p>${address.country}</p>
 
-  <hr>
+  <hr style=width:50%;>
 
   <h1>V PRÍPADE AKÝCHKOĽVEK OTÁZOK NÁS  <br/> NEVÁHAJTE KONTAKTOVAŤ</h1>
   <p>
 ${isForex ? "info@forexporadenstvo.sk" : "info@stavkoveporadenstvo.sk"}
   </p>
   <h2>PRAJEME VÁM PRÍJEMNY DEŇ</h2>
-  <p><strong>tím ${isForex ? "Forex" : "Stavkove"} Poradenstvo! </strong></p>
+  <p><strong>tím ${isForex ? "Forex" : "Stávkové"} Poradenstvo! </strong></p>
 
-  <div>
+  <div style=padding:20px;>
     <a href=https://www.facebook.com/${
       isForex ? "poradenstvoforex" : "poradenstvostavkove"
-    }.sk style=margin:5px><img src = 'cid:facebook' alt="facebook logo" width="60" height="60" /></a> 
+    }.sk style=margin:5px><img src = 'cid:facebook' alt="facebook logo" width="45" height="45" /></a> 
     <a href=https://www.instagram.com/${
       isForex ? "forexporadenstvo" : "stavkoveporadenstvo"
-    }.official/ style=margin:5px><img src = 'cid:instagram' alt="instagram logo" width="60" height="60"/></a>
+    }.official/ style=margin:5px><img src = 'cid:instagram' alt="instagram logo" width="45" height="45"/></a>
     <a href=https://www.tiktok.com/${
       isForex ? "@forexporadenstvo" : "@stavkoveporadenstvo"
-    } style=margin:5px><img src = 'cid:tiktok' alt="tiktok logo" width="60" height="60"/></a>
+    } style=margin:5px><img src = 'cid:tiktok' alt="tiktok logo" width="45" height="45"/></a>
     <a href=https://t.me/${
       isForex ? "forex" : "stavkove"
-    }poradenstvosk style=margin:5px><img src = 'cid:telegram' alt="telegram logo" width="60" height="60"/></a>
+    }poradenstvosk style=margin:5px><img src = 'cid:telegram' alt="telegram logo" width="45" height="45"/></a>
   </div>
   </div>`;
 };

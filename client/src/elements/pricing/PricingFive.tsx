@@ -395,6 +395,7 @@ const PricingFive = () => {
               {/* @ts-ignore */}
               <StripeCheckout
                 locale="auto"
+                panelLabel="Zaplatiť"
                 currency="EUR"
                 stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
                 token={(e) => handleToken(e, currentPackage?.id)}
@@ -419,6 +420,7 @@ const PricingFive = () => {
             <>
               {/* @ts-ignore */}
               <StripeCheckout
+                panelLabel="Zaplatiť"
                 locale="auto"
                 currency="EUR"
                 stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
