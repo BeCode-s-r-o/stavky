@@ -16,7 +16,7 @@ function createInvoice(invoice, path) {
 function generateHeader(doc, invoice) {
   doc
     .rect(50, 40, 120, 40)
-    .fill("#444444")
+    .fill(`${invoice.pageType === "forex" ? "#463acc" : "#3b055b"}`)
     .image(`${invoice.pageType}.png`, 60, 45, {
       width: 100,
       align: "center",
@@ -73,7 +73,7 @@ function generateCustomerInformation(doc, invoice) {
     .text("Dátum splatnosti:", 50, customerInformationTop + 45)
     .text(formatDate(new Date(), 14), 150, customerInformationTop + 45)
     .text(
-      "Uhrada bola vykonaná cez platobnú bránu STRIPE. Služba je dodávaná v digitálnej podobe",
+      "Uhrada bola vykonaná cez platobnú bránu STRIPE. Služba je dodávaná v digitálnej podobe.",
       50,
       customerInformationTop + 70,
       {
@@ -93,6 +93,7 @@ function generateInvoiceTable(doc, invoice) {
     doc,
     invoiceTableTop,
     "Názov Produktu",
+    "Trvanie",
     "Počet",
     "Cena bez DPH",
     "DPH",
@@ -108,6 +109,7 @@ function generateInvoiceTable(doc, invoice) {
       doc,
       position,
       item.item,
+      item.duration,
       item.quantity,
       formatCurrency(item.amount * 0.8),
       "20 %",
@@ -123,6 +125,7 @@ function generateInvoiceTable(doc, invoice) {
     subtotalPosition,
     "",
     "",
+    "",
     "Základ DPH 20 %",
     "",
     formatCurrency(invoice.subtotal * 0.8)
@@ -134,6 +137,7 @@ function generateInvoiceTable(doc, invoice) {
     paidToDatePosition,
     "",
     "",
+    "",
     "DPH 20%",
     "",
     formatCurrency(invoice.subtotal * 0.2)
@@ -142,6 +146,7 @@ function generateInvoiceTable(doc, invoice) {
   generateTableRow(
     doc,
     discountPosition,
+    "",
     "",
     "",
     "Zľava",
@@ -156,10 +161,12 @@ function generateInvoiceTable(doc, invoice) {
     duePosition,
     "",
     "",
+    "",
     "Celkom",
     "",
     formatCurrency(invoice.subtotal - invoice.discount)
   );
+
   doc.font("Helvetica");
 }
 
@@ -174,6 +181,7 @@ function generateTableRow(
   doc,
   y,
   item,
+  duration,
   description,
   unitCost,
   quantity,
@@ -182,6 +190,7 @@ function generateTableRow(
   doc
     .fontSize(10)
     .text(item, 50, y)
+    .text(duration, 170, y)
     .text(description, 250, y)
     .text(unitCost, 310, y, { width: 90, align: "left" })
     .text(quantity, 370, y, { width: 90, align: "right" })

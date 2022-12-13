@@ -45,6 +45,7 @@ const PricingFive = () => {
       token,
       package: { id: id, quantity: 1 },
       discount: 1,
+      isForex: pageType === 'forex',
     });
 
     if (response.status === 200) {

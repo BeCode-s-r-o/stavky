@@ -4,7 +4,7 @@ const storeItems = new Map([
     {
       priceInCents: 3990,
       name: "Stavkove Starter 15",
-      description: "Balík s trvaním 15 dni",
+      duration: "15 dni",
     },
   ],
   [
@@ -12,7 +12,7 @@ const storeItems = new Map([
     {
       priceInCents: 6990,
       name: "Stavkove Starter 30",
-      description: "Balík s trvaním 30 dni",
+      duration: "30 dni",
     },
   ],
   [
@@ -20,7 +20,7 @@ const storeItems = new Map([
     {
       priceInCents: 14990,
       name: "Stavkove Starter 90",
-      description: "Balík s trvaním 90 dni",
+      duration: "90 dni",
     },
   ],
   [
@@ -28,7 +28,7 @@ const storeItems = new Map([
     {
       priceInCents: 12990,
       name: "Stavkove Kombi 30",
-      description: "Balík s trvaním 30 dni",
+      duration: "30 dni",
     },
   ],
   [
@@ -36,7 +36,7 @@ const storeItems = new Map([
     {
       priceInCents: 21990,
       name: "Stavkove Kombi 90",
-      description: "Balík s trvaním 90 dni",
+      duration: "90 dni",
     },
   ],
   [
@@ -44,7 +44,7 @@ const storeItems = new Map([
     {
       priceInCents: 29990,
       name: "Stavkove Kombi 180",
-      description: "Balík s trvaním 180 dni",
+      duration: "180 dni",
     },
   ],
   [
@@ -52,7 +52,7 @@ const storeItems = new Map([
     {
       priceInCents: 9900,
       name: "Stavkove Exclusive 30",
-      description: "Balík s trvaním 30 dni",
+      duration: "30 dni",
     },
   ],
   [
@@ -60,7 +60,7 @@ const storeItems = new Map([
     {
       priceInCents: 16990,
       name: "Stavkove Exclusive 90",
-      description: "Balík s trvaním 90 dni",
+      duration: "90 dni",
     },
   ],
   [
@@ -68,7 +68,7 @@ const storeItems = new Map([
     {
       priceInCents: 23990,
       name: "Stavkove Exclusive 180",
-      description: "Balík s trvaním ",
+      duration: "180 dni",
     },
   ],
   [
@@ -76,7 +76,7 @@ const storeItems = new Map([
     {
       priceInCents: 3990,
       name: "Forex Starter 15",
-      description: "Balík s trvaním 15 dni",
+      duration: "15 dni",
     },
   ],
   [
@@ -84,7 +84,7 @@ const storeItems = new Map([
     {
       priceInCents: 6990,
       name: "Forex Starter 30",
-      description: "Balík s trvaním 30 dni",
+      duration: "30 dni",
     },
   ],
   [
@@ -92,7 +92,7 @@ const storeItems = new Map([
     {
       priceInCents: 14990,
       name: "Forex Starter 90",
-      description: "Balík s trvaním 90 dni",
+      duration: "90 dni",
     },
   ],
   [
@@ -100,7 +100,7 @@ const storeItems = new Map([
     {
       priceInCents: 12990,
       name: "Forex Kombi 30",
-      description: "Balík s trvaním 30 dni",
+      duration: "30 dni",
     },
   ],
   [
@@ -108,7 +108,7 @@ const storeItems = new Map([
     {
       priceInCents: 21990,
       name: "Forex Kombi 90",
-      description: "Balík s trvaním 90 dni",
+      duration: "90 dni",
     },
   ],
   [
@@ -116,7 +116,7 @@ const storeItems = new Map([
     {
       priceInCents: 29990,
       name: "Forex Kombi 180",
-      description: "Balík s trvaním 180 dni",
+      duration: "180 dni",
     },
   ],
   [
@@ -124,7 +124,7 @@ const storeItems = new Map([
     {
       priceInCents: 9900,
       name: "Forex Exclusive 30",
-      description: "Balík s trvaním 30 dni",
+      duration: "30 dni",
     },
   ],
   [
@@ -132,7 +132,7 @@ const storeItems = new Map([
     {
       priceInCents: 16990,
       name: "Forex Exclusive 90",
-      description: "Balík s trvaním 90 dni",
+      duration: "90 dni",
     },
   ],
   [
@@ -140,7 +140,7 @@ const storeItems = new Map([
     {
       priceInCents: 23990,
       name: "Forex Exclusive 180",
-      description: "Balík s trvaním 180 dni",
+      duration: "180 dni",
     },
   ],
 ]);
