@@ -111,7 +111,9 @@ const createEmailTemplate = ({
                             <table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                               <tr>
                                 <td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
-                                  <div class="alignment" align="center" style="line-height:10px"><img class="big" src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/3296/MCC_confirmation_heroimage_2.png" style="display: block; height: auto; border: 0; width: 680px; max-width: 100%;" width="680" alt="Hero Image Placeholder" title="Hero Image Placeholder"></div>
+                                  <div class="alignment" align="center" style="line-height:10px"><img class="big" src=${
+                                    isForex ? "cid:forex" : "cid:stavkove"
+                                  } style="padding-top:30px;padding-bottom:30px;display: block; height: auto; border: 0; width: 195px; max-width: 100%;" width="680" alt="Hero Image Placeholder" title="Hero Image Placeholder"></div>
                                 </td>
                               </tr>
                             </table>
@@ -119,7 +121,7 @@ const createEmailTemplate = ({
                               <tr>
                                 <td class="pad">
                                   <div style="color:#ffffff;direction:ltr;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;font-weight:400;letter-spacing:0px;line-height:200%;text-align:center;mso-line-height-alt:36px;">
-                                    <p style="margin: 0;">Dobrý deň <strong>Ľubomír Bučko</strong></p>
+                                    <p style="margin: 0;">Dobrý deň <strong>${name}</strong></p>
                                   </div>
                                 </td>
                               </tr>
@@ -141,7 +143,9 @@ const createEmailTemplate = ({
                                   <div class="alignment" align="center">
                                     <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                       <tr>
-                                        <td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 1px solid #3DE6E8;"><span>&#8202;</span></td>
+                                        <td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 3px solid ${
+                                          isForex ? "#463acc" : "#3b055b"
+                                        };"><span>&#8202;</span></td>
                                       </tr>
                                     </table>
                                   </div>
@@ -212,7 +216,9 @@ const createEmailTemplate = ({
                                   <div class="alignment" align="center">
                                     <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                       <tr>
-                                        <td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 1px solid #3DE6E8;"><span>&#8202;</span></td>
+                                        <td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 3px solid ${
+                                          isForex ? "#463acc" : "#3b055b"
+                                        };"><span>&#8202;</span></td>
                                       </tr>
                                     </table>
                                   </div>
@@ -224,7 +230,7 @@ const createEmailTemplate = ({
                                 <td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:40px;">
                                   <div style="font-family: sans-serif">
                                     <div class style="font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #ffffff; line-height: 1.2; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
-                                      <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><span style="font-size:26px;"><strong>VAŠA OBJEDNÁVKA č. 1671013069738</strong></span></p>
+                                      <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><span style="font-size:26px;"><strong>VAŠA OBJEDNÁVKA č. ${invoiceNumber}</strong></span></p>
                                     </div>
                                   </div>
                                 </td>
@@ -304,7 +310,7 @@ const createEmailTemplate = ({
                                 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;">
                                   <div style="font-family: sans-serif">
                                     <div class style="font-size: 12px; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
-                                      <p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">Fero Mrkva</span></strong></p>
+                                      <p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">${name}</span></strong></p>
                                     </div>
                                   </div>
                                 </td>
@@ -315,7 +321,7 @@ const createEmailTemplate = ({
                                 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;">
                                   <div style="font-family: sans-serif">
                                     <div class style="font-size: 12px; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
-                                      <p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">fero@mrkva.c</span></strong></p>
+                                      <p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">${email}</span></strong></p>
                                     </div>
                                   </div>
                                 </td>
@@ -326,9 +332,15 @@ const createEmailTemplate = ({
                                 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;">
                                   <div style="font-family: sans-serif">
                                     <div class style="font-size: 12px; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
-                                      <p style="margin: 0; font-size: 16px; mso-line-height-alt: 24px;"><span style="font-size:16px;">Buzulucká 685/4, 4</span></p>
-                                      <p style="margin: 0; font-size: 16px; mso-line-height-alt: 24px;"><span style="font-size:16px;">040 22, Košice</span></p>
-                                      <p style="margin: 0; font-size: 16px; mso-line-height-alt: 24px;"><span style="font-size:16px;">Slovakia</span></p>
+                                      <p style="margin: 0; font-size: 16px; mso-line-height-alt: 24px;"><span style="font-size:16px;">${
+                                        address.street
+                                      }</span></p>
+                                      <p style="margin: 0; font-size: 16px; mso-line-height-alt: 24px;"><span style="font-size:16px;">${
+                                        (address.zip + ", ", address.city)
+                                      }</span></p>
+                                      <p style="margin: 0; font-size: 16px; mso-line-height-alt: 24px;"><span style="font-size:16px;">${
+                                        address.country
+                                      }</span></p>
                                     </div>
                                   </div>
                                 </td>
@@ -363,7 +375,7 @@ const createEmailTemplate = ({
                               <tr>
                                 <td class="pad">
                                   <div style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:150%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:24px;">
-                                    <p style="margin: 0;">KOMBI BALÍK 30</p>
+                                    <p style="margin: 0;">${storeItem.name}</p>
                                   </div>
                                 </td>
                               </tr>
@@ -374,7 +386,7 @@ const createEmailTemplate = ({
                               <tr>
                                 <td class="pad">
                                   <div style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:19.2px;">
-                                    <p style="margin: 0;">Trvanie</p>
+                                    <p style="margin: 0;">Množstvo</p>
                                   </div>
                                 </td>
                               </tr>
@@ -384,7 +396,7 @@ const createEmailTemplate = ({
                                 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;padding-top:10px;">
                                   <div style="font-family: sans-serif">
                                     <div class style="font-size: 12px; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
-                                      <p style="margin: 0; mso-line-height-alt: 24px;"><span style="font-size:16px;">30 dní</span></p>
+                                      <p style="margin: 0; mso-line-height-alt: 24px;"><span style="font-size:16px;">1</span></p>
                                     </div>
                                   </div>
                                 </td>
@@ -434,7 +446,9 @@ const createEmailTemplate = ({
                                   <div class="alignment" align="center">
                                     <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                       <tr>
-                                        <td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 1px solid #3DE6E8;"><span>&#8202;</span></td>
+                                        <td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 3px solid ${
+                                          isForex ? "#463acc" : "#3b055b"
+                                        };"><span>&#8202;</span></td>
                                       </tr>
                                     </table>
                                   </div>
@@ -563,43 +577,7 @@ const createEmailTemplate = ({
                 </tr>
               </tbody>
             </table>
-            <table class="row row-9" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-              <tbody>
-                <tr>
-                  <td>
-                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 680px;" width="680">
-                      <tbody>
-                        <tr>
-                          <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                            <table class="icons_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                              <tr>
-                                <td class="pad" style="vertical-align: middle; color: #9d9d9d; font-family: inherit; font-size: 15px; padding-bottom: 5px; padding-top: 5px; text-align: center;">
-                                  <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                    <tr>
-                                      <td class="alignment" style="vertical-align: middle; text-align: center;">
-                                        <!--[if vml]><table align="left" cellpadding="0" cellspacing="0" role="presentation" style="display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><![endif]-->
-                                        <!--[if !vml]><!-->
-                                        <table class="icons-inner" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block; margin-right: -4px; padding-left: 0px; padding-right: 0px;" cellpadding="0" cellspacing="0" role="presentation">
-                                          <!--<![endif]-->
-                                          <tr>
-                                            <td style="vertical-align: middle; text-align: center; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 6px;"><a href="https://www.designedwithbee.com/?utm_source=editor&utm_medium=bee_pro&utm_campaign=free_footer_link" target="_blank" style="text-decoration: none;"><img class="icon" alt="Designed with BEE" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/53601_510656/Signature/bee.png" height="32" width="34" align="center" style="display: block; height: auto; margin: 0 auto; border: 0;"></a></td>
-                                            <td style="font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 15px; color: #9d9d9d; vertical-align: middle; letter-spacing: undefined; text-align: center;"><a href="https://www.designedwithbee.com/?utm_source=editor&utm_medium=bee_pro&utm_campaign=free_footer_link" target="_blank" style="color: #9d9d9d; text-decoration: none;">Designed with BEE</a></td>
-                                          </tr>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+
           </td>
         </tr>
       </tbody>

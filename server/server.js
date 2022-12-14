@@ -144,24 +144,14 @@ app.post("/checkout", async (req, res) => {
             contentType: "application/pdf",
           },
           {
-            filename: "facebook.png",
-            path: "./images/facebook.png",
-            cid: "facebook",
+            filename: "stavkove.png",
+            path: "./stavkove.png",
+            cid: "stavkove",
           },
           {
-            filename: "instagram.png",
-            path: "./images/instagram.png",
-            cid: "instagram",
-          },
-          {
-            filename: "tiktok.png",
-            path: "./images/tiktok.png",
-            cid: "tiktok",
-          },
-          {
-            filename: "telegram.png",
-            path: "./images/telegram.png",
-            cid: "telegram",
+            filename: "forex.png",
+            path: "./forex.png",
+            cid: "forex",
           },
         ], // plain text body
       });
