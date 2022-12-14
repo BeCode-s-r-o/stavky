@@ -112,7 +112,7 @@ function generateInvoiceTable(doc, invoice) {
       item.duration,
       item.quantity,
       formatCurrency(item.amount * 0.8),
-      "20 %",
+      "20%",
       formatCurrency(item.amount)
     );
 
@@ -126,7 +126,7 @@ function generateInvoiceTable(doc, invoice) {
     "",
     "",
     "",
-    "Základ DPH 20 %",
+    "Základ DPH 20%",
     "",
     formatCurrency(invoice.subtotal * 0.8)
   );
@@ -149,10 +149,11 @@ function generateInvoiceTable(doc, invoice) {
     "",
     "",
     "",
-    "Zľava",
+    `Zľava ${invoice.discountPercent + "%"}`,
     "",
-    formatCurrency(invoice.discount)
+    formatCurrency(invoice.discountValue)
   );
+  console.log(invoice.discountValue);
 
   const duePosition = paidToDatePosition + 40;
   doc.font("./Roboto-Bold.ttf");
@@ -164,7 +165,7 @@ function generateInvoiceTable(doc, invoice) {
     "",
     "Celkom",
     "",
-    formatCurrency(invoice.subtotal - invoice.discount)
+    formatCurrency(invoice.subtotal - invoice.discountValue)
   );
 
   doc.font("Helvetica");

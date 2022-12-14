@@ -36,7 +36,7 @@ const PricingFive = () => {
     },
   });
 
-  const isProd = true;
+  const isProd = false;
   const url = isProd ? 'https://api.forexporadenstvo.sk/checkout' : 'http://localhost:5500/checkout';
 
   async function handleToken(token: any, id: number) {
@@ -44,7 +44,7 @@ const PricingFive = () => {
     const response = await axios.post(url, {
       token,
       package: { id: id, quantity: 1 },
-      discount: 1,
+      discount: currentDiscount / 100,
       isForex: pageType === 'forex',
     });
 

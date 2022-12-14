@@ -35,17 +35,22 @@ app.post("/checkout", async (req, res) => {
   let error, status;
 
   try {
-    const { package, token, discount, isForex } = req.body;
+    const { token, package, discount, isForex } = req.body;
     const customer = await stripe.customers.create({
       email: token.email,
       source: token.id,
     });
+    console.log(discount);
 
     const storeItem = storeItems.get(package.id);
-
+    console.log(
+      Math.round(storeItem.priceInCents - storeItem.priceInCents * discount)
+    );
     const key = uuid();
     const charge = await stripe.charges.create({
-      amount: Math.round(storeItem.priceInCents * discount),
+      amount: Math.round(
+        storeItem.priceInCents - storeItem.priceInCents * discount
+      ),
       currency: "eur",
       customer: customer.id,
       receipt_email: token.email,
@@ -88,9 +93,8 @@ app.post("/checkout", async (req, res) => {
           },
         ],
         subtotal: storeItem.priceInCents,
-        discount: Math.round(
-          storeItem.priceInCents - storeItem.priceInCents * discount
-        ),
+        discountValue: Math.round(storeItem.priceInCents * discount),
+        discountPercent: discount * 100,
         invoice_nr: invoiceNumber,
         pageType: isForex ? "forex" : "stavkove",
       };
