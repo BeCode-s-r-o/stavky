@@ -15,7 +15,7 @@ const TimelineData = [
   {
     id: '3',
     title: 'AKTIVÁCIA',
-    description: 'Po úhrade služby obdržíte mail s informáciami a vstupnými inštrukciami pre aktiváciu členstva. ',
+    description: 'Po úhrade služby obdržíte mail s informáciami a inštrukciami pre aktiváciu členstva. ',
   },
   {
     id: '4',

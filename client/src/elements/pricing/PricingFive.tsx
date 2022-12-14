@@ -36,7 +36,7 @@ const PricingFive = () => {
     },
   });
 
-  const isProd = false;
+  const isProd = true;
   const url = isProd ? 'https://api.forexporadenstvo.sk/checkout' : 'http://localhost:5500/checkout';
 
   async function handleToken(token: any, id: number) {
@@ -91,7 +91,7 @@ const PricingFive = () => {
                 <span className="subtitle">EUR za {pricing.first.label}</span>
               </div>
             </div>
-            <div className="pricing-body">
+            <div className="pricing-body" style={{ padding: '30px 0 10px' }}>
               <ul className="list-style--1">
                 <li>
                   <FiCheck /> {pageType === 'forex' ? '1-3 SIGNÁLY DENNE' : '1-3 TIPY DENNE'}
@@ -108,11 +108,11 @@ const PricingFive = () => {
               </ul>
             </div>
             <div className="container w-50 mb-0">
-              <p style={{ textAlign: 'center', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
-                VYBRAŤ DĹŽKU ČLENSTVA:
+              <p style={{ textAlign: 'left', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
+                VYBRAŤ DĹŽKU ČLENSTVA
               </p>
               <select
-                className="my-5"
+                className="my-4 "
                 value={JSON.stringify(pricing.first)}
                 onChange={(e) => {
                   setPricing({ ...pricing, first: JSON.parse(e.target.value) });
@@ -150,7 +150,7 @@ const PricingFive = () => {
                 </option>
               </select>
             </div>
-            <div className="pricing-footer">
+            <div className="pricing-footer mt-3">
               <button
                 className="btn-default btn-border"
                 style={{ cursor: 'pointer', border: '1px solid var(--color-pink)' }}
@@ -182,7 +182,7 @@ const PricingFive = () => {
                 <span className="subtitle">EUR za {pricing.second.label}</span>
               </div>
             </div>
-            <div className="pricing-body">
+            <div className="pricing-body" style={{ padding: '30px 0 10px' }}>
               <ul className="list-style--1">
                 <li>
                   <FiCheck /> STARTER & EXCLUSIVE
@@ -211,11 +211,11 @@ const PricingFive = () => {
               </ul>
             </div>
             <div className="container w-50 mb-0">
-              <p style={{ textAlign: 'center', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
-                VYBRAŤ DĹŽKU ČLENSTVA:
+              <p style={{ textAlign: 'left', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
+                VYBRAŤ DĹŽKU ČLENSTVA
               </p>
               <select
-                className="my-5"
+                className="my-4 "
                 value={JSON.stringify(pricing.second)}
                 onChange={(e) => {
                   setPricing({
@@ -256,7 +256,7 @@ const PricingFive = () => {
                 </option>
               </select>
             </div>
-            <div className="pricing-footer">
+            <div className="pricing-footer mt-3">
               <button
                 className="btn-default btn-small"
                 style={{ cursor: 'pointer', minHeight: '50px', minWidth: '130px' }}
@@ -285,7 +285,7 @@ const PricingFive = () => {
                 <span className="subtitle">EUR za {pricing.third.label}</span>
               </div>
             </div>
-            <div className="pricing-body">
+            <div className="pricing-body" style={{ padding: '30px 0 10px' }}>
               <ul className="list-style--1">
                 <li>
                   <FiCheck /> {pageType === 'forex' ? '2-5 SIGNÁLOV DENNE' : '2-5 TIPOV DENNE'}
@@ -302,11 +302,11 @@ const PricingFive = () => {
               </ul>
             </div>
             <div className="container w-50 mb-0">
-              <p style={{ textAlign: 'center', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
-                VYBRAŤ DĹŽKU ČLENSTVA:
+              <p style={{ textAlign: 'left', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
+                VYBRAŤ DĹŽKU ČLENSTVA
               </p>
               <select
-                className="my-5"
+                className="my-4 "
                 value={JSON.stringify(pricing.third)}
                 onChange={(e) => {
                   setPricing({ ...pricing, third: JSON.parse(e.target.value) });
@@ -345,7 +345,7 @@ const PricingFive = () => {
               </select>
             </div>
 
-            <div className="pricing-footer">
+            <div className="pricing-footer mt-3">
               <button
                 className="btn-default btn-border "
                 style={{ cursor: 'pointer', border: '1px solid var(--color-pink)' }}
@@ -379,7 +379,7 @@ const PricingFive = () => {
           },
         }}
       >
-        <h2 style={{ textTransform: 'uppercase' }}>Máte zľavový kód?</h2>
+        <h2 style={{ textTransform: 'uppercase', textAlign: 'center' }}>Máte zľavový kód?</h2>
         <input className="mb-5" value={code.toUpperCase()} onChange={checkForCode} />
 
         {currentDiscount > 0 && (
@@ -438,8 +438,8 @@ const PricingFive = () => {
             Zatvoriť
           </button>
           <center>
-            <small style={{ textAlign: 'center', fontSize: '10px' }}>
-              Pokračovaním v objednávke súhlasíte s Obchodnými podmienkami a Spracovaním osobných údajov
+            <small style={{ textAlign: 'center', fontSize: '8px' }}>
+              Pokračovaním v objednávke súhlasíte s obchodnými podmienkami a spracovaním osobných údajov
             </small>
           </center>
         </div>

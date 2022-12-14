@@ -21,7 +21,7 @@ const WebAgency = ({ pageType }: PageType) => {
                       </span>
                       <h1
                         className="title "
-                        style={{ paddingTop: '2rem' }}
+                        style={{ paddingTop: '2rem', marginBottom: '0px' }}
                         dangerouslySetInnerHTML={{
                           __html:
                             pageType === 'forex'
@@ -30,7 +30,7 @@ const WebAgency = ({ pageType }: PageType) => {
                         }}
                       ></h1>
                       <p
-                        className="description px-5"
+                        className="description py-5 px-md-5 px-2"
                         dangerouslySetInnerHTML={{
                           __html:
                             pageType === 'forex'
