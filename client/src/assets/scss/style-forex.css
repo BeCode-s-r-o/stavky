@@ -6539,7 +6539,7 @@ textarea:-ms-input-placeholder {
 }
 
 .background-overlay {
-  background-color: #000000;
+  background-color: #0f0f11;;
   opacity: 0.6;
   transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
   height: 100%;
@@ -6792,7 +6792,7 @@ select {
   transition: 0.3s;
   height: 60px;
   line-height: 28px;
-  padding: 10px 20px;
+  padding: 10px;
   outline: none;
   background: var(--color-blackest);
   text-align: center;

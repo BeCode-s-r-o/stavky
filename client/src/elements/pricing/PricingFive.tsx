@@ -108,8 +108,8 @@ const PricingFive = () => {
               </ul>
             </div>
             <div className="container w-50 mb-0">
-              <p style={{ textAlign: 'left', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
-                VYBRAŤ DĹŽKU ČLENSTVA
+              <p style={{ textAlign: 'center', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
+                DĹŽKA ČLENSTVA
               </p>
               <select
                 className="my-4 "
@@ -211,8 +211,8 @@ const PricingFive = () => {
               </ul>
             </div>
             <div className="container w-50 mb-0">
-              <p style={{ textAlign: 'left', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
-                VYBRAŤ DĹŽKU ČLENSTVA
+              <p style={{ textAlign: 'center', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
+                DĹŽKA ČLENSTVA
               </p>
               <select
                 className="my-4 "
@@ -302,8 +302,8 @@ const PricingFive = () => {
               </ul>
             </div>
             <div className="container w-50 mb-0">
-              <p style={{ textAlign: 'left', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
-                VYBRAŤ DĹŽKU ČLENSTVA
+              <p style={{ textAlign: 'center', marginBottom: 0, whiteSpace: 'nowrap', marginTop: '15px' }}>
+                DĹŽKA ČLENSTVA
               </p>
               <select
                 className="my-4 "
@@ -438,9 +438,13 @@ const PricingFive = () => {
             Zatvoriť
           </button>
           <center>
-            <small style={{ textAlign: 'center', fontSize: '8px' }}>
-              Pokračovaním v objednávke súhlasíte s obchodnými podmienkami a spracovaním osobných údajov
-            </small>
+            <p
+              style={{ textAlign: 'center', fontSize: '13px', lineHeight: '16px', marginBottom: '10px' }}
+              className="pt-5"
+            >
+              Pokračovaním v objednávke súhlasíte s obchodnými
+              <br /> podmienkami a spracovaním osobných údajov
+            </p>
           </center>
         </div>
       </Modal>

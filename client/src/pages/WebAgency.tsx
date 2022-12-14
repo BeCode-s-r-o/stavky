@@ -9,7 +9,7 @@ const WebAgency = ({ pageType }: PageType) => {
       <Element name="uvod">
         <div className="slider-area slider-style-8 height-650">
           {/* style={{ background: `url(${Background})` }} */}
-          <div className="background-overlay"></div>
+
           {BannerData.map((data, index) => (
             <div key={index} className="single-slide" style={{ position: 'relative' }}>
               <div className="container">
@@ -34,8 +34,8 @@ const WebAgency = ({ pageType }: PageType) => {
                         dangerouslySetInnerHTML={{
                           __html:
                             pageType === 'forex'
-                              ? 'Investujte s našimi službami jednoducho a efektívne cez aplikáciu. Naučíme Vás celý postup ako začať <br/> zarábať na obchodovaní menových párov. Trading s vysokou mierou úspešnosti.'
-                              : 'Investujte s našimi službami jednoducho a efektívne cez aplikáciu. Naučíme Vás celý postup ako začať <br/> zarábať na stávkovaní športových zápasov. Tipovanie s vysokou mierou úspešnosti.',
+                              ? 'Investujte s našimi službami jednoducho a efektívne cez aplikáciu. Naučíme Vás celý postup ako začať <br/> zarábať na obchodovaní menových párov. Trading s vysokou mierou dlhodobej úspešnosti.'
+                              : 'Investujte s našimi službami jednoducho a efektívne cez aplikáciu. Naučíme Vás celý postup ako začať <br/> zarábať na stávkovaní športových zápasov. Tipovanie s vysokou mierou dlhodobej úspešnosti.',
                         }}
                       ></p>
                       <div className="button-group mt-1">
