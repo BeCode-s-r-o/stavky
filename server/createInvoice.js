@@ -73,7 +73,7 @@ function generateCustomerInformation(doc, invoice) {
     .text("Dátum splatnosti:", 50, customerInformationTop + 45)
     .text(formatDate(new Date(), 14), 150, customerInformationTop + 45)
     .text(
-      "Uhrada bola vykonaná cez platobnú bránu STRIPE. Služba je dodávaná v digitálnej podobe.",
+      "Úhrada bola vykonaná cez platobnú bránu STRIPE. Služba je dodávaná v digitálnej podobe.",
       50,
       customerInformationTop + 70,
       {

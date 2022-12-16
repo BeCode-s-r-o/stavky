@@ -16,7 +16,7 @@ const CalltoActionFive = () => {
   const pageType = process.env.REACT_APP_WEBSITE_TYPE;
   return (
     <div className="rn-callto-action clltoaction-style-default style-5">
-      <div className="container">
+      <div className="container" style={{ position: 'relative', zIndex: '999' }}>
         <div className="row row--0 align-items-center content-wrapper theme-shape" style={{ zIndex: -1 }}>
           <div className="col-lg-12">
             <div className="inner">
@@ -30,6 +30,7 @@ const CalltoActionFive = () => {
                     <div className="call-to-btn text-center ">
                       <a
                         className="btn-default btn-icon mx-2"
+                        target="_blank"
                         href={
                           pageType === 'forex'
                             ? 'https://www.instagram.com/forexporadenstvo.official/'
@@ -42,6 +43,7 @@ const CalltoActionFive = () => {
                     <div className="call-to-btn text-center ">
                       <a
                         className=" btn-default btn-icon mx-2"
+                        target="_blank"
                         href={
                           pageType === 'forex'
                             ? 'https://t.me/forexporadenstvosk'

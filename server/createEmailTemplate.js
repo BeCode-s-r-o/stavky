@@ -121,7 +121,7 @@ const createEmailTemplate = ({
                               <tr>
                                 <td class="pad">
                                   <div style="color:#ffffff;direction:ltr;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;font-weight:400;letter-spacing:0px;line-height:200%;text-align:center;mso-line-height-alt:36px;">
-                                    <p style="margin: 0;">Dobrý deň <strong>${name}</strong></p>
+                                    <p style="margin: 0;">Dobrý deň, <strong>${name}</strong></p>
                                   </div>
                                 </td>
                               </tr>
@@ -193,7 +193,7 @@ const createEmailTemplate = ({
                             <table class="heading_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                               <tr>
                                 <td class="pad" style="text-align:center;width:100%;padding-top:30px;">
-                                  <h2 style="margin: 0; color: #ffffff; direction: ltr; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 30px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">HOTOVO! DO 48 HODÍN VÁS BUDEME KONTAKTOVAŤ</span></h2>
+                                  <h2 style="margin: 0; color: #ffffff; direction: ltr; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 25px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">HOTOVO! DO 48 HODÍN VÁS BUDEME KONTAKTOVAŤ</span></h2>
                                 </td>
                               </tr>
                             </table>
@@ -204,7 +204,7 @@ const createEmailTemplate = ({
                                     <div class style="font-size: 12px; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
                                       <p style="margin: 0; text-align: center; font-size: 17px; mso-line-height-alt: 25.5px;"><span style="font-size:17px;">Do <strong>48 hodín</strong>&nbsp;Vás bude kontaktovať náš&nbsp;<strong>support team</strong></span></p>
                                       <p style="margin: 0; text-align: center; font-size: 17px; mso-line-height-alt: 25.5px;"><span style="font-size:17px;"><strong> </strong>s ďalšími inštrukciami, uvítacím <strong>e-bookom </strong>&nbsp;a potrebnými&nbsp;<strong>linkami</strong></span></p>
-                                      <p style="margin: 0; text-align: center; font-size: 17px; mso-line-height-alt: 25.5px;"><span style="font-size:17px;">&nbsp;na odber našich&nbsp;<strong>alertov</strong>.</span></p>
+                                      <p style="margin: 0; text-align: center; font-size: 17px; mso-line-height-alt: 25.5px;"><span style="font-size:17px;">&nbsp;na odber našich prémiových&nbsp;<strong>alertov</strong>.</span></p>
                                     </div>
                                   </div>
                                 </td>
@@ -418,7 +418,11 @@ const createEmailTemplate = ({
                                 <td class="pad">
                                   <div style="font-family: sans-serif">
                                     <div class style="font-size: 12px; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
-                                      <p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">129.90€(s DPH)&nbsp; &nbsp;&nbsp;</span></strong></p>
+                                      <p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">${Number(
+                                        storeItem.priceInCents / 100
+                                      ).toFixed(
+                                        2
+                                      )} (s DPH)&nbsp; &nbsp;&nbsp;</span></strong></p>
                                     </div>
                                   </div>
                                 </td>
@@ -503,7 +507,13 @@ const createEmailTemplate = ({
                               <tr>
                                 <td class="pad">
                                   <div style="color:#101112;font-size:18px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:120%;text-align:center;direction:ltr;letter-spacing:0px;mso-line-height-alt:21.599999999999998px;">
-                                    <p style="margin: 0;"><a href="mailto:info@stavkoveporadenstvo.sk" target="_blank" style="text-decoration: underline; color: #ffffff;" rel="noopener">info@stavkoveporadenstvo.sk</a></p>
+                                    <p style="margin: 0;"><a href="mailto:info@${
+                                      isForex
+                                        ? "forexporadenstvo"
+                                        : "stavkoveporadenstvo"
+                                    }.sk" target="_blank" style="text-decoration: underline; color: #ffffff;" rel="noopener">info@${
+    isForex ? "forexporadenstvo" : "stavkoveporadenstvo"
+  }.sk</a></p>
                                   </div>
                                 </td>
                               </tr>
@@ -524,7 +534,9 @@ const createEmailTemplate = ({
                                 <td class="pad" style="padding-bottom:40px;padding-left:25px;padding-right:25px;">
                                   <div style="font-family: sans-serif">
                                     <div class style="font-size: 12px; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
-                                      <p style="margin: 0; text-align: center; mso-line-height-alt: 27px;"><span style="font-size:18px;">tím Stávkové Poradenstvo!</span></p>
+                                      <p style="margin: 0; text-align: center; mso-line-height-alt: 27px;"><span style="font-size:18px;">tím ${
+                                        isForex ? "Forex" : "Stávkové"
+                                      } Poradenstvo!</span></p>
                                     </div>
                                   </div>
                                 </td>
@@ -548,9 +560,7 @@ const createEmailTemplate = ({
                           <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 0px; padding-bottom: 0px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
                             <table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                               <tr>
-                                <td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
-                                  <div class="alignment" align="center" style="line-height:10px"><img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/3296/MCC_teaser_yourlogo.png" style="display: block; height: auto; border: 0; width: 136px; max-width: 100%;" width="136" alt="Your Logo Placeholder" title="Your Logo Placeholder"></div>
-                                </td>
+                               
                               </tr>
                             </table>
                             <table class="social_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
@@ -559,10 +569,26 @@ const createEmailTemplate = ({
                                   <div class="alignment" align="center">
                                     <table class="social-table" width="144px" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block;">
                                       <tr>
-                                        <td style="padding:0 2px 0 2px;"><a href="https://www.example.com" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/facebook@2x.png" width="32" height="32" alt="Facebook" title="facebook" style="display: block; height: auto; border: 0;"></a></td>
-                                        <td style="padding:0 2px 0 2px;"><a href="https://www.example.com" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" width="32" height="32" alt="Instagram" title="instagram" style="display: block; height: auto; border: 0;"></a></td>
-                                        <td style="padding:0 2px 0 2px;"><a href="https://www.tiktok.com" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/tiktok@2x.png" width="32" height="32" alt="TikTok" title="TikTok" style="display: block; height: auto; border: 0;"></a></td>
-                                        <td style="padding:0 2px 0 2px;"><a href="https://telegram.org" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/telegram@2x.png" width="32" height="32" alt="Telegram" title="Telegram" style="display: block; height: auto; border: 0;"></a></td>
+                                        <td style="padding:0 2px 0 2px;"><a href=${
+                                          isForex
+                                            ? "https://www.facebook.com/poradenstvoforex.sk"
+                                            : "https://www.facebook.com/poradenstvostavkove.sk"
+                                        } target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/facebook@2x.png" width="32" height="32" alt="Facebook" title="facebook" style="display: block; height: auto; border: 0;"></a></td>
+                                        <td style="padding:0 2px 0 2px;"><a href=${
+                                          isForex
+                                            ? "https://www.instagram.com/forexporadenstvo.official"
+                                            : "https://www.instagram.com/stavkoveporadenstvo.official/"
+                                        } target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" width="32" height="32" alt="Instagram" title="instagram" style="display: block; height: auto; border: 0;"></a></td>
+                                        <td style="padding:0 2px 0 2px;"><a href=${
+                                          isForex
+                                            ? "https://www.tiktok.com/@forexporadenstvo"
+                                            : "https://www.tiktok.com/@stavkoveporadenstvo"
+                                        } target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/tiktok@2x.png" width="32" height="32" alt="TikTok" title="TikTok" style="display: block; height: auto; border: 0;"></a></td>
+                                        <td style="padding:0 2px 0 2px;"><a href=${
+                                          isForex
+                                            ? "https://t.me/forexporadenstvosk"
+                                            : "https://www.t.me/stavkoveporadenstvosk"
+                                        } target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/telegram@2x.png" width="32" height="32" alt="Telegram" title="Telegram" style="display: block; height: auto; border: 0;"></a></td>
                                       </tr>
                                     </table>
                                   </div>

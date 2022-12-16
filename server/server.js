@@ -40,12 +40,9 @@ app.post("/checkout", async (req, res) => {
       email: token.email,
       source: token.id,
     });
-    console.log(discount);
 
     const storeItem = storeItems.get(package.id);
-    console.log(
-      Math.round(storeItem.priceInCents - storeItem.priceInCents * discount)
-    );
+
     const key = uuid();
     const charge = await stripe.charges.create({
       amount: Math.round(
@@ -160,15 +157,13 @@ app.post("/checkout", async (req, res) => {
           throw err;
         }
       });
-      console.log("Message sent: %s", info.messageId);
+      console.log("Odoslané: %s", info.messageId);
       // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
     }
 
     sendEmail().catch(console.error);
 
     status = "success";
-
-    console.log("success");
   } catch (error) {
     console.log(error);
     status = "failure";

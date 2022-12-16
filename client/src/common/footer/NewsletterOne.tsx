@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
-import { database } from '../../firebase';
-import { getDatabase, ref, onValue, set } from 'firebase/database';
+import { getDatabase, ref, set } from 'firebase/database';
+import React from 'react';
+import { useState } from 'react';
 
 const NewsletterOne = () => {
   const saveEmail = () => {
-    ref(getDatabase(), 'emails').push({ email });
+    const now = Date.now();
+    set(ref(getDatabase(), 'emails/' + `${now}`), {
+      email,
+      now,
+    });
   };
   const [email, setEmail] = useState('');
   return (
@@ -21,7 +25,7 @@ const NewsletterOne = () => {
             </div>
           </div>
           <div className="col-lg-8">
-            <form className="rn-newsletter mt_md--20 mt_sm--20" action="#">
+            <div className="rn-newsletter mt_md--20 mt_sm--20">
               <div className="form-group">
                 <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Váš e-mail" />
               </div>
@@ -30,7 +34,7 @@ const NewsletterOne = () => {
                   ODOBERAŤ NOVINKY
                 </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
