@@ -397,7 +397,11 @@ const PricingFive = () => {
                 locale="auto"
                 panelLabel="Zaplatiť"
                 currency="EUR"
-                stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
+                stripeKey={
+                  pageType === 'stavkove'
+                    ? 'pk_live_51M7g6SAcMetXNxGnvrKflmOgdKaX1mleDOqjaQUNc8kX9USuXli2SSNGUPOc3gwz79lieAl5OujdkV3rFX4bUSD400AyLyEOTt'
+                    : 'pk_live_51M7gHAKx7i5LUSFdKrKgUMbXAneT4OC1wY6RcKyVcLB4L6ZanB0qTquSWcIpQ2UoExwzPNeQXxzW34nByfWRYNZJ00N0gEbPAh'
+                }
                 token={(e) => handleToken(e, currentPackage?.id)}
                 amount={
                   currentPackage?.value
@@ -423,7 +427,11 @@ const PricingFive = () => {
                 panelLabel="Zaplatiť"
                 locale="auto"
                 currency="EUR"
-                stripeKey="pk_test_51LJyhMBelUpwp79FkRfmFxHJJqAM7XTYKMYz3OHNtkvCjiMYvVwV4VPED9lXaP7CWjmq0ALVU3e4qLwKWOpl0UEo00vuAgo7Mt"
+                stripeKey={
+                  pageType === 'stavkove'
+                    ? 'pk_live_51M7g6SAcMetXNxGnvrKflmOgdKaX1mleDOqjaQUNc8kX9USuXli2SSNGUPOc3gwz79lieAl5OujdkV3rFX4bUSD400AyLyEOTt'
+                    : 'pk_live_51M7gHAKx7i5LUSFdKrKgUMbXAneT4OC1wY6RcKyVcLB4L6ZanB0qTquSWcIpQ2UoExwzPNeQXxzW34nByfWRYNZJ00N0gEbPAh'
+                }
                 token={(e) => handleToken(e, currentPackage?.id)}
                 amount={currentPackage?.value ? currentPackage.value * 100 : 0}
                 name={`Balík ${currentPackage?.name} - ` + (currentPackage?.label || '')}

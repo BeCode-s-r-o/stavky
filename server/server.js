@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const bodyparser = require("body-parser");
-const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
+
 const PDFDocument = require("pdfkit");
 const { createInvoice } = require("./createInvoice.js");
 const { createEmailTemplate } = require("./createEmailTemplate");
@@ -36,6 +36,11 @@ app.post("/checkout", async (req, res) => {
 
   try {
     const { token, package, discount, isForex } = req.body;
+    const stripe = require("stripe")(
+      isForex
+        ? process.env.STRIPE_PRIVATE_KEY_FOREX
+        : process.env.STRIPE_PRIVATE_KEY_STAVKOVE
+    );
     const customer = await stripe.customers.create({
       email: token.email,
       source: token.id,
