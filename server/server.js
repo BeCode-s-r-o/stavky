@@ -5,6 +5,7 @@ const bodyparser = require("body-parser");
 const PDFDocument = require("pdfkit");
 const { createInvoice } = require("./createInvoice.js");
 const { createEmailTemplate } = require("./createEmailTemplate");
+const { InvoiceNumber } = require("invoice-number");
 const uuid = require("uuid").v4;
 const fs = require("fs");
 const cors = require("cors");
@@ -63,7 +64,16 @@ app.post("/checkout", async (req, res) => {
     async function sendEmail() {
       // Generate test SMTP service account from ethereal.email
       // Only needed if you don't have a real mail account for testing
-      invoiceNumber = await Date.now();
+      var invoiceNumber = "0100";
+      try {
+        const docRef = db.collection("cislo-objednavky").doc("invoiceNumber");
+        var invoiceNumber = InvoiceNumber.next(docRef.number);
+        await docRef.set({
+          number: invoiceNumber,
+        });
+      } catch (err) {
+        console.log(err);
+      }
 
       const htmlMessage = createEmailTemplate({
         name: token.card.name,

@@ -48,9 +48,14 @@ const createEmailTemplate = ({
         max-height: 0px;
         overflow: hidden;
       }
-  
+
       @media (max-width:700px) {
-  
+        .mobile_center{
+          text-align:center;
+        }
+        .mobile_hide{
+          display:none;
+        }
         .desktop_hide table.icons-inner,
         .social_block.desktop_hide .social-table {
           display: inline-block !important;
@@ -248,7 +253,7 @@ const createEmailTemplate = ({
                             <table class="paragraph_block block-10" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad" style="padding-bottom:14px;">
-                                  <div style="color:#ffffff;direction:ltr;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:200%;text-align:left;mso-line-height-alt:32px;">
+                                  <div style="color:#ffffff;direction:ltr;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:200%;mso-line-height-alt:32px;text-align:center;">
                                     <p style="margin: 0;"><strong>&nbsp;FAKTURAČNÉ ÚDAJE :</strong></p>
                                   </div>
                                 </td>
@@ -262,15 +267,15 @@ const createEmailTemplate = ({
                 </tr>
               </tbody>
             </table>
-            <table class="row row-3" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+            <table class="row row-3 " align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
               <tbody>
                 <tr>
                   <td>
-                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; border-radius: 0; width: 680px;" width="680">
+                    <table class="row-content stack " align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; border-radius: 0; width: 680px;" width="680">
                       <tbody>
                         <tr>
                           <td class="column column-1" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                            <table class="text_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                            <table class="text_block block-2 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;">
                                   <div style="font-family: sans-serif">
@@ -281,7 +286,7 @@ const createEmailTemplate = ({
                                 </td>
                               </tr>
                             </table>
-                            <table class="text_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                            <table class="text_block block-3 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;">
                                   <div style="font-family: sans-serif">
@@ -292,7 +297,7 @@ const createEmailTemplate = ({
                                 </td>
                               </tr>
                             </table>
-                            <table class="text_block block-4" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                            <table class="text_block block-4 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;">
                                   <div style="font-family: sans-serif">
@@ -305,7 +310,7 @@ const createEmailTemplate = ({
                             </table>
                           </td>
                           <td class="column column-2" width="75%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                            <table class="text_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                            <table class="text_block block-2 mobile_center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;">
                                   <div style="font-family: sans-serif">
@@ -316,7 +321,7 @@ const createEmailTemplate = ({
                                 </td>
                               </tr>
                             </table>
-                            <table class="text_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                            <table class="text_block block-3 mobile_center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;">
                                   <div style="font-family: sans-serif">
@@ -327,7 +332,7 @@ const createEmailTemplate = ({
                                 </td>
                               </tr>
                             </table>
-                            <table class="text_block block-4" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                            <table class="text_block block-4 mobile_center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;">
                                   <div style="font-family: sans-serif">
@@ -362,7 +367,7 @@ const createEmailTemplate = ({
                       <tbody>
                         <tr>
                           <td class="column column-1" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                            <table class="paragraph_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                            <table class="paragraph_block block-2 mobile_center" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad">
                                   <div style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:19.2px;">
@@ -371,7 +376,7 @@ const createEmailTemplate = ({
                                 </td>
                               </tr>
                             </table>
-                            <table class="paragraph_block block-3" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                            <table class="paragraph_block block-3 mobile_center" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad">
                                   <div style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:150%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:24px;">
@@ -381,8 +386,8 @@ const createEmailTemplate = ({
                               </tr>
                             </table>
                           </td>
-                          <td class="column column-2" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                            <table class="paragraph_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                          <td class="column column-2 " width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                            <table class="paragraph_block block-2 mobile_center" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad">
                                   <div style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:19.2px;">
@@ -391,7 +396,7 @@ const createEmailTemplate = ({
                                 </td>
                               </tr>
                             </table>
-                            <table class="text_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                            <table class="text_block block-3 mobile_center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;padding-top:10px;">
                                   <div style="font-family: sans-serif">
@@ -404,7 +409,7 @@ const createEmailTemplate = ({
                             </table>
                           </td>
                           <td class="column column-3" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                            <table class="paragraph_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                            <table class="paragraph_block block-2 mobile_center" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad">
                                   <div style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:19.2px;">
@@ -413,7 +418,7 @@ const createEmailTemplate = ({
                                 </td>
                               </tr>
                             </table>
-                            <table class="text_block block-3" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                            <table class="text_block block-3 mobile_center" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
                                 <td class="pad">
                                   <div style="font-family: sans-serif">
