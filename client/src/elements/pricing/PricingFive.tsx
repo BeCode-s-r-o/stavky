@@ -23,7 +23,7 @@ const PricingFive = () => {
       id: pageType === 'stavkove' ? 2 : 12,
     },
     second: {
-      name: 'COMBI',
+      name: 'KOMBI',
       label: '30 dní',
       value: 129.9,
       id: pageType === 'stavkove' ? 4 : 14,
@@ -71,8 +71,11 @@ const PricingFive = () => {
   const checkForCode = ({ target: { value } }: any) => {
     setCode(value);
     setCurrentDiscount(0);
-    if (currentCodes[value] || currentCodes[String(value).toLowerCase()]) {
-      setCurrentDiscount(currentCodes[value] ? currentCodes[value] : currentCodes[String(value).toLowerCase()]);
+    console.log(currentCodes[currentPackage.name], currentPackage.name);
+    if (currentCodes[currentPackage.name][currentPackage.label.split(' ')[0]][String(value).toLowerCase()]) {
+      setCurrentDiscount(
+        currentCodes[currentPackage.name][currentPackage.label.split(' ')[0]][String(value).toLowerCase()]
+      );
     }
   };
 
@@ -363,6 +366,8 @@ const PricingFive = () => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => {
+          setCode('');
+          setCurrentDiscount(0);
           setIsOpen(false);
         }}
         style={{
@@ -442,7 +447,14 @@ const PricingFive = () => {
               </StripeCheckout>
             </>
           )}
-          <button className="btn btn-default btn-border btn-small mt-4" onClick={() => setIsOpen(false)}>
+          <button
+            className="btn btn-default btn-border btn-small mt-4"
+            onClick={() => {
+              setCode('');
+              setCurrentDiscount(0);
+              setIsOpen(false);
+            }}
+          >
             Zatvoriť
           </button>
           <center>

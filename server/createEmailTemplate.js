@@ -116,9 +116,9 @@ const createEmailTemplate = ({
                             <table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                               <tr>
                                 <td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
-                                  <div class="alignment" align="center" style="line-height:10px"><img class="big" src=${
+                                  <div class="alignment" align="center" style="line-height:10px"><img  src=${
                                     isForex ? "cid:forex" : "cid:stavkove"
-                                  } style="padding-top:30px;padding-bottom:30px;display: block; height: auto; border: 0; width: 195px; max-width: 100%;" width="680" alt="Hero Image Placeholder" title="Hero Image Placeholder"></div>
+                                  } style="padding-top:30px;padding-bottom:30px;display: block; height: auto; border: 0; width: 155px; max-width: 50%;"  alt="Logo" title="Logo"></div>
                                 </td>
                               </tr>
                             </table>
@@ -427,7 +427,7 @@ const createEmailTemplate = ({
                                         storeItem.priceInCents / 100
                                       ).toFixed(
                                         2
-                                      )} (s DPH)&nbsp; &nbsp;&nbsp;</span></strong></p>
+                                      )}€ (s DPH)&nbsp; &nbsp;&nbsp;</span></strong></p>
                                     </div>
                                   </div>
                                 </td>

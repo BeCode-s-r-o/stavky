@@ -145,34 +145,37 @@ app.post("/checkout", async (req, res) => {
       let info = await transporter.sendMail({
         from: isForex
           ? `"Objednávka č. ${invoiceNumber} | Forex Poradenstvo" <info@forexporadenstvo.sk>`
-          : `"Objednávka č. ${invoiceNumber} | Stavkove Poradenstvo" <info@stavkoveporadenstvo.sk>`, // sender address
-        to: token.email, // list of receivers
-        subject: "Vaša Objednávka", // Subject line
+          : `"Objednávka č. ${invoiceNumber} | Stavkove Poradenstvo" <info@stavkoveporadenstvo.sk>`,
+        to: token.email,
+        subject: "Vaša Objednávka",
         html: htmlMessage,
         attachments: [
           {
             filename: `faktura č.${invoiceNumber + ".pdf"}`,
             path: `faktura č.${invoiceNumber + ".pdf"}`,
             contentType: "application/pdf",
+            send: true,
           },
           {
             filename: "stavkove.png",
             path: "./stavkove.png",
             cid: "stavkove",
+            send: !isForex,
           },
           {
             filename: "forex.png",
             path: "./forex.png",
             cid: "forex",
+            send: isForex,
           },
-        ], // plain text body
+        ].filter((i) => i.send),
       });
       fs.unlink(`faktura č.${invoiceNumber + ".pdf"}`, (err) => {
         if (err) {
           throw err;
         }
       });
-      console.log("Odoslané: %s", info.messageId);
+      console.log("Odoslané: %s", JSON.stringify(info, null, 2));
       // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
     }
 
@@ -187,6 +190,58 @@ app.post("/checkout", async (req, res) => {
 
   res.json({ error, status });
 });
+
+const htmlMessage = createEmailTemplate({
+  name: "Vlado",
+  invoiceNumber: "123",
+  isForex: true,
+  storeItem: {
+    name: "Balík 1",
+    priceInCents: 100,
+    duration: "1 mesiac",
+  },
+  email: "tomkovladko@gmail.com",
+  address: {
+    street: "Street",
+    zip: "Zip",
+    city: "City",
+    country: "Country",
+  },
+});
+
+let transporter = nodemailer.createTransport({
+  host: "smtp.m1.websupport.sk",
+  port: 465,
+  secure: true,
+  auth: {
+    user: "info@forexporadenstvo.sk",
+    pass: process.env.ACOUNT_PASSWORD,
+  },
+});
+// send mail with defined transport object
+let info = transporter
+  .sendMail({
+    from: `"Objednávka č. ${123} | Forex Poradenstvo" <info@forexporadenstvo.sk>`,
+    to: "tomkovladko@gmail.com",
+    subject: "Vaša Objednávka",
+    html: htmlMessage,
+    attachments: [
+      {
+        filename: "stavkove.png",
+        path: "./stavkove.png",
+        cid: "stavkove",
+        send: false,
+      },
+      {
+        filename: "forex.png",
+        path: "./forex.png",
+        cid: "forex",
+        send: true,
+      },
+    ].filter((i) => i.send),
+  })
+  .then((res) => console.log(res));
+
 app.listen(PORT, () => {
-  console.log("listening");
+  console.log("Server is running on port " + PORT + "");
 });
