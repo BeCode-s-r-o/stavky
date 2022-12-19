@@ -23,7 +23,6 @@ app.use(cors());
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 const PORT = 5500;
-let invNum = 100;
 
 function formatDate(date) {
   const day = date.getDate();
@@ -43,6 +42,7 @@ app.post("/checkout", async (req, res) => {
         ? process.env.STRIPE_PRIVATE_KEY_FOREX
         : process.env.STRIPE_PRIVATE_KEY_STAVKOVE
     );
+
     const customer = await stripe.customers.create({
       email: token.email,
       source: token.id,
@@ -51,28 +51,31 @@ app.post("/checkout", async (req, res) => {
     const storeItem = storeItems.get(package.id);
 
     const key = uuid();
-    const charge = await stripe.charges
-      .create({
-        amount: Math.round(
-          storeItem.priceInCents - storeItem.priceInCents * discount
-        ),
-        currency: "eur",
-        customer: customer.id,
-        receipt_email: token.email,
-        description: storeItem.name,
-        key: key,
-      })
-      .then((i) => console.log(i));
+    const charge = await stripe.charges.create({
+      amount: Math.round(
+        storeItem.priceInCents - storeItem.priceInCents * discount
+      ),
+      currency: "eur",
+      customer: customer.id,
+      receipt_email: token.email,
+      description: storeItem.name,
+      key: key,
+    });
 
     async function sendEmail() {
-      var invoiceNumber = "0100";
       try {
-        const docRef = db.collection("cislo-objednavky").doc("invoiceNumber");
-        invoiceNumber = InvoiceNumber.next(docRef.number);
+        const docRef = await db
+          .collection("cislo-objednavky")
+          .doc("invoiceNumber");
+        var order = await db
+          .collection("cislo-objednavky")
+          .doc("invoiceNumber")
+          .get();
+
+        var invoiceNumber = "0" + order.data().number;
         await docRef.set({
-          number: invoiceNumber || `0${invNum}`,
+          number: order.data().number + 1,
         });
-        invNum++;
       } catch (err) {
         console.log(err);
       }
