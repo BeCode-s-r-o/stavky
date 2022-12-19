@@ -55,7 +55,7 @@ const createEmailTemplate = ({
         }
 
         .mobile_font{
-          font-size: 22px !important;
+          font-size: 16px !important;
         }
         .mobile_hide{
           display:none;

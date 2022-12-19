@@ -153,7 +153,6 @@ function generateInvoiceTable(doc, invoice) {
     "",
     formatCurrency(invoice.discountValue)
   );
-  console.log(invoice.discountValue);
 
   const duePosition = paidToDatePosition + 40;
   doc.font("./Roboto-Bold.ttf");

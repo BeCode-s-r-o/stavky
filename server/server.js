@@ -23,6 +23,7 @@ app.use(cors());
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 const PORT = 5500;
+let invNum = 100;
 
 function formatDate(date) {
   const day = date.getDate();
@@ -50,27 +51,28 @@ app.post("/checkout", async (req, res) => {
     const storeItem = storeItems.get(package.id);
 
     const key = uuid();
-    const charge = await stripe.charges.create({
-      amount: Math.round(
-        storeItem.priceInCents - storeItem.priceInCents * discount
-      ),
-      currency: "eur",
-      customer: customer.id,
-      receipt_email: token.email,
-      description: storeItem.name,
-      key: key,
-    });
+    const charge = await stripe.charges
+      .create({
+        amount: Math.round(
+          storeItem.priceInCents - storeItem.priceInCents * discount
+        ),
+        currency: "eur",
+        customer: customer.id,
+        receipt_email: token.email,
+        description: storeItem.name,
+        key: key,
+      })
+      .then((i) => console.log(i));
 
     async function sendEmail() {
-      // Generate test SMTP service account from ethereal.email
-      // Only needed if you don't have a real mail account for testing
       var invoiceNumber = "0100";
       try {
         const docRef = db.collection("cislo-objednavky").doc("invoiceNumber");
-        var invoiceNumber = InvoiceNumber.next(docRef.number);
+        invoiceNumber = InvoiceNumber.next(docRef.number);
         await docRef.set({
-          number: invoiceNumber,
+          number: invoiceNumber || `0${invNum}`,
         });
+        invNum++;
       } catch (err) {
         console.log(err);
       }
@@ -79,7 +81,11 @@ app.post("/checkout", async (req, res) => {
         name: token.card.name,
         invoiceNumber: invoiceNumber,
         isForex: isForex,
-        storeItem: storeItem,
+        storeItem: {
+          ...storeItem,
+          priceInCents:
+            storeItem.priceInCents - storeItem.priceInCents * discount,
+        },
         email: token.email,
         address: {
           street: token.card.address_line1,
