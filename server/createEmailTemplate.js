@@ -53,6 +53,10 @@ const createEmailTemplate = ({
         .mobile_center{
           text-align:center;
         }
+
+        .mobile_font{
+          font-size: 22px !important;
+        }
         .mobile_hide{
           display:none;
         }
@@ -136,7 +140,7 @@ const createEmailTemplate = ({
                                 <td class="pad">
                                   <div style="font-family: sans-serif">
                                     <div class style="font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #ffffff; line-height: 1.2; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
-                                      <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><span style="font-size:30px;"><strong>ĎAKUJEME ZA PLATBU A DÔVERU</strong></span></p>
+                                      <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><span style="font-size:30px;" class="mobile_font"><strong>ĎAKUJEME ZA PLATBU A DÔVERU</strong></span></p>
                                     </div>
                                   </div>
                                 </td>
@@ -198,7 +202,7 @@ const createEmailTemplate = ({
                             <table class="heading_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                               <tr>
                                 <td class="pad" style="text-align:center;width:100%;padding-top:30px;">
-                                  <h2 style="margin: 0; color: #ffffff; direction: ltr; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 25px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">HOTOVO! DO 48 HODÍN VÁS BUDEME KONTAKTOVAŤ</span></h2>
+                                  <h2 class="mobile_font" style="margin: 0; color: #ffffff; direction: ltr; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 25px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder mobile_font">HOTOVO! DO 48 HODÍN VÁS BUDEME KONTAKTOVAŤ</span></h2>
                                 </td>
                               </tr>
                             </table>
@@ -369,18 +373,20 @@ const createEmailTemplate = ({
                           <td class="column column-1" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
                             <table class="paragraph_block block-2 mobile_center" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
-                                <td class="pad">
-                                  <div style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:19.2px;">
-                                    <p style="margin: 0;">Produkt</p>
+                                <td class="pad  mobile_center">
+                                  <div class="mobile_center" style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:19.2px;">
+                                    <p class="mobile_center" style="margin: 0;">Produkt</p>
                                   </div>
                                 </td>
                               </tr>
                             </table>
                             <table class="paragraph_block block-3 mobile_center" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
-                                <td class="pad">
-                                  <div style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:150%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:24px;">
-                                    <p style="margin: 0;">${storeItem.name}</p>
+                                <td class="pad mobile_center">
+                                  <div class="mobile_center" style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:150%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:24px;">
+                                    <p class="mobile_center" style="margin: 0;">${
+                                      storeItem.name
+                                    }</p>
                                   </div>
                                 </td>
                               </tr>
@@ -389,9 +395,9 @@ const createEmailTemplate = ({
                           <td class="column column-2 " width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
                             <table class="paragraph_block block-2 mobile_center" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
-                                <td class="pad">
-                                  <div style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:19.2px;">
-                                    <p style="margin: 0;">Množstvo</p>
+                                <td class="pad mobile_center">
+                                  <div class="mobile_center" style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:19.2px;">
+                                    <p class="mobile_center" style="margin: 0;">Množstvo</p>
                                   </div>
                                 </td>
                               </tr>
@@ -411,10 +417,10 @@ const createEmailTemplate = ({
                           <td class="column column-3" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
                             <table class="paragraph_block block-2 mobile_center" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                               <tr>
-                                <td class="pad">
-                                  <div style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:19.2px;">
-                                    <p style="margin: 0;">Cena</p>
-                                  </div>
+                                <td class="pad mobile_center">
+                                  <di class="mobile_center"v style="color:#ffffff;font-size:16px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:19.2px;">
+                                    <p class="mobile_center" style="margin: 0;">Cena</p>
+                                  </di>
                                 </td>
                               </tr>
                             </table>
@@ -469,7 +475,7 @@ const createEmailTemplate = ({
                                 <td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:40px;">
                                   <div style="font-family: sans-serif">
                                     <div class style="font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #ffffff; line-height: 1.2; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
-                                      <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><span style="font-size:30px;"><strong>V PRÍPADE AKÝCHKOĽVEK OTÁZOK NÁS<br>NEVÁHAJTE KONTAKTOVAŤ</strong></span></p>
+                                      <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><span style="font-size:30px;" class="mobile_font"><strong>V PRÍPADE AKÝCHKOĽVEK OTÁZOK NÁS<br>NEVÁHAJTE KONTAKTOVAŤ</strong></span></p>
                                     </div>
                                   </div>
                                 </td>
