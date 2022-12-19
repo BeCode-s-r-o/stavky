@@ -145,9 +145,9 @@ app.post("/checkout", async (req, res) => {
       let info = await transporter.sendMail({
         from: isForex
           ? `"Objednávka č. ${invoiceNumber} | Forex Poradenstvo" <info@forexporadenstvo.sk>`
-          : `"Objednávka č. ${invoiceNumber} | Stavkove Poradenstvo" <info@stavkoveporadenstvo.sk>`,
-        to: token.email,
-        subject: "Vaša Objednávka",
+          : `"Objednávka č. ${invoiceNumber} | Stavkove Poradenstvo" <info@stavkoveporadenstvo.sk>`, // sender address
+        to: token.email, // list of receivers
+        subject: "Vaša Objednávka", // Subject line
         html: htmlMessage,
         attachments: [
           {
@@ -243,5 +243,5 @@ let info = transporter
   .then((res) => console.log(res));
 
 app.listen(PORT, () => {
-  console.log("Server is running on port " + PORT + "");
+  console.log("listening");
 });

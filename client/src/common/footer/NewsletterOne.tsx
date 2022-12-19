@@ -3,20 +3,14 @@ import React from 'react';
 import { useState } from 'react';
 
 const NewsletterOne = () => {
-  const [email, setEmail] = useState('');
-  const [saved, setSaved] = useState(false);
   const saveEmail = () => {
     const now = Date.now();
     set(ref(getDatabase(), 'emails/' + `${now}`), {
       email,
       now,
     });
-    setEmail('');
-    setSaved(true);
-    setTimeout(() => {
-      setSaved(false);
-    }, 2000);
   };
+  const [email, setEmail] = useState('');
   return (
     <div className={'newsletter-area'}>
       <div className="container">
@@ -35,9 +29,8 @@ const NewsletterOne = () => {
               <div className="form-group">
                 <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Váš e-mail" />
               </div>
-              {saved && <p>Ďakujeme, Váš e-mail bol zaradený do odoberania najnovších správ a aktualizácií.</p>}
               <div className="form-group">
-                <button className="btn-default" disabled={saved} onClick={saveEmail}>
+                <button className="btn-default" onClick={saveEmail}>
                   ODOBERAŤ NOVINKY
                 </button>
               </div>
