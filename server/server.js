@@ -191,57 +191,6 @@ app.post("/checkout", async (req, res) => {
   res.json({ error, status });
 });
 
-const htmlMessage = createEmailTemplate({
-  name: "Vlado",
-  invoiceNumber: "123",
-  isForex: true,
-  storeItem: {
-    name: "Balík 1",
-    priceInCents: 100,
-    duration: "1 mesiac",
-  },
-  email: "tomkovladko@gmail.com",
-  address: {
-    street: "Street",
-    zip: "Zip",
-    city: "City",
-    country: "Country",
-  },
-});
-
-let transporter = nodemailer.createTransport({
-  host: "smtp.m1.websupport.sk",
-  port: 465,
-  secure: true,
-  auth: {
-    user: "info@forexporadenstvo.sk",
-    pass: process.env.ACOUNT_PASSWORD,
-  },
-});
-// send mail with defined transport object
-let info = transporter
-  .sendMail({
-    from: `"Objednávka č. ${123} | Forex Poradenstvo" <info@forexporadenstvo.sk>`,
-    to: "tomkovladko@gmail.com",
-    subject: "Vaša Objednávka",
-    html: htmlMessage,
-    attachments: [
-      {
-        filename: "stavkove.png",
-        path: "./stavkove.png",
-        cid: "stavkove",
-        send: false,
-      },
-      {
-        filename: "forex.png",
-        path: "./forex.png",
-        cid: "forex",
-        send: true,
-      },
-    ].filter((i) => i.send),
-  })
-  .then((res) => console.log(res));
-
 app.listen(PORT, () => {
-  console.log("listening");
+  console.log(`Server listening on port ${PORT}`);
 });
