@@ -104,7 +104,7 @@ const createEmailTemplate = ({
     </style>
   </head>
   
-  <body style="margin: 0; background-color: #000000; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
+  <body style="margin: 0; background-color: #000000 !important; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
     <table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #000000;">
       <tbody>
         <tr>
@@ -239,7 +239,7 @@ const createEmailTemplate = ({
                                 <td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:40px;">
                                   <div style="font-family: sans-serif">
                                     <div class style="font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #ffffff; line-height: 1.2; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
-                                      <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><span style="font-size:26px;"><strong>VAŠA OBJEDNÁVKA č. ${invoiceNumber}</strong></span></p>
+                                      <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><span style="font-size:26px;" class="mobile_font"><strong>VAŠA OBJEDNÁVKA č. ${invoiceNumber}</strong></span></p>
                                     </div>
                                   </div>
                                 </td>
@@ -249,7 +249,9 @@ const createEmailTemplate = ({
                               <tr>
                                 <td class="pad">
                                   <div style="color:#ffffff;direction:ltr;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;font-weight:400;letter-spacing:0px;line-height:200%;text-align:center;mso-line-height-alt:36px;">
-                                    <p style="margin: 0;"><strong>Stávkové Poradenstvo</strong></p>
+                                    <p style="margin: 0;"><strong${
+                                      isForex ? "Forex" : "Stávkové"
+                                    } Poradenstvo</strong></p>
                                   </div>
                                 </td>
                               </tr>

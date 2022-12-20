@@ -140,7 +140,7 @@ function generateInvoiceTable(doc, invoice) {
     "",
     "DPH 20%",
     "",
-    formatCurrency((invoice.subtotal - invoice.discountValue) * 0.2)
+    formatCurrency(invoice.subtotal * 0.2)
   );
   const discountPosition = paidToDatePosition + 20;
   generateTableRow(

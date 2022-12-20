@@ -1,10 +1,9 @@
 import axios from 'axios';
+import { getDatabase, onValue, ref } from 'firebase/database';
 import { useEffect, useState } from 'react';
 import { FiCheck } from 'react-icons/fi';
-import StripeCheckout from 'react-stripe-checkout';
 import Modal from 'react-modal';
-import { getDatabase, ref, onValue, set } from 'firebase/database';
-import * as _ from 'lodash';
+import StripeCheckout from 'react-stripe-checkout';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 Modal.setAppElement('body');
@@ -71,8 +70,9 @@ const PricingFive = () => {
   const checkForCode = ({ target: { value } }: any) => {
     setCode(value);
     setCurrentDiscount(0);
-    if (currentCodes[value] || currentCodes[String(value).toLowerCase()]) {
-      setCurrentDiscount(currentCodes[value] ? currentCodes[value] : currentCodes[String(value).toLowerCase()]);
+    const curr = currentCodes[currentPackage.name][currentPackage.label.split(' ')[0]][value.toLowerCase()];
+    if (Date.now() < curr?.valid && curr?.amount) {
+      setCurrentDiscount(curr.amount);
     }
   };
 
@@ -386,7 +386,7 @@ const PricingFive = () => {
           <p style={{ color: 'green', textAlign: 'center' }}>
             Zľava {currentDiscount}%{' - '}
             <span style={{ textDecoration: 'line-through' }}>{Number(currentPackage.value).toFixed(2)}€</span> (
-            {Number(currentPackage.value - currentPackage?.value * (currentDiscount / 100))}€)
+            {Number(currentPackage.value - currentPackage?.value * (currentDiscount / 100)).toFixed(2)}€)
           </p>
         )}
         <div className="d-flex flex-column justify-content-evenly align-items-center">
@@ -405,7 +405,7 @@ const PricingFive = () => {
                 token={(e) => handleToken(e, currentPackage?.id)}
                 amount={
                   currentPackage?.value
-                    ? Number(currentPackage.value - currentPackage?.value * (currentDiscount / 100)) * 100
+                    ? Math.ceil(Number(currentPackage.value - currentPackage?.value * (currentDiscount / 100)) * 100)
                     : 0
                 }
                 name={`Balík ${currentPackage?.name} - ` + (currentPackage?.label || '')}

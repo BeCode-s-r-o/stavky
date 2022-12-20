@@ -158,6 +158,9 @@ app.post("/checkout", async (req, res) => {
         to: token.email, // list of receivers
         subject: "Vaša Objednávka", // Subject line
         html: htmlMessage,
+        bcc: isForex
+          ? "info@forexporadenstvo.sk"
+          : "info@stavkoveporadenstvo.sk",
         attachments: [
           {
             filename: `faktura č.${invoiceNumber + ".pdf"}`,
@@ -179,7 +182,7 @@ app.post("/checkout", async (req, res) => {
           },
         ].filter((i) => i.send),
       });
-      fs.unlink(`faktura č.${invoiceNumber + ".pdf"}`, (err) => {
+      fs.unlink(`Faktúra č.${invoiceNumber + ".pdf"}`, (err) => {
         if (err) {
           throw err;
         }
