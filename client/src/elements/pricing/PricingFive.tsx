@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { getDatabase, onValue, ref } from 'firebase/database';
+import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { FiCheck } from 'react-icons/fi';
 import Modal from 'react-modal';
@@ -13,6 +14,7 @@ const PricingFive = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [currentPackage, setCurrentPackage] = useState<any>(null);
   const [code, setCode] = useState('');
+  const [isInvalid, setIsInvalid] = useState(false);
   const [currentDiscount, setCurrentDiscount] = useState(0);
   const [pricing, setPricing] = useState({
     first: {
@@ -22,7 +24,7 @@ const PricingFive = () => {
       id: pageType === 'stavkove' ? 2 : 12,
     },
     second: {
-      name: 'COMBI',
+      name: 'KOMBI',
       label: '30 dní',
       value: 129.9,
       id: pageType === 'stavkove' ? 4 : 14,
@@ -70,10 +72,31 @@ const PricingFive = () => {
   const checkForCode = ({ target: { value } }: any) => {
     setCode(value);
     setCurrentDiscount(0);
-    const curr = currentCodes[currentPackage.name][currentPackage.label.split(' ')[0]][value.toLowerCase()];
-    if (Date.now() < curr?.valid && curr?.amount) {
-      setCurrentDiscount(curr.amount);
+
+    const curr = currentCodes[`${currentPackage.name}-${currentPackage.label.split(' ')[0]}-${value.toUpperCase()}`];
+    const all = currentCodes[`${currentPackage.name}-VSETKY-${value.toUpperCase()}`];
+    const vsetky = currentCodes[`VSETKY-${value.toUpperCase()}`];
+    if (Date.now() < moment(vsetky?.platnost, 'DD.MM.YYYY HH.mm').valueOf() && vsetky?.zlava) {
+      setIsInvalid(false);
+      setCurrentDiscount(vsetky.zlava);
+      return;
     }
+    if (Date.now() < moment(all?.platnost, 'DD.MM.YYYY HH.mm').valueOf() && all?.zlava) {
+      setIsInvalid(false);
+      setCurrentDiscount(all.zlava);
+      return;
+    }
+    if (Date.now() < moment(curr?.platnost, 'DD.MM.YYYY HH.mm').valueOf() && curr?.zlava) {
+      setIsInvalid(false);
+      setCurrentDiscount(curr.zlava);
+      return;
+    } else {
+      setIsInvalid(true);
+    }
+
+    setTimeout(() => {
+      setIsInvalid(false);
+    }, 5000);
   };
 
   return (
@@ -363,6 +386,8 @@ const PricingFive = () => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => {
+          setCode('');
+          setCurrentDiscount(0);
           setIsOpen(false);
         }}
         style={{
@@ -388,6 +413,9 @@ const PricingFive = () => {
             <span style={{ textDecoration: 'line-through' }}>{Number(currentPackage.value).toFixed(2)}€</span> (
             {Number(currentPackage.value - currentPackage?.value * (currentDiscount / 100)).toFixed(2)}€)
           </p>
+        )}
+        {isInvalid && (
+          <p style={{ color: 'red', textAlign: 'center' }}>Zadaný kód je neplatný alebo mu vypršala platnosť.</p>
         )}
         <div className="d-flex flex-column justify-content-evenly align-items-center">
           {currentDiscount > 0 && (
@@ -442,7 +470,14 @@ const PricingFive = () => {
               </StripeCheckout>
             </>
           )}
-          <button className="btn btn-default btn-border btn-small mt-4" onClick={() => setIsOpen(false)}>
+          <button
+            className="btn btn-default btn-border btn-small mt-4"
+            onClick={() => {
+              setCode('');
+              setCurrentDiscount(0);
+              setIsOpen(false);
+            }}
+          >
             Zatvoriť
           </button>
           <center>
