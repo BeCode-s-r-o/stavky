@@ -616,7 +616,31 @@ const createEmailTemplate = ({
                 </tr>
               </tbody>
             </table>
-
+            <table class="text_block block-6" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+            <tr>
+              <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;padding-top:10px;">
+                <div style="font-family: sans-serif">
+                  <div class style="font-size: 12px; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
+                    <p style="margin: 0; text-align: center; mso-line-height-alt: 25.5px;"><span style="font-size:14px;">Kompletné informácie o našich službách, kontaktné
+                    údaje, cenník a taktiež OP, SOÚ a žiadosť o UP
+                    nájdete na  <a href="${
+                      isForex
+                        ? "www.forexporadenstvo.sk"
+                        : "www.stavkoveporadenstvo.sk"
+                    }" target="_blank" style="text-decoration: underline; color: #ffffff;" rel="noopener">${
+    isForex ? "www.forexporadenstvo.sk" : "www.stavkoveporadenstvo.sk"
+  }</a> . Pri
+                    žiadosti o UP je potrebné vopred kontaktovať <a href="mailto:info@${
+                      isForex ? "forexporadenstvo" : "stavkoveporadenstvo"
+                    }.sk" target="_blank" style="text-decoration: underline; color: #ffffff;" rel="noopener">info@${
+    isForex ? "forexporadenstvo" : "stavkoveporadenstvo"
+  }.sk</a>
+                    </span></p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
           </td>
         </tr>
       </tbody>

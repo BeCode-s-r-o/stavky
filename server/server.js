@@ -202,6 +202,58 @@ app.post("/checkout", async (req, res) => {
 
   res.json({ error, status });
 });
+app.post("/test-email", async (req, res) => {
+  try {
+    const { isForex, email } = req.body;
+    const storeItem = storeItems.get(6);
+    // Create HTML template
+    const htmlMessage = createEmailTemplate({
+      name: "Test USer",
+      invoiceNumber: "09876567890",
+      isForex: isForex,
+      storeItem: {
+        ...storeItem,
+        priceInCents: storeItem.priceInCents - storeItem.priceInCents * 1,
+      },
+      email: email,
+      address: {
+        street: "Skúšobná",
+        zip: "0972",
+        city: "BRatislva",
+        country: "Amerika",
+      },
+    });
+
+    // Create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+      host: "smtp.m1.websupport.sk",
+      port: 465,
+      secure: true, // true for 465, false for other ports
+      auth: {
+        user: isForex
+          ? "info@forexporadenstvo.sk"
+          : "info@stavkoveporadenstvo.sk", // generated ethereal user
+        pass: process.env.ACOUNT_PASSWORD, // generated ethereal password
+      },
+    });
+
+    // send mail with defined transport object
+    let info = await transporter.sendMail({
+      from: isForex
+        ? `"Objednávka č. 1 | Forex Poradenstvo" <info@forexporadenstvo.sk>`
+        : `"Objednávka č. 1 | Stavkove Poradenstvo" <info@stavkoveporadenstvo.sk>`, // replace with your name and email
+      to: email,
+      subject: "Your Purchase Confirmation",
+      html: htmlMessage,
+    });
+
+    console.log("Email sent:", info.response);
+    res.status(200).send("Email sent successfully!");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error sending email.");
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
