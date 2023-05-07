@@ -22,8 +22,9 @@ jobs:
 
       - name: 🔨 NPM RUN BUILD
         run: |
+          cd client
           npm install --force
-          npm run build:forex
+          npm run build:stavkove
 
       - name: 📂 NAHRAŤ NA FTP SERVER
         uses: SamKirkland/FTP-Deploy-Action@4.3.3

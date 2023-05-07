@@ -22,6 +22,7 @@ jobs:
 
       - name: 🔨 NPM RUN BUILD
         run: |
+          cd client
           npm install --force
           npm run build:forex
 
