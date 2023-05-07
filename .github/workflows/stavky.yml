@@ -32,7 +32,7 @@ jobs:
           server: stavkoveporadenstvo.sk
           username: ftp.stavkoveporadenstvo.sk
           password: Wy1=?6T^0B
-          local-dir: ./client/build
+          local-dir: ./client/build/
           server-dir: stavkoveporadenstvo.sk/web/
           port: 21
           protocol: ftp
