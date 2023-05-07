@@ -482,12 +482,11 @@ const PricingFive = () => {
           </button>
           <center>
             <p
-              style={{ textAlign: 'center', fontSize: '13px', lineHeight: '16px', marginBottom: '10px' }}
+              style={{ textAlign: 'center', fontSize: '13px', lineHeight: '16px', marginBottom: '10px', width: '65%' }}
               className="pt-5"
             >
-              Pokračovaním v objednávke súhlasíte s obchodnými podmienkami,
-              <br />
-              aktiváciou členstva a spracovaním osobných údajov.
+              Pokračovaním v objednávke súhlasíte s obchodnými podmienkami, aktiváciou členstva a spracovaním osobných
+              údajov.
             </p>
           </center>
         </div>

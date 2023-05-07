@@ -1,19 +1,21 @@
+import React from 'react';
+
 const Copyright = ({ pageType }: PageType) => {
+  const websiteHref = pageType === 'forex' ? 'www.forexporadenstvo.sk' : 'www.stavkoveporadenstvo.sk';
+
   return (
     <div className="copyright-area copyright-style-one">
       <div className="container">
         <div className="text-sm">
-          {' '}
-          <p style={{ fontSize: '1.2rem' }}>
-            {' '}
+          <p style={{ fontSize: '1.1rem', textAlign: 'justify' }}>
             Po zakúpení služby užívateľ súhlasí s aktívnym predplatným, ktoré môže kedykoľvek zrušiť. Zásady ochrany
             osobných údajov sú bližšie špecifikované v Spracovanie osobných údajov na stránke{' '}
-            <a href={pageType === 'forex' ? 'www.forexporadenstvo.sk' : 'www.stavkoveporadenstvo.sk'} target="_blank">
-              {pageType === 'forex' ? 'www.forexporadenstvo.sk' : 'www.stavkoveporadenstvo.sk'}
+            <a href={websiteHref} target="_blank">
+              {websiteHref}
             </a>{' '}
             . Všeobecné obchodné podmienky sú bližšie špecifikované v Obchodné podmienky na{' '}
-            <a href={pageType === 'forex' ? 'www.forexporadenstvo.sk' : 'www.stavkoveporadenstvo.sk'} target="_blank">
-              {pageType === 'forex' ? 'www.forexporadenstvo.sk' : 'www.stavkoveporadenstvo.sk'}
+            <a href={websiteHref} target="_blank">
+              {websiteHref}
             </a>{' '}
             . Členstvo je automaticky obnovované podľa zakúpenej služby, aktuálne je 30 / 90 / 180 dňové členstvo. Pri
             zakúpení členstva na 30/90/180 dní bude automaticky po 30/60/180 dňoch obnovené členstvo, pokiaľ užívateľ
@@ -21,6 +23,16 @@ const Copyright = ({ pageType }: PageType) => {
             predplateného a zamedzeniu ďalších poplatkov, musí kontaktovať poskytovateľa pred ďalším dátumom úhrady
             členstva na mail a požiadať o ukončenie predplatného, poskytovateľ následne najneskôr do 24 hodín musí
             ukončiť predplatné a tým zamedziť ďalšiemu obnoveniu členstva.
+          </p>
+          <p style={{ fontSize: '1.1rem', textAlign: 'justify' }}>
+            Zásady ochrany osobných údajov sú bližšie špecifikované v Spracovanie osobných údajov na stránke{' '}
+            <a href={websiteHref}>{websiteHref}</a> Všeobecné obchodné podmienky sú bližšie špecifikované v Obchodné
+            podmienky na <a href={websiteHref}>{websiteHref}</a> Členstvo je automaticky obnovované podľa zakúpenej
+            služby. Po zakúpení služby užívateľ súhlasí s aktívnym predplatným, ktoré môže kedykoľvek zrušiť. Pokiaľ
+            užívateľ nepožiada o ukončenie predplatného pred uhradeným ďalšej platby, automaticky mu bude členstvo
+            predĺžené. Pokiaľ užívateľ žiada o ukončenie predplateného a zamedzeniu ďalších poplatkov, musí kontaktovať
+            poskytovateľa pred ďalším dátumom úhrady členstva na mail a požiadať o ukončenie predplatného, poskytovateľ
+            následne najneskôr do 24 hodín musí ukončiť predplatné a tým zamedziť ďalšiemu obnoveniu členstva.
           </p>
         </div>
         <div className="row align-items-center">
@@ -38,7 +50,7 @@ const Copyright = ({ pageType }: PageType) => {
                   </a>
                 </li>
                 <li>
-                  <a href={pageType === 'forex' ? '/UP-forex.pdf' : '/UP-stavky.pdf'} target="_blank" download>
+                  <a href={pageType === 'forex' ? '/UP-forex.pdf' : '/UP-stavky.pdf'} target="_blank">
                     Ukončenie predplatného
                   </a>
                 </li>
