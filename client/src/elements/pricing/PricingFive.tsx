@@ -486,7 +486,8 @@ const PricingFive = () => {
               className="pt-5"
             >
               Pokračovaním v objednávke súhlasíte
-              <br /> s obchodnými podmienkami, aktiváciou členstva <br />a spracovaním osobných údajov.
+              <br /> s obchodnými podmienkami, aktiváciou
+              <br /> členstva a spracovaním osobných údajov.
             </p>
           </center>
         </div>
