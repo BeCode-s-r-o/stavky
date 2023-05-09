@@ -42,18 +42,20 @@ const PricingFive = () => {
 
   async function handleToken(token: any, id: number) {
     setIsOpen(false);
-    const response = await axios.post(url, {
-      token,
-      package: { id: id, quantity: 1 },
-      discount: currentDiscount / 100,
-      isForex: pageType === 'forex',
-    });
 
-    if (response.status === 200) {
+    try {
+      const response = await axios.post(url, {
+        token,
+        package: { id: id, quantity: 1 },
+        discount: currentDiscount / 100,
+        isForex: pageType === 'forex',
+      });
       toast.success('Platba prebehla úspešne', {
         theme: 'colored',
       });
-    } else {
+      console.log(response);
+    } catch (e) {
+      console.log(e);
       toast.error('Platba neprebehla úspešne', {
         theme: 'colored',
       });
