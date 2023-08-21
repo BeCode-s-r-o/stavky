@@ -86,7 +86,7 @@ const App = () => {
           <Timeline pageType={pageType} />
           <Pricing pageType={pageType} />
           <CounterUp pageType={pageType} />
-          <Testimonial pageType={pageType} />
+          {/* <Testimonial pageType={pageType} /> */}
           <CalltoAction pageType={pageType} />
           <RnAccordion pageType={pageType} />
           <WhyUs pageType={pageType} />
