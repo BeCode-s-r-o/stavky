@@ -6,7 +6,7 @@ const pageType = process.env.REACT_APP_WEBSITE_TYPE;
 const testimonialData = [
   {
     image: pageType === 'forex' ? 1 : 20,
-    name: pageType === 'forex' ? 'Filip Paštrák' : 'Samuel Golonka',
+    name: pageType === 'forex' ? 'Filip P' : 'Samuel G',
     designation: pageType === 'forex' ? 'revízny technik' : 'vysokoškolský študent',
     location: 'CO Miego, AD, USA',
     description:
@@ -16,7 +16,7 @@ const testimonialData = [
   },
   {
     image: 9,
-    name: pageType === 'forex' ? 'Juraj Lacko' : 'Filip Jakubovič',
+    name: pageType === 'forex' ? 'Juraj L' : 'Filip J',
     designation: pageType === 'forex' ? 'architekt' : 'podnikateľ',
     location: 'CO Miego, AD, USA',
     description:
@@ -26,7 +26,7 @@ const testimonialData = [
   },
   {
     image: 3,
-    name: pageType === 'forex' ? 'Peter Tóth' : 'Martin Kubovčík',
+    name: pageType === 'forex' ? 'Peter T' : 'Martin K',
     designation: pageType === 'forex' ? 'PR špecialista' : 'marketingový špecialista',
     location: 'CO Miego, AD, USA',
     description:
@@ -36,7 +36,7 @@ const testimonialData = [
   },
   {
     image: pageType === 'forex' ? 13 : 22,
-    name: pageType === 'forex' ? 'Dušan Fulla' : 'Elena Siváková',
+    name: pageType === 'forex' ? 'Dušan F' : 'Elena S',
     designation: pageType === 'forex' ? 'elektrotechnik' : 'mamička na materskej',
     location: 'CO Miego, AD, USA',
     description:
@@ -46,7 +46,7 @@ const testimonialData = [
   },
   {
     image: 5,
-    name: pageType === 'forex' ? 'Dávid Tomčík' : 'Dávid Mataj',
+    name: pageType === 'forex' ? 'Dávid T' : 'Dávid M',
     designation: pageType === 'forex' ? 'statik' : 'klampiar',
     location: 'CO Miego, AD, USA',
     description:
@@ -56,7 +56,7 @@ const testimonialData = [
   },
   {
     image: pageType === 'forex' ? 19 : 11,
-    name: pageType === 'forex' ? 'Václav Macák' : 'Martina Lazuchová',
+    name: pageType === 'forex' ? 'Václav M' : 'Martina L',
     designation: pageType === 'forex' ? 'predajca vozidiel' : 'zdravotná sestra',
     location: 'CO Miego, AD, USA',
     description:
@@ -66,7 +66,7 @@ const testimonialData = [
   },
   {
     image: pageType === 'forex' ? 12 : 18,
-    name: pageType === 'forex' ? 'Tatiana Roháčová' : 'Tibor Lazár',
+    name: pageType === 'forex' ? 'Tatiana R' : 'Tibor L',
     designation: pageType === 'forex' ? 'mamička na materskej' : 'kuriér',
     location: 'CO Miego, AD, USA',
     description:
@@ -76,7 +76,7 @@ const testimonialData = [
   },
   {
     image: pageType === 'forex' ? 8 : 15,
-    name: pageType === 'forex' ? 'Monika Kupčovie' : 'Samuel Krištofič',
+    name: pageType === 'forex' ? 'Monika K' : 'Samuel K',
     designation: pageType === 'forex' ? 'prekladateľka' : 'realitný maklér',
     location: 'CO Miego, AD, USA',
     description:
@@ -86,7 +86,7 @@ const testimonialData = [
   },
   {
     image: pageType === 'forex' ? 2 : 23,
-    name: pageType === 'forex' ? 'Zuzana Vargová' : 'Mária Kaderová',
+    name: pageType === 'forex' ? 'Zuzana V' : 'Mária K',
     designation: pageType === 'forex' ? 'recepčná' : 'účtovníčka',
     location: 'CO Miego, AD, USA',
     description:
@@ -134,12 +134,12 @@ const TestimonialOne = ({ column, teamStyle }: any) => {
             <ScrollAnimation animateIn="fadeInUp" animateOut="fadeInOut" animateOnce={true}>
               <div className={`rn-box-card ${teamStyle}`}>
                 <div className="inner mx-2">
-                  <figure className="thumbnail">
+                  {/* <figure className="thumbnail">
                     <img src={`./images/testimonial/recerence${data.image}.jpg`} alt="img" />
-                  </figure>
+                  </figure> */}
                   <figcaption className="content">
                     <p className="description">{data.description}</p>
-                    <h2 className="title">{data.name}</h2>
+                    <h2 className="title">{data.name + '.'}</h2>
                     <h6 className="subtitle theme-gradient">{data.designation}</h6>
                   </figcaption>
                 </div>

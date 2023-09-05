@@ -52,11 +52,11 @@ const Social = ({ pageType }: PageType) => {
                       </li>
                       <li style={{ zIndex: 0 }}>
                         {pageType === 'forex' ? (
-                          <a target="_blank" href="https://www.instagram.com/forexporadenstvo.official/">
+                          <a target="_blank" href="https://www.instagram.com/forexporadenstvo.sk_">
                             <FiInstagram />
                           </a>
                         ) : (
-                          <a target="_blank" href="https://www.instagram.com/stavkoveporadenstvo.official/">
+                          <a target="_blank" href="https://www.instagram.com/stavkoveporadenstvo.sk_/">
                             <FiInstagram />
                           </a>
                         )}

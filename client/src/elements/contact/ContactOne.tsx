@@ -21,10 +21,10 @@ const ContactOne = () => {
                       <a
                         href={`https://instagram.com/${
                           process.env.REACT_APP_WEBSITE_TYPE === 'forex' ? 'forexporadenstvo' : 'stavkoveporadenstvo'
-                        }.official`}
+                        }.sk_`}
                       >
                         @{process.env.REACT_APP_WEBSITE_TYPE === 'forex' ? 'forexporadenstvo' : 'stavkoveporadenstvo'}
-                        .official
+                        .sk_
                       </a>
                     </p>
                   </div>

@@ -33,8 +33,8 @@ const CalltoActionFive = () => {
                         target="_blank"
                         href={
                           pageType === 'forex'
-                            ? 'https://www.instagram.com/forexporadenstvo.official/'
-                            : 'https://www.instagram.com/stavkoveporadenstvo.official/'
+                            ? 'https://www.instagram.com/forexporadenstvo.sk_/'
+                            : 'https://www.instagram.com/stavkoveporadenstvo.sk_/'
                         }
                       >
                         INSTAGRAM
